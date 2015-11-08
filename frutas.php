@@ -14,10 +14,10 @@
             //#botao{
               //  margin-left: 730px;
            // }
-            #bt1{
+            #bt1, #bt2{
                 display: none;
             }
-            #label{
+            .label{
                 display:none;
                 color: red;
             }
@@ -40,18 +40,26 @@
             
             if((perg1.selected == true) && (perg2.selected == true) && (perg3.selected == true) && (perg4.selected == true) && (perg5.selected == true) && (perg6.selected == true)){
                 alert("Acertou todas as questões! Parabéns!");
+                return true;
             }else{   
                   $('#bt1').show('slow');
                   $('#bt').hide('fast');  
                   alert("Resposta Errada. Você tem a opção de verificar as resposta ou tentar novamente!");
                   return false;
             }
-             $(document).ready(function() {
+        }
+          $(document).ready(function() {
               $('#bt1').click(function() {
-                  $('#label').show('slow');
+                  $('.label').show('slow');
+                  $('#bt2').show('slow');
+                  
               });
         });
-        }
+            function Proximo(){
+                location.href="animais.php";
+            }
+        
+        
     </script>
     </head>
     <body>
@@ -65,10 +73,9 @@
                     <embed width="560" height="315" src="video/FRUTAS_VIDEO_curto.mp4"/>
                 </object>
             </video>
-           <!-- <iframe width="560" height="315" src="https://www.youtube.com/embed/CzqtMT1Zfb0" frameborder="0" allowfullscreen></iframe> -->
         </div>
         
-        <form action="" onsubmit="correcao()">
+        <form action="" onsubmit="return correcao()">
             <label> 1)Quantas frutas tem no vídeo? </label> <br>
             <select id="pergunta1">
                <option id="1" > 1</option>
@@ -76,7 +83,7 @@
                <option id="3" > 9</option>
                <option id="4" > 4</option>
            </select> <br>
-           <label id="label"> Resposta: 5 </label>
+           <label class="label"> Resposta: 5 </label>
            <br>
             <label> 2)Quais frutas possuem a cor VERMELHA? </label><br>
             <select id="pergunta2">
@@ -85,7 +92,7 @@
                <option id="7" > Maçã e Melancia</option>
                <option id="8" > Banana e Mçã</option>
            </select> <br>
-           <label id="label"> Resposta: Maçã e Melancia </label>
+           <label class="label"> Resposta: Maçã e Melancia </label>
             <br>
             <label> 3)Qual fruta começa com a letra “L”?</label><br>
             <select id="pergunta4">
@@ -94,7 +101,7 @@
                <option id="15" > Uva</option>
                <option id="16" > Melancia</option>
            </select> <br>
-           <label id="label"> Resposta: Laranja </label>
+           <label class="label"> Resposta: Laranja </label>
             <br>
             <label> 4)Quais frutas começam com a letra “M”?</label><br>
             <select id="pergunta3">
@@ -103,7 +110,7 @@
                <option id="11" > Banana e Uva</option>
                <option id="12" > Melancia e Maçã</option>
            </select> <br>
-           <label id="label"> Resposta: Melancia e Maçã </label>
+           <label class="label"> Resposta: Melancia e Maçã </label>
             <br>
             <label> 5)Quais frutas tem a casca amarela? </label><br>
              <select id="pergunta4">
@@ -112,7 +119,7 @@
                <option id="19" > Uva e Melancia</option>
                <option id="20" > Banana e Laranja</option>
            </select> <br>
-           <label id="label"> Resposta: Banana e Laranja </label>
+           <label class="label"> Resposta: Banana e Laranja </label>
             <br>
             <label> 6)	Quais frutas tem folhas?</label><br>
              <select id="pergunta4">
@@ -121,11 +128,12 @@
                <option id="23" > Uva e Melância </option>
                <option id="24" > Maçã e Melancia</option>
            </select> <br>
-           <label id="label"> Resposta: Uva, Maçã e Laranja </label>
+           <label class="label"> Resposta: Uva, Maçã e Laranja </label>
             <br>
             <br>
             <input type="submit" id="bt" value="Responder"/>
-            <input type="button" id="bt1" name="bt1" value="Ver Correção"/>         
+            <input type="button" id="bt1" name="bt1" value="Ver Correção"/>
+            <input type="button" id="bt2" onclick="Proximo()" value="Próximo Jogo"/>
         </form> 
         <?php
         // put your code here
