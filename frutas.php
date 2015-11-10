@@ -6,14 +6,8 @@
         <style>
              #video{
                 display: none;
-               // margin-left: 500px;
+              
             }
-            //#titulo{
-               // margin-left: 680px;
-           // }
-            //#botao{
-              //  margin-left: 730px;
-           // }
             #bt1, #bt2{
                 display: none;
             }
@@ -42,10 +36,30 @@
                 alert("Acertou todas as questões! Parabéns!");
                 return true;
             }else{   
-                  $('#bt1').show('slow');
-                  $('#bt').hide('fast');  
-                  alert("Resposta Errada. Você tem a opção de verificar as resposta ou tentar novamente!");
-                  return false;
+                  erros = 0;
+
+                    if (!perg1.selected) {
+                        erros++;
+                    }
+                    if (!perg2.selected) {
+                        erros++;
+                    }
+                    if (!perg3.selected) {
+                        erros++;
+                    }
+                    if (!perg4.selected) {
+                        erros++;
+                    }
+                    if (!perg5.selected) {
+                        erros++;
+                    }
+                    if (!perg6.selected) {
+                        erros++;
+                    }
+                    $('#bt1').show('slow');
+                    $('#bt').hide('fast');
+                    alert("Você errou "+ erros + " questões! Sinto muito, tente novamente :)");
+                    return false;
             }
         }
           $(document).ready(function() {
@@ -56,7 +70,7 @@
               });
         });
             function Proximo(){
-                location.href="animais.php";
+                location.href="";
             }
         
         
@@ -75,8 +89,8 @@
             </video>
         </div>
         
-        <form action="" onsubmit="return correcao()">
-            <label> 1)Quantas frutas tem no vídeo? </label> <br>
+        <form action="" onsubmit="return correcao();">
+            <label> 1)Quantas frutas têm no vídeo? </label> <br>
             <select id="pergunta1">
                <option id="1" > 1</option>
                <option id="2" > 5</option>

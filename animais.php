@@ -6,14 +6,7 @@
         <style>
              #video{
                 display: none;
-               // margin-left: 500px;
             }
-            //#titulo{
-               // margin-left: 680px;
-           // }
-            //#botao{
-              //  margin-left: 730px;
-           // }
             #bt1, #bt2{
                 display: none;
             }
@@ -36,14 +29,34 @@
             perg3 = document.getElementById("12");
             perg4 = document.getElementById("15");
             
-            if((perg1.selected == true) && (perg2.selected == true) && (perg3.selected == true) && (perg4.selected == true)){
+            if((perg1.selected) && (perg2.selected) && (perg3.selected) && (perg4.selected)){
                 alert("Acertou todas as questões! Parabéns!");
                 return true;
             }else{   
-                  $('#bt1').show('slow');
-                  $('#bt').hide('fast');  
-                  alert("Resposta Errada. Você tem a opção de verificar as resposta ou tentar novamente!");
-                  return false;
+                 erros = 0;
+
+                    if (!perg1.selected) {
+                        erros++;
+                    }
+                    if (!perg2.selected) {
+                        erros++;
+                    }
+                    if (!perg3.selected) {
+                        erros++;
+                    }
+                    if (!perg4.selected) {
+                        erros++;
+                    }
+                    if (!perg5.selected) {
+                        erros++;
+                    }
+                    if (!perg6.selected) {
+                        erros++;
+                    }
+                    $('#bt1').show('slow');
+                    $('#bt').hide('fast');
+                    alert("Você errou "+ erros + " questões! Sinto muito, tente novamente :)");
+                    return false;
             }
             }
              $(document).ready(function() {
@@ -54,7 +67,7 @@
               });
         });
             function Proximo(){
-                location.href="frutas.php";
+                location.href="";
             }
         
 
@@ -71,12 +84,12 @@
                     <embed width="560" height="315" src="video/ANIMAIS_VIDEO_curto.mp4"/>
                 </object>
             </video>
-           <!-- <iframe width="560" height="315" src="https://www.youtube.com/embed/CzqtMT1Zfb0" frameborder="0" allowfullscreen></iframe> -->
+          
         </div>
         
-        <form action="frutas.php" onsubmit="return correcao()">
+        <form action="" onsubmit="return correcao();">
             <h3> Perguntas: </h3>
-           <label> 1)Quantas animais tem no vídeo? </label> <br>
+           <label> 1)Quantas animais têm no vídeo? </label> <br>
            <select id="pergunta1" name="Pergunta1">
                <option id="1" value="3"> 3</option>
                <option id="2" value="7"> 7</option>
@@ -85,7 +98,7 @@
            </select> <br>
            <label class="label"> Resposta: 5 </label>
             <br>
-            <label> 2)Quais animais, dos que passarão no vídeo, tem pelo? </label><br>
+            <label> 2)Quais animais, dos que passarão no vídeo, têm pelo? </label><br>
             <select id="pergunta2" name="pergunta2">
                <option id="5" value="Galo, Porco, Vaca e Gato"> Galo, Porco, Vaca e Gato</option>
                <option id="6" value="Vaca, Gato, Porco e Tigre"> Vaca, Gato, Porco e Tigre</option>
