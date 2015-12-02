@@ -5,6 +5,9 @@
         <meta charset="utf-8">
         <title></title>
         <style>
+            #video{
+                display: none;
+            }
             #perg1, #perg2, #perg3, #perg4, #perg5, #perg6{
                 display: none;
             }
@@ -29,8 +32,15 @@
         <script>
             $(document).ready(function () {
                 $('#comecar').click(function () {
-                    $('#perg1').show('fast');
+                    $('#video').show('fast');
                     $('#orientacao').hide('fast');
+
+                });
+            });
+            $(document).ready(function () {
+                $('#perguntas').click(function () {
+                    $('#perg1').show('fast');
+                    $('#video').hide('fast');
 
                 });
             });
@@ -83,15 +93,37 @@
     </head>
 
     <body>
-        <h1> "Quantos?" </h1>
+        <h1> Mentalizando </h1>
         <div id="orientacao">
-            <h3> No jogo dos "Quantos?" você terá que: <br><br>
-                - Responder perguntas sobre quantidades. </h3>
+            <h3> No jogo mentalizando você terá que: <br>
+                - Assistir um vídeo; <br>
+                - Responder perguntas sobre o vídeo. </h3>
+            <h3 id="h3"> Preste bastante atenção no vídeo. </h3>
             <input type="button" value="Começar" id="comecar"/>
+        </div>
+        <div id = "video">
+            <?php
+            $id_jogo = 3;
+            $video = "select * from jogo where id =$id_jogo";
+
+            $res = mysqli_query($con, $video);
+            if ($res) {
+                while ($registro = mysqli_fetch_array($res)) {
+                    echo "<video width = '560' height = '315' controls = 'controls' >";
+                    echo "<source src = " . $registro['complemento'] . " type = 'video/mp4'>";
+                    echo "<object data = '' width = '560' height = '315'>";
+                    echo "<embed width = '560' height = '315' src = " . $registro['complemento'] . "/>";
+                    echo "</object>";
+                    echo "</video>";
+                    echo "<br>";
+                    echo "<br>";
+                    echo "<input type='button' value='Ir para as perguntas' id='perguntas'/>";
+                }
+            }
+            ?> 
         </div>
 
         <?php
-        $id_jogo = 2;
         $a = 0;
         $quesito = "select * from quesito where jogo_id=$id_jogo";
         $result = mysqli_query($con, $quesito);

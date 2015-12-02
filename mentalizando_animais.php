@@ -5,13 +5,16 @@
         <meta charset="utf-8">
         <title></title>
         <style>
-            #perg1, #perg2, #perg3, #perg4, #perg5, #perg6{
+            #video{
+                display: none;
+            }
+            #perg1, #perg2, #perg3, #perg4{
                 display: none;
             }
             #final{
                 display: none;
             }
-            #finalizar1,#finalizar2, #finalizar3, #finalizar4, #finalizar5, #finalizar6{
+            #finalizar1,#finalizar2, #finalizar3, #finalizar4{
                 display: none;
             }
             #h3{
@@ -29,8 +32,15 @@
         <script>
             $(document).ready(function () {
                 $('#comecar').click(function () {
-                    $('#perg1').show('fast');
+                    $('#video').show('fast');
                     $('#orientacao').hide('fast');
+
+                });
+            });
+            $(document).ready(function () {
+                $('#perguntas').click(function () {
+                    $('#perg1').show('fast');
+                    $('#video').hide('fast');
 
                 });
             });
@@ -47,32 +57,20 @@
                     $('#perg2').hide('fast');
 
                 });
-            });$(document).ready(function () {
+            });
+            $(document).ready(function () {
                 $('#proximo3').click(function () {
                     $('#perg4').show('fast');
                     $('#perg3').hide('fast');
-
-                });
-            });$(document).ready(function () {
-                $('#proximo4').click(function () {
-                    $('#perg5').show('fast');
-                    $('#perg4').hide('fast');
+                    $('#finalizar4').show('fast');
+                    $('#proximo4').hide('fast');
 
                 });
             });
             $(document).ready(function () {
-                $('#proximo5').click(function () {
-                    $('#perg6').show('fast');
-                    $('#perg5').hide('fast');
-                    $('#finalizar6').show('fast');
-                    $('#proximo6').hide('fast');
-
-                });
-            });
-            $(document).ready(function () {
-                $('#finalizar6').click(function () {
+                $('#finalizar4').click(function () {
                     $('#final').show('fast');
-                    $('#perg6').hide('fast');
+                    $('#perg4').hide('fast');
 
                 });
             });
@@ -83,15 +81,37 @@
     </head>
 
     <body>
-        <h1> "Quantos?" </h1>
+        <h1> Mentalizando </h1>
         <div id="orientacao">
-            <h3> No jogo dos "Quantos?" você terá que: <br><br>
-                - Responder perguntas sobre quantidades. </h3>
+            <h3> No jogo mentalizando você terá que: <br>
+                - Assistir um vídeo; <br>
+                - Responder perguntas sobre o vídeo. </h3>
+            <h3 id="h3"> Preste bastante atenção no vídeo. </h3>
             <input type="button" value="Começar" id="comecar"/>
+        </div>
+        <div id = "video">
+            <?php
+            $id_jogo = 1;
+            $video = "select * from jogo where id =$id_jogo";
+
+            $res = mysqli_query($con, $video);
+            if ($res) {
+                while ($registro = mysqli_fetch_array($res)) {
+                    echo "<video width = '560' height = '315' controls = 'controls' >";
+                    echo "<source src = " . $registro['complemento'] . " type = 'video/mp4'>";
+                    echo "<object data = '' width = '560' height = '315'>";
+                    echo "<embed width = '560' height = '315' src = " . $registro['complemento'] . "/>";
+                    echo "</object>";
+                    echo "</video>";
+                    echo "<br>";
+                    echo "<br>";
+                    echo "<input type='button' value='Ir para as perguntas' id='perguntas'/>";
+                }
+            }
+            ?> 
         </div>
 
         <?php
-        $id_jogo = 2;
         $a = 0;
         $quesito = "select * from quesito where jogo_id=$id_jogo";
         $result = mysqli_query($con, $quesito);
