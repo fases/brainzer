@@ -7,7 +7,7 @@
         <?php
         include "conexao.php";
 
-//Pegando os valores do formulario
+    //Pegando os valores do formulário
         $nome = $_POST["nome"];
         $email = $_POST["email"];
         $idade = $_POST["idade"];
