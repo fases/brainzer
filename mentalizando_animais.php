@@ -156,7 +156,8 @@ $a = 0;
         $quesito = "select * from quesito where jogo_id='$id_jogo'";
         $result = mysqli_query($con, $quesito);
         if ($result) {
-            echo "<form method='get'>";
+            //echo "<form /action='mentalizando_animais_correcao.php' method='get'>";
+            echo "<form action='mentalizando_animais_correcao.php' method='get'>";
             while ($reg = mysqli_fetch_array($result)) {
                 $a++;
                 echo "<div id='perg$a'> ";
@@ -195,7 +196,7 @@ $a = 0;
             $resposta[2] = (isset($_GET["respcerta3"]) ? $_GET["respcerta3"] : null);
             $resposta[3] = (isset($_GET["respcerta4"]) ? $_GET["respcerta4"] : null);
 
-            $erros = 0;
+            /*$erros = 0;
             for ($numero = 0; $numero <= 3; $numero++) {
                 $quesito_atual = $_POST["quesito".$numero];
                 $query = "SELECT * FROM respostas inner join quesito on (respostas.quesito_id = quesito.id) where quesito.jogo_id = 1 and quesito.id = $quesito_atual";
@@ -214,7 +215,7 @@ $a = 0;
             } else {
                 echo "<h3> Você errou " . $erros . " questões.</h3>";
             }
-            mysqli_close($con);
+            mysqli_close($con);*/
             ?>
             <input type='button' id='correcao' value='Ver Correção'/>
             <input type='button' id='respnova' value='Responder Novamente'/>
