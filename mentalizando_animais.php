@@ -85,8 +85,8 @@ $a = 0;
             });
             //ONMOUSEOVER E ONMOUSEOUT - BOTÕES DAS RESPOSTAS
             $(document).ready(function () {
-                $('#resp1, #resp2, #resp3, #resp4').mouseover(function () {
-                    $('#resp1, #resp2, #resp3, #resp4').css('background-color', '#fc510d');
+                $('#resp11, #resp12, #resp13, #resp14').mouseover(function () {
+                    $('#resp11, #resp12, #resp13, #resp14').css('background-color', '#fc510d');
                 });
                 $('#resp11, #resp12, #resp13, #resp14').mouseout(function () {
                     $('#resp11, #resp12, #resp13, #resp14').css('background-color', '#0066ff');
@@ -132,8 +132,9 @@ $a = 0;
         <div id = "video">
             <?php
             $id_jogo = 1;
-            $video = "select * from jogo where id ='$id_jogo'";
-
+            $nivel = 2;
+            $video = "SELECT * FROM tipo_jogo where jogo_id = $id_jogo and nivel =$nivel";
+            
             $res = mysqli_query($con, $video);
             if ($res) {
                 while ($registro = mysqli_fetch_array($res)) {
@@ -150,14 +151,12 @@ $a = 0;
             }
             ?> 
         </div>
-
         <?php
         //$a = 0;
-        $quesito = "select * from quesito where jogo_id='$id_jogo'";
+        $quesito = "select * from quesito where jogo_id = $id_jogo and tipojogo_id = $nivel";
         $result = mysqli_query($con, $quesito);
         if ($result) {
-            //echo "<form /action='mentalizando_animais_correcao.php' method='get'>";
-            echo "<form action='mentalizando_animais_correcao.php' method='get'>";
+            echo "<form method='get'>";
             while ($reg = mysqli_fetch_array($result)) {
                 $a++;
                 echo "<div id='perg$a'> ";
@@ -166,7 +165,8 @@ $a = 0;
                 $quesito_id = $reg['id'];
                 if ($reg['id']) {
                     $pergunta = $reg['id'];
-                    $resp = "select * from respostas where quesito_id = '$pergunta'";
+                    $resp = "select * from respostas as r inner join quesito as q on ( r.quesito_id = q.id) where q.jogo_id=$id_jogo and r.quesito_id = $pergunta";
+                    
                     $resultado = mysqli_query($con, $resp);
                     if ($resultado) {
                         while ($regis = mysqli_fetch_array($resultado)) {
@@ -184,6 +184,7 @@ $a = 0;
             }
 
             echo "<input type='submit' id='finalizar' value='Finalizar'/>";
+            
             echo "</form>";
         }
         //$mysqli_close($con);
@@ -191,31 +192,34 @@ $a = 0;
 
         <div id="final">
             <?php
-            $resposta[0] = (isset($_GET["respcerta1"]) ? $_GET["respcerta1"] : null);
-            $resposta[1] = (isset($_GET["respcerta2"]) ? $_GET["respcerta2"] : null);
-            $resposta[2] = (isset($_GET["respcerta3"]) ? $_GET["respcerta3"] : null);
-            $resposta[3] = (isset($_GET["respcerta4"]) ? $_GET["respcerta4"] : null);
+            $resposta[1] = (isset($_GET["respcerta1"]) ? $_GET["respcerta1"] : null);
+            $resposta[2] = (isset($_GET["respcerta2"]) ? $_GET["respcerta2"] : null);
+            $resposta[3] = (isset($_GET["respcerta3"]) ? $_GET["respcerta3"] : null);
+            $resposta[4] = (isset($_GET["respcerta4"]) ? $_GET["respcerta4"] : null);
 
-            /*$erros = 0;
-            for ($numero = 0; $numero <= 3; $numero++) {
-                $quesito_atual = $_POST["quesito".$numero];
-                $query = "SELECT * FROM respostas inner join quesito on (respostas.quesito_id = quesito.id) where quesito.jogo_id = 1 and quesito.id = $quesito_atual";
-
+            $erros = 0;
+            //for ($numero = 0; $numero <= 3; $numero++) {
+                //$quesito_atual = $_GET["quesito".$numero];
+            $numero = 0;
+                $query = "SELECT respostaCorreta FROM quesito where jogo_id ='$id_jogo' and tipojogo_id='$nivel';";
                 $results = mysqli_query($con, $query);
                 if ($results) {
-                    while ($registro = mysqli_fetch_array($results)) {
-                        if ($registro["correta"] == $resposta[$numero]) {
+                    while($registro = mysqli_fetch_array($results)) {
+                        $numero++;
+                        if ($registro["respostaCorreta"] != $resposta[$numero]) {
+                            //echo "$resposta[$numero]<br>";
+                            echo $registro["respostaCorreta"];
                             $erros++;
                         }
                     }
                 }
-            }
+            //}
             if ($erros == 0) {
                 echo "<h3> Você acertou todas as questões Parabéns!</h3>";
             } else {
                 echo "<h3> Você errou " . $erros . " questões.</h3>";
             }
-            mysqli_close($con);*/
+            mysqli_close($con);
             ?>
             <input type='button' id='correcao' value='Ver Correção'/>
             <input type='button' id='respnova' value='Responder Novamente'/>
