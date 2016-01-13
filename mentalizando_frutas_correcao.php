@@ -21,6 +21,7 @@ and open the template in the editor.
                 $('#correcao').click(function() {
                     $('#respostascertas').show('fast');
                     $('#final').hide('fast');
+                    
                 });
             });
             function responderNovamente(){
@@ -30,6 +31,7 @@ and open the template in the editor.
             function sair(){
                 location.href="menu.php";
             }
+   
         </script>
     </head>
     <body>
@@ -44,13 +46,14 @@ and open the template in the editor.
             $resposta[2] = (isset($_POST["respcerta2"]) ? $_POST["respcerta2"] : null);
             $resposta[3] = (isset($_POST["respcerta3"]) ? $_POST["respcerta3"] : null);
             $resposta[4] = (isset($_POST["respcerta4"]) ? $_POST["respcerta4"] : null);
-
+            $resposta[5] = (isset($_POST["respcerta5"]) ? $_POST["respcerta5"] : null);
+            $resposta[6] = (isset($_POST["respcerta6"]) ? $_POST["respcerta6"] : null);
 
             $erros = 0;
             //for ($numero = 0; $numero <= 3; $numero++) {
             //$quesito_atual = $_GET["quesito".$numero];
             $numero = 0;
-            $query = "SELECT respostaCorreta FROM quesito where jogo_id ='$id_jogo' and tipojogo_id='$nivel';";
+            $query = "SELECT respostaCorreta FROM quesito where jogo_id ='$id_jogo' and tipojogo_id='$id_jogo';";
             $results = mysqli_query($con, $query);
             if ($results) {
                 while ($registro = mysqli_fetch_array($results)) {
@@ -77,7 +80,7 @@ and open the template in the editor.
             <input type='button' id='correcao' value='Ver Correção'/>
             <input type='button' id='respnova' value='Responder Novamente' onclick="responderNovamente()"/>
             <input type='button' id='sair' value='Sair' onclick="sair()"/>
-
+            
               </div>
         
         
@@ -86,7 +89,7 @@ and open the template in the editor.
                echo "<div id='respostascertas' style='display: none;'>";
 
                 $a = 0;
-                $quesitos = "select * from quesito where jogo_id = $id_jogo and tipojogo_id = $nivel";
+                $quesitos = "select * from quesito where jogo_id = $id_jogo and tipojogo_id = $id_jogo";
                 $resultados = mysqli_query($con, $quesitos);
                 if ($resultados) {
                     while ($reg = mysqli_fetch_array($resultados)) {
@@ -105,7 +108,7 @@ and open the template in the editor.
                 }
             }
         }
-        echo "<input type='button' value='Sair' onclick='sair()'>";
+         echo "<input type='button' value='Sair' onclick='sair()'>";
          echo '</div>';
                         ?>
                    

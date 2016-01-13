@@ -88,13 +88,13 @@
                 });
             });
             //EXIBINDO A DIV FINAL
-            $(document).ready(function() {
-                $('#finalizar').click(function() {
-                    $('#final').show('fast');
-                    $('#perg6').hide('fast');
+            //$(document).ready(function() {
+                //$('#finalizar').click(function() {
+                   // $('#final').show('fast');
+                   // $('#perg6').hide('fast');
 
-                });
-            });
+               // });
+            //});
             //ONMOUSEOVER E ONMOUSEOUT - BOTÕES DAS RESPOSTAS
             $(document).ready(function() {
                 $('#resp11, #resp12, #resp13, #resp14, #resp15,#resp16').mouseover(function() {
@@ -166,10 +166,10 @@
 
         <?php
         $a = 0;
-        $quesito = "select * from quesito where jogo_id = $id_jogo and tipojogo_id = $nivel";
+        $quesito = "select * from quesito where jogo_id = $id_jogo and tipojogo_id = $id_jogo";
         $result = mysqli_query($con, $quesito);
         if ($result) {
-            echo "<form method='get'>";
+            echo "<form method='post' action='mentalizando_frutas_correcao.php'>";
             while ($reg = mysqli_fetch_array($result)) {
                 $a++;
                 echo "<div id='perg$a'> ";
@@ -202,49 +202,7 @@
         }
         //$mysqli_close($con);
         ?>
-        <div id="final">
-            <?php
-            $resposta[1] = (isset($_GET["respcerta1"]) ? $_GET["respcerta1"] : null);
-            $resposta[2] = (isset($_GET["respcerta2"]) ? $_GET["respcerta2"] : null);
-            $resposta[3] = (isset($_GET["respcerta3"]) ? $_GET["respcerta3"] : null);
-            $resposta[4] = (isset($_GET["respcerta4"]) ? $_GET["respcerta4"] : null);
-            $resposta[5] = (isset($_GET["respcerta5"]) ? $_GET["respcerta5"] : null);
-            $resposta[6] = (isset($_GET["respcerta6"]) ? $_GET["respcerta6"] : null);
-
-            $erros = 0;
-            //for ($numero = 0; $numero <= 3; $numero++) {
-            //$quesito_atual = $_GET["quesito".$numero];
-            $numero = 0;
-            $query = "SELECT respostaCorreta FROM quesito where jogo_id ='$id_jogo' and tipojogo_id='$nivel';";
-            $results = mysqli_query($con, $query);
-            if ($results) {
-                while ($registro = mysqli_fetch_array($results)) {
-                    $numero++;
-                    if ($registro["respostaCorreta"] != $resposta[$numero]) {
-                        //echo "$resposta[$numero]<br>";
-                        //echo $registro["respostaCorreta"];
-                        $erros++;
-                    }else{
-                        //echo"Deu errado";
-                        //echo "$resposta[$numero]<br>";
-                        //echo $registro["respostaCorreta"];
-                    }
-                }
-            }
-            //}
-            if ($erros == 0) {
-                echo "<h3> Você acertou todas as questões Parabéns!</h3>";
-            } else {
-                echo "<h3> Você errou " . $erros . " questões.</h3>";
-            }
-            mysqli_close($con);
-            ?>
-            <input type='button' id='correcao' value='Ver Correção'/>
-            <input type='button' id='respnova' value='Responder Novamente'/>
-            <input type='button' id='sair' value='Sair'/>
-
-        </div>
-
+        
 
     </body>
 </html>
