@@ -75,13 +75,6 @@ $a = 0;
 
                 });
             });
-            //EXIBINDO A DIV FINAL
-            $(document).ready(function () {
-                $('#finalizar').click(function () {
-                    $('#final').show('fast');
-                    $('#perg4').hide('fast');
-                });
-            });
             //ONMOUSEOVER E ONMOUSEOUT - BOTÕES DAS RESPOSTAS
             $(document).ready(function () {
                 $('#resp11, #resp12, #resp13, #resp14').mouseover(function () {
@@ -151,7 +144,7 @@ $a = 0;
             ?> 
         </div>
         <?php
-        //$a = 0;
+        $a = 0;
         $quesito = "select * from quesito where jogo_id = $id_jogo and tipojogo_id = $nivel";
         $result = mysqli_query($con, $quesito);
         if ($result) {
