@@ -23,15 +23,19 @@
 
         if (($res_email > 0) || ($res_usuario > 0)) {
             if ($res_usuario > 0) {
-                echo "Já existe um usuário cadastrado com esse usuário. </br>";
+                //TA DANDO BUG
+                header("Location: cadastrar.html");
+                echo "<script type='javascript'>alert('Já existe um usuário cadastrado com esse usuário. </br>');";
                 unset($usuario);
             }
             if ($res_email > 0) {
-                echo "Já existe um usuário com esse email. Tente outro. </br>";
+                //TA DANDO BUG
+                echo "<script type='javascript'>alert('Já existe um usuário cadastrado com esse email. </br>');";
+                header("Location: cadastrar.html");
                 unset($email);
             }
 
-            include "pagina_inicial.php";
+            include "index.html";
         } else {
             //Inserindo os valores no banco e validando a senha 
 //Verificando se a senha foi digitada duas vezes é a mesma
@@ -39,7 +43,7 @@
             $senhac = $_POST["senha_c"];
 
             if ($senha != $senhac) {
-                header("Location: pagina_inicial.php?certo=As senhas não conferem!</br>");
+                header("Location: cadastrar.html?certo=As senhas não conferem!</br>");
             } else {
 //Se a verificação estiver certa a senha vai ser codificada em md5
                 $senha_codificada = md5($senha);
@@ -50,7 +54,7 @@
             }
 //Se o sql rodar certinho, redireciona para a página inicial com a mensagem 
             if ($sql) {
-                header("Location: pagina_inicial.php?certo=Cadastro concluido com sucesso!</br>");
+                header("Location: index.html");
             }
         }
         ?>  

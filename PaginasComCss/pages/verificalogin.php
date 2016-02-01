@@ -8,14 +8,19 @@ include "conexao.php";
 $usuario = isset($_POST["usuario"]) ? $_POST["usuario"] : "";
 $senha = isset($_POST["senha"]) ? $_POST["senha"] : "";
 
+$senha = md5($senha);
+
 //seleciona a tabela usuario
-$query = mysqli_query($con, "SELECT id FROM usuario WHERE user = '$usuario' AND senha = '$senha' ");
+$query = mysqli_query($con, "SELECT id FROM `usuario` WHERE `user` = '$usuario' AND `senha` = '$senha' ");
 $res = mysqli_num_rows($query);
-if ( $res = 1){
-    $_SESSION["usuario"] = $usuario;
-    header("Location: menu.php");
+
+echo $res;
+
+if ($res == 1){
+	$_SESSION["usuario"] = $usuario;
+    header("Location: index.html?usuario='$res'");
 }else{
-    header("Location: pagina_inicial.php?$erro= Usuário ou senha errados. </br>");
+   header("Location: login.html?$erro= '$res'. </br>");    
 }
 
 

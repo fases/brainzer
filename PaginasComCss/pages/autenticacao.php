@@ -14,8 +14,8 @@ $query = "SELECT id FROM usuario WHERE usuario = '$user' AND senha = '$senha' ";
 $res = mysqli_query($con, $query);
 
 if (!isset($_SESSION["usuario"])){ 
-    header("Location: pagina_inicial.php");
+    header("Location: login.html");
 } else {
-    header("Location: menu.php");
+    header("Location: index.html");
 }
 ?>
