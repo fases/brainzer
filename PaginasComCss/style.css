@@ -626,20 +626,23 @@ figure.effect-Beauty:hover p {
 .social li
 {
 	display: inline-block;
-	margin: 0px 5px;
+	margin: 5px 5px;
 }
 .social li a
 {
-	color: #fff;
+	color: #D94848;
 	font-size: 35px;
 	line-height: 0px !important;
 }
 
-
+.botao{
+	margin: 10px;
+	width: 200px;
+}
 .address
 {
 	padding: 60px 0px;
-	background-color: rgba(0,0,0,0.1)
+	background-color: rgba(0,0,0,0.1);
 }
 .info p
 {
@@ -709,6 +712,7 @@ margin-top: 20px;
 {
 text-align: center;
 }
+
 .btn-or
 {
 margin-top: 20px;

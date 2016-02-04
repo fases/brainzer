@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <html>
     <head>
         <title></title>
@@ -54,7 +57,8 @@
             }
 //Se o sql rodar certinho, redireciona para a página inicial com a mensagem 
             if ($sql) {
-                header("Location: index.html");
+                $_SESSION["usuario"] = $usuario;
+                header("Location: index.html?usuario='$usuario'");
             }
         }
         ?>  

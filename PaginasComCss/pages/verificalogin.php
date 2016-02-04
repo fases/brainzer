@@ -1,6 +1,6 @@
 <?php
 //inicio da sessão
-session_start();
+
 //inclui conexão no banco de dados
 include "conexao.php";
 
@@ -11,16 +11,17 @@ $senha = isset($_POST["senha"]) ? $_POST["senha"] : "";
 $senha = md5($senha);
 
 //seleciona a tabela usuario
-$query = mysqli_query($con, "SELECT id FROM `usuario` WHERE `user` = '$usuario' AND `senha` = '$senha' ");
+$query = mysqli_query($con, "SELECT id FROM usuario WHERE user = '$usuario' AND senha = '$senha' ");
 $res = mysqli_num_rows($query);
 
-echo $res;
+
 
 if ($res == 1){
+	session_start();
 	$_SESSION["usuario"] = $usuario;
-    header("Location: index.html?usuario='$res'");
+    header("Location: index.html?usuario=$usuario");
 }else{
-   header("Location: login.html?$erro= '$res'. </br>");    
+   header("Location: login.html?erro=1");    
 }
 
 

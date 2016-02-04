@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: 13-Jan-2016 às 21:07
+-- Generation Time: 04-Fev-2016 às 01:12
 -- Versão do servidor: 5.6.25
 -- PHP Version: 5.5.27
 
@@ -29,7 +29,7 @@ SET time_zone = "+00:00";
 CREATE TABLE IF NOT EXISTS `jogo` (
   `id` int(11) NOT NULL,
   `nome` varchar(200) DEFAULT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
 
 --
 -- Extraindo dados da tabela `jogo`
@@ -59,22 +59,22 @@ CREATE TABLE IF NOT EXISTS `quesito` (
 --
 
 INSERT INTO `quesito` (`id`, `pergunta`, `pontuacao_padrao`, `jogo_id`, `respostaCorreta`, `tipojogo_id`) VALUES
-(1, 'Quantas frutas tem no video?', 20, 1, '5', 1),
-(2, 'Quais frutas possuem a cor VERMELHA?', 20, 1, 'Melancia e Maca', 1),
-(3, 'Quais frutas comecam com a letra M?', 20, 1, 'Melancia e Maca', 1),
-(4, 'Quais frutas comecam com a letra L?', 20, 1, 'Laranja', 1),
-(5, 'Qual fruta tem a casca amarela? ', 20, 1, 'Banana e Laranja', 1),
-(6, 'Quais frutas tem folhas??', 20, 1, 'Uva, Maca e Laranja', 1),
-(7, 'Quantos animais tem no video?', 20, 1, '5', 2),
-(8, 'Quais animais tem pelo?', 20, 1, 'Vaca, Gato, Porco e Tigre', 2),
-(9, 'Qual animal tem pena?', 20, 1, 'Galo', 2),
-(10, 'Qual animal possui apenas uma cor?', 20, 1, 'Porco', 2),
-(11, 'Quantas horas tem um dia?', 20, 2, '24 horas', 3),
-(12, 'Quantos dias tem uma semana?', 20, 2, '7 dias', 3),
-(13, 'Quantas estacoes tem um ano?', 20, 2, '4 estacoes', 3),
-(14, 'Quantos meses tem um ano?', 20, 2, '12 meses', 3),
-(15, 'Quantos minutos tem uma hora?', 20, 2, '60 minutos', 3),
-(16, 'Quantos segundos tem um minuto?', 20, 2, '60 segundos', 3);
+(1, 'Quantas frutas tem no video?', 17, 1, '5', 1),
+(2, 'Quais frutas possuem a cor VERMELHA?', 16, 1, 'Melancia e Maca', 1),
+(3, 'Quais frutas comecam com a letra M?', 16, 1, 'Melancia e Maca', 1),
+(4, 'Quais frutas comecam com a letra L?', 17, 1, 'Laranja', 1),
+(5, 'Qual fruta tem a casca amarela? ', 17, 1, 'Banana e Laranja', 1),
+(6, 'Quais frutas tem folhas??', 17, 1, 'Uva, Maca e Laranja', 1),
+(7, 'Quantos animais tem no video?', 25, 1, '5', 2),
+(8, 'Quais animais tem pelo?', 25, 1, 'Vaca, Gato, Porco e Tigre', 2),
+(9, 'Qual animal tem pena?', 25, 1, 'Galo', 2),
+(10, 'Qual animal possui apenas uma cor?', 25, 1, 'Porco', 2),
+(11, 'Quantas horas tem um dia?', 17, 2, '24 horas', 3),
+(12, 'Quantos dias tem uma semana?', 16, 2, '7 dias', 3),
+(13, 'Quantas estacoes tem um ano?', 17, 2, '4 estacoes', 3),
+(14, 'Quantos meses tem um ano?', 17, 2, '12 meses', 3),
+(15, 'Quantos minutos tem uma hora?', 16, 2, '60 minutos', 3),
+(16, 'Quantos segundos tem um minuto?', 17, 2, '60 segundos', 3);
 
 -- --------------------------------------------------------
 
@@ -160,17 +160,17 @@ CREATE TABLE IF NOT EXISTS `usuario` (
   `id` int(11) NOT NULL,
   `nome` varchar(200) NOT NULL,
   `email` varchar(200) NOT NULL,
-  `senha` varchar(20) NOT NULL,
+  `senha` varchar(50) NOT NULL,
   `idade` int(11) NOT NULL,
   `user` varchar(100) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
 
 --
 -- Extraindo dados da tabela `usuario`
 --
 
 INSERT INTO `usuario` (`id`, `nome`, `email`, `senha`, `idade`, `user`) VALUES
-(2, 'Alana Ribeiro', 'alana_fatima@hotmail.com', '202cb962ac59075b964b', 18, 'alanaribeiro');
+(4, 'Daiane Carla', 'dadacrc@gmail.com', '202cb962ac59075b964b07152d234b70', 19, 'daianeecarla');
 
 --
 -- Indexes for dumped tables
@@ -226,7 +226,7 @@ ALTER TABLE `usuario`
 -- AUTO_INCREMENT for table `jogo`
 --
 ALTER TABLE `jogo`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=3;
 --
 -- AUTO_INCREMENT for table `quesito`
 --
@@ -251,7 +251,7 @@ ALTER TABLE `tipo_jogo`
 -- AUTO_INCREMENT for table `usuario`
 --
 ALTER TABLE `usuario`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=5;
 --
 -- Constraints for dumped tables
 --
