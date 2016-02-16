@@ -3,8 +3,7 @@
         if (!isset($_SESSION["usuario"])) {
             header("Location: ../pagina_inicial.php");
         } else {
-            echo "";
-             
+             echo "";
         } 
 ?>
 
@@ -207,32 +206,18 @@
                         <div class="panel-heading">
                             <div class="row">
                                 <div class="col-xs-3">
-                                    <i class="fa fa-comments fa-5x"></i>
+                                    <img src="../images/mentalizando.png">
+                                    <!--<i class="fa fa-comments fa-5x"></i>-->
                                 </div>
                                 <div class="col-xs-9 text-right">
-                                    <div class="huge">1</div>
-                                    <div>Muito fácil</div>
+                                    <div class="huge">26</div>
+                                    <div>Mentalizando</div>
                                 </div>
                             </div>
                         </div>
                         <a href="#">
                             <div class="panel-footer">
-                                <?php
-                                    include "conexao.php";
-
-
-                                    $jogo = $_GET["jogo"];
-                                    $select_nivel = mysqli_query($con, "SELECT nivel FROM tipo_jogo where jogo_id = $jogo");
-                                    if ($select_nivel){
-                                        while ($registro = mysqli_fetch_array($select_nivel)) {
-                                    if(($jogo == 1) && ($registro[nivel] == 1)) {
-                                            echo "<a class='pull-left' href='../mentalizando_frutas.php'>Nível ".$registro[nivel]." </a></br>";
-                                    }
-
-                                    if (($jogo == 2) && ($registro[nivel] == 1)) {
-                                            echo "<a class='pull-left' href='../quantos.php'> Nível".$registro[nivel]." </a></br>";
-                                    }
-                                ?>
+                                <a class="pull-left" href="nivel.php?jogo=1">Escolher jogo</a>
                                 <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
                                 <div class="clearfix"></div>
                             </div>
@@ -244,26 +229,18 @@
                         <div class="panel-heading">
                             <div class="row">
                                 <div class="col-xs-3">
-                                    <i class="fa fa-tasks fa-5x"></i>
+                                    <img src="../images/caca-palavras.png">
+                                    <!--<i class="fa fa-tasks fa-5x"></i>-->
                                 </div>
                                 <div class="col-xs-9 text-right">
-                                    <div class="huge">2</div>
-                                    <div>Fácil</div>
+                                    <div class="huge">12</div>
+                                    <div>Quantos</div>
                                 </div>
                             </div>
                         </div>
                         <a href="#">
-                            <div class="panel-footer"> 
-                                    <?php
-
-                                        if(($jogo == 1) && ($registro[nivel] == 2)) {
-                                            echo "<a class='pull-left' href='../mentalizando_animais.php'>Nível ".$registro[nivel]." </a><br>";
-                                        }
-
-                                        }
-                                        }
-                                    ?>
-                                </span></a>
+                            <div class="panel-footer">
+                                <a href="nivel.php?jogo=2"><span class="pull-left">Escolher jogo</span></a>
                                 <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
                                 <div class="clearfix"></div>
                             </div>
@@ -278,14 +255,14 @@
                                     <i class="fa fa-shopping-cart fa-5x"></i>
                                 </div>
                                 <div class="col-xs-9 text-right">
-                                    <div class="huge">3</div>
-                                    <div>Médio</div>
+                                    <div class="huge">124</div>
+                                    <div>Caça-palavras</div>
                                 </div>
                             </div>
                         </div>
                         <a href="#">
                             <div class="panel-footer">
-                                <a href="nivel.php?jogo=3"><span class="pull-left">Escolher nível</a></span>
+                                <a href="nivel.php?jogo=3"><span class="pull-left">Escolher jogo</a></span>
                                 <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
                                 <div class="clearfix"></div>
                             </div>
@@ -300,14 +277,14 @@
                                     <i class="fa fa-support fa-5x"></i>
                                 </div>
                                 <div class="col-xs-9 text-right">
-                                    <div class="huge">4</div>
-                                    <div>Difícil</div>
+                                    <div class="huge">13</div>
+                                    <div>Jogo da memória</div>
                                 </div>
                             </div>
                         </div>
                         <a href="#">
                             <div class="panel-footer">
-                                <a href="nivel.php?jogo=4"><span class="pull-left">Escolher nível</a></span>
+                                <a href="nivel.php?jogo=4"><span class="pull-left">Escolher jogo</a></span>
                                 <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
                                 <div class="clearfix"></div>
                             </div>

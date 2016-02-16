@@ -638,6 +638,10 @@ figure.effect-Beauty:hover p {
 .botao{
 	margin: 10px;
 	width: 200px;
+        
+}
+.botao:hover{
+    background-color: #D94848;
 }
 .address
 {
@@ -673,7 +677,7 @@ figure.effect-Beauty:hover p {
 .foot-logo
 {
 	font-family: 'Pacifico', cursive;
-	color: #3EC9C3;	
+	color: #008DCE;	
 	font-size: 30px;
 	text-align: center;
 }
@@ -688,7 +692,7 @@ figure.effect-Beauty:hover p {
 }
 .foot-text a
 {
-	color: #3EC9C3;	
+	color: #008DCE;	
 }
 
 

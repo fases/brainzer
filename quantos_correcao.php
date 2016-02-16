@@ -13,6 +13,30 @@ and open the template in the editor.
             #respostascertas{
                 display: block;
             }
+            *{
+                text-align: center;
+                background-color: #008cde;
+
+            }
+
+            h1{
+                font-family: 'Pacifico', cursive;
+                color: white;
+                font-size: 70px;
+            }
+            h3{
+                font-family: 'Exo 2', sans-serif;
+                color: white;
+                font-size: 25px;
+            } 
+            .butao{
+                font-size: 50%;
+                border-radius: 6px;
+                display: inline-block;
+                padding: 15px 20px;
+                font-size: 18px;
+                background-color: #fff;
+            }
         </style>
         <script type="text/javascript" src="jquery-1.11.3.min.js"></script>
         <script>
@@ -29,7 +53,7 @@ and open the template in the editor.
                 
             }
             function sair(){
-                location.href="menu.php";
+                location.href="PaginasComCss/pages/index.php";
             }
    
         </script>
@@ -71,15 +95,15 @@ and open the template in the editor.
             }
             //}
             if ($erros == 0) {
-                echo "<h3> Você acertou todas as questões Parabéns!</h3>";
+                echo "<h3> Você acertou todas as questões. Parabéns!</h3>";
             } else {
                 echo "<h3> Você errou " . $erros . " questões.</h3>";
             }
             mysqli_close($con);
             ?>
-            <input type='button' id='correcao' value='Ver Correção'/>
-            <input type='button' id='respnova' value='Responder Novamente' onclick="responderNovamente()"/>
-            <input type='button' id='sair' value='Sair' onclick="sair()"/>
+            <input type='button' class='butao' id='correcao' value='Ver Correção'/>
+            <input type='button' class='butao' id='respnova' value='Responder Novamente' onclick="responderNovamente()"/>
+            <input type='button' class='butao' id='sair' value='Sair' onclick="sair()"/>
             
               </div>
         
@@ -108,7 +132,7 @@ and open the template in the editor.
                 }
             }
         }
-         echo "<input type='button' value='Sair' onclick='sair()'>";
+         echo "<input type='button' class='butao' value='Sair' onclick='sair()'>";
          echo '</div>';
                         ?>
                    

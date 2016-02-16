@@ -19,7 +19,7 @@ $res = mysqli_num_rows($query);
 if ($res == 1){
 	session_start();
 	$_SESSION["usuario"] = $usuario;
-    header("Location: index.html?usuario=$usuario");
+    header("Location: index.php?usuario=$usuario");
 }else{
    header("Location: login.html?erro=1");    
 }

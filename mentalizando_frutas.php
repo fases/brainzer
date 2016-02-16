@@ -5,6 +5,30 @@
         <meta charset="utf-8">
         <title></title>
         <style>
+            *{
+                text-align: center;
+                background-color: #008cde;
+
+            }
+
+            h1{
+                font-family: 'Pacifico', cursive;
+                color: white;
+                font-size: 70px;
+            }
+            h3{
+                font-family: 'Exo 2', sans-serif;
+                color: white;
+                font-size: 25px;
+            } 
+            .butao{
+                font-size: 18px;
+                border-radius: 6px;
+                display: inline-block;
+                padding: 15px 20px;
+                font-size: 18px;
+                background-color: #fff;
+            }
             #video{
                 display: none;
             }
@@ -139,7 +163,7 @@
                 - Assistir um vídeo; <br>
                 - Responder perguntas sobre o vídeo. </h3>
             <h3 id="h3"> Preste bastante atenção no vídeo. </h3>
-            <input type="button" value="Começar" id="comecar"/>
+            <input type="button" class="butao" value="Começar" id="comecar"/>
         </div>
         <div id = "video">
             <?php
@@ -158,7 +182,7 @@
                     echo "</video>";
                     echo "<br>";
                     echo "<br>";
-                    echo "<input type='button' value='Ir para as perguntas' id='perguntas'/>";
+                    echo "<input type='button' class='butao' value='Ir para as perguntas' id='perguntas'/>";
                 }
             }
             ?> 
@@ -189,14 +213,14 @@
                             echo "<input type='button' class='div' id='resp4$a' onclick='passar(this.value,$a);' name='resp4'  value= '" . $regis['alternativa4'] . "'/> <br>";
                             echo "<input type='hidden' class='div' id='respcerta$a' name='respcerta$a' value=''/> <br>";
                             echo "<input type='hidden' class='div' id='quesito_id' name='quesito$a' value='$quesito_id'/> <br>";
-                            echo "<input type='button' id='proximo$a' value='Próximo'/>";
+                            echo "<input type='button' class='butao' id='proximo$a' value='Próximo'/>";
                         }
                     }
                 }
                 echo "</div>";
             }
 
-            echo "<input type='submit' id='finalizar' value='Finalizar'/>";
+            echo "<input type='submit' class='butao' id='finalizar' value='Finalizar'/>";
 
             echo "</form>";
         }

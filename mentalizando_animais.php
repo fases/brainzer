@@ -1,13 +1,52 @@
-<?php
-include "conexao.php";
-$a = 0;
-?>
+<?php 
+session_start();
+
+    include 'conexao.php'; 
+
+        if (!isset($_SESSION["usuario"])) {
+            header("Location: ../pagina_inicial.php");
+        } else {
+            $pegar = "SELECT id FROM usuario WHERE user = '".$_SESSION["usuario"]."'";
+            $sql = mysqli_query($con, $pegar);
+            if ($sql) {
+                while ($reg = mysqli_fetch_array($sql)) {
+                    $id_user = $reg["id"];
+                }
+            }
+        }
+           ?>
 <!DOCTYPE html>
 <html lang="pt-br">
     <head>
+    <link href='https://fonts.googleapis.com/css?family=Exo+2' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
         <meta charset="utf-8">
         <title></title>
         <style>
+            *{
+                text-align: center;
+                background-color: #008cde;
+
+            }
+
+            h1{
+                font-family: 'Pacifico', cursive;
+                color: white;
+                font-size: 70px;
+            }
+            h3{
+                font-family: 'Exo 2', sans-serif;
+                color: white;
+                font-size: 25px;
+            } 
+            .butao{
+                font-size: 18px;
+                border-radius: 6px;
+                display: inline-block;
+                padding: 15px 20px;
+                font-size: 18px;
+                background-color: #fff;
+            }
             #video{
                 display: none;
             }
@@ -33,6 +72,7 @@ $a = 0;
         </style>
         <script type="text/javascript" src="jquery-1.11.3.min.js"></script>
         <script type="text/javascript">
+            
             //EXIBINDO O VÍDEO
             $(document).ready(function () {
                 $('#comecar').click(function () {
@@ -119,7 +159,7 @@ $a = 0;
                 - Assistir um vídeo; <br>
                 - Responder perguntas sobre o vídeo. </h3>
             <h3 id="h3"> Preste bastante atenção no vídeo. </h3>
-            <input type="button" value="Começar" id="comecar"/>
+            <input class="butao" type="button" value="Começar" id="comecar"/>
         </div>
         <div id = "video">
             <?php
@@ -138,7 +178,7 @@ $a = 0;
                     echo "</video>";
                     echo "<br>";
                     echo "<br>";
-                    echo "<input type='button' value='Ir para as perguntas' id='perguntas'/>";
+                    echo "<input class='butao' type='button' value='Ir para as perguntas' id='perguntas'/>";
                 }
             }
             ?> 
@@ -168,14 +208,14 @@ $a = 0;
                             echo "<input type='button' class='div' id='resp4$a' onclick='passar(this.value,$a);' name='resp4'  value= '" . $regis['alternativa4'] . "'/> <br>";
                             echo "<input type='hidden' class='div' id='respcerta$a' name='respcerta$a' value=''/> <br>";
                             echo "<input type='hidden' class='div' id='quesito_id' name='quesito$a' value='$quesito_id'/> <br>";
-                            echo "<input type='button' id='proximo$a' value='Próximo'/>";
+                            echo "<input type='button' class='butao' id='proximo$a' value='Próximo'/>";
                         }
                     }
                 }
                 echo "</div>";
             }
 
-            echo "<input type='submit' id='finalizar' value='Finalizar'/>";
+            echo "<input class='butao' type='submit' id='finalizar' value='Finalizar'/>";
             
             echo "</form>";
         }
