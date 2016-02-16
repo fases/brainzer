@@ -218,18 +218,21 @@
                         <a href="#">
                             <div class="panel-footer">
                                 <?php
-                                
-                                if($_GET["jogo"] == 1){
-                                    echo "<a class='pull-left' href='../../mentalizando_frutas.php'> Nível 1 </a></br>";
-                                }
-                                if ($_GET["jogo"] == 2) {
-                                    echo "<a class='pull-left' href='../../quantos.php'> Nível 1 </a></br>";
-                                }
-                                if ($_GET["jogo"] == 3) {
-                                    echo "<a class='pull-left' href='../../quantos.php'> Nível 1 </a></br>";   
-                                }
-                            
-                            ?>
+                                    include "conexao.php";
+
+
+                                    $jogo = $_GET["jogo"];
+                                    $select_nivel = mysqli_query($con, "SELECT nivel FROM tipo_jogo where jogo_id = $jogo");
+                                    if ($select_nivel){
+                                        while ($registro = mysqli_fetch_array($select_nivel)) {
+                                    if(($jogo == 1) && ($registro[nivel] == 1)) {
+                                            echo "<a class='pull-left' href='../mentalizando_frutas.php'>Nível ".$registro[nivel]." </a></br>";
+                                    }
+
+                                    if (($jogo == 2) && ($registro[nivel] == 1)) {
+                                            echo "<a class='pull-left' href='../quantos.php'> Nível".$registro[nivel]." </a></br>";
+                                    }
+                                ?>
                                 <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
                                 <div class="clearfix"></div>
                             </div>
@@ -251,11 +254,15 @@
                         </div>
                         <a href="#">
                             <div class="panel-footer"> 
-                            <?php
-                            if ($_GET["jogo"] == 1) {
-                                echo "<a class='pull-left' href='../../mentalizando_animais.php'> Nível 2 </a></br>";
-                            }
-                            ?>    
+                                    <?php
+
+                                        if(($jogo == 1) && ($registro[nivel] == 2)) {
+                                            echo "<a class='pull-left' href='../mentalizando_animais.php'>Nível ".$registro[nivel]." </a><br>";
+                                        }
+
+                                        }
+                                        }
+                                    ?>
                                 </span></a>
                                 <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
                                 <div class="clearfix"></div>

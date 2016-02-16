@@ -58,7 +58,7 @@ session_start();
 //Se o sql rodar certinho, redireciona para a página inicial com a mensagem 
             if ($sql) {
                 $_SESSION["usuario"] = $usuario;
-                header("Location: index.html?usuario='$usuario'");
+                header("Location: index.php?usuario=$usuario");
             }
         }
         ?>  
