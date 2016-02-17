@@ -49,7 +49,7 @@ and open the template in the editor.
                 });
             });
             function responderNovamente(){
-                    location.href="mentalizando_frutas.php";
+                    location.href="quantos.php";
                 
             }
             function sair(){
