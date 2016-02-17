@@ -1,11 +1,11 @@
-<?php 
+<?php
         session_start();
         if (!isset($_SESSION["usuario"])) {
             header("Location: ../pagina_inicial.php");
         } else {
-            echo $_SESSION["usuario"];
-             
-        } 
+            echo "";
+
+        }
 ?>
 
 <!DOCTYPE html>
@@ -170,7 +170,24 @@
             <!-- /.navbar-top-links -->
 
             <div class="navbar-default sidebar" role="navigation">
-
+                <div class="sidebar-nav navbar-collapse">
+                    <ul class="nav" id="side-menu">
+                        <li class="sidebar-search">
+                            <div class="input-group custom-search-form">
+                                <input type="text" class="form-control" placeholder="Search...">
+                                <span class="input-group-btn">
+                                <button class="btn btn-default" type="button">
+                                    <i class="fa fa-search"></i>
+                                </button>
+                            </span>
+                            </div>
+                            <!-- /input-group -->
+                        </li>
+                        <li>
+                            <a href="index.html"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
+                        </li>
+                    </ul>
+                </div>
                 <!-- /.sidebar-collapse -->
             </div>
             <!-- /.navbar-static-side -->
@@ -200,7 +217,19 @@
                         </div>
                         <a href="#">
                             <div class="panel-footer">
-                                <a class="pull-left" href="nivel.php?jogo=1">Escolher nível</a>
+                                <?php
+
+                                if($_GET["jogo"] == 1){
+                                    echo "<a class='pull-left' href='../../mentalizando_animais.php'> Nível 1 </a></br>";
+                                }
+                                if ($_GET["jogo"] == 2) {
+                                    echo "<a class='pull-left' href='../../quantos.php'> Nível 1 </a></br>";
+                                }
+                                if ($_GET["jogo"] == 3) {
+                                    echo "<a class='pull-left' href='../../jogo_memoria.php'> Nível 1 </a></br>";
+                                }
+
+                            ?>
                                 <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
                                 <div class="clearfix"></div>
                             </div>
@@ -222,7 +251,12 @@
                         </div>
                         <a href="#">
                             <div class="panel-footer">
-                                <a href="nivel.php?jogo=2"><span class="pull-left">Escolher nível</span></a>
+                            <?php
+                            if ($_GET["jogo"] == 1) {
+                                echo "<a class='pull-left' href='../../mentalizando_frutas.php'> Nível 2 </a></br>";
+                            }
+                            ?>
+                                </span></a>
                                 <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
                                 <div class="clearfix"></div>
                             </div>
@@ -274,7 +308,7 @@
                     </div>
                 </div>
             </div>
-           
+
         </div>
         <!-- /#page-wrapper -->
 

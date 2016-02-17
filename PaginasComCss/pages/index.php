@@ -1,10 +1,10 @@
-<?php 
+<?php
         session_start();
         if (!isset($_SESSION["usuario"])) {
             header("Location: ../pagina_inicial.php");
         } else {
              echo "";
-        } 
+        }
 ?>
 
 <!DOCTYPE html>
@@ -62,7 +62,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <p class="navbar-brand" href="index.html">BrainZer</p>
+                <a class="navbar-brand" href="index.html">BrainZer</a>
             </div>
             <!-- /.navbar-header -->
 
@@ -169,7 +169,24 @@
             <!-- /.navbar-top-links -->
 
             <div class="navbar-default sidebar" role="navigation">
-
+                <div class="sidebar-nav navbar-collapse">
+                    <ul class="nav" id="side-menu">
+                        <li class="sidebar-search">
+                            <div class="input-group custom-search-form">
+                                <input type="text" class="form-control" placeholder="Search...">
+                                <span class="input-group-btn">
+                                <button class="btn btn-default" type="button">
+                                    <i class="fa fa-search"></i>
+                                </button>
+                            </span>
+                            </div>
+                            <!-- /input-group -->
+                        </li>
+                        <li>
+                            <a href="index.html"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
+                        </li>
+                    </ul>
+                </div>
                 <!-- /.sidebar-collapse -->
             </div>
             <!-- /.navbar-static-side -->
@@ -193,7 +210,7 @@
                                     <!--<i class="fa fa-comments fa-5x"></i>-->
                                 </div>
                                 <div class="col-xs-9 text-right">
-                                    <div class="huge">02</div>
+                                    <div class="huge">1</div>
                                     <div>Mentalizando</div>
                                 </div>
                             </div>
@@ -216,7 +233,7 @@
                                     <!--<i class="fa fa-tasks fa-5x"></i>-->
                                 </div>
                                 <div class="col-xs-9 text-right">
-                                    <div class="huge">01</div>
+                                    <div class="huge">2</div>
                                     <div>Quantos</div>
                                 </div>
                             </div>
@@ -238,8 +255,8 @@
                                     <i class="fa fa-shopping-cart fa-5x"></i>
                                 </div>
                                 <div class="col-xs-9 text-right">
-                                    <div class="huge">00</div>
-                                    <div>Caça-palavras</div>
+                                    <div class="huge">3</div>
+                                    <div>Jogo da Memória</div>
                                 </div>
                             </div>
                         </div>
@@ -260,8 +277,8 @@
                                     <i class="fa fa-support fa-5x"></i>
                                 </div>
                                 <div class="col-xs-9 text-right">
-                                    <div class="huge">03</div>
-                                    <div>Jogo da memória</div>
+                                    <div class="huge">4</div>
+                                    <div>Caça-Palavras</div>
                                 </div>
                             </div>
                         </div>
@@ -275,7 +292,7 @@
                     </div>
                 </div>
             </div>
-           
+
         </div>
         <!-- /#page-wrapper -->
 

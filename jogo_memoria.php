@@ -29,8 +29,11 @@ include 'conexao.php';
                 width: 200px;
                 height: 200px   ;
             }
-            #img_0, #img_1,#img_2, #img_3, #img_4, #img_5, #img_6, #img_7, #img_8, #img_9, #img_10, #img_11{
+            #img0, #img1,#img2, #img3, #img4, #img5, #img6, #img7, #img8, #img9, #img10, #img11{
                 display: none;
+            }
+            #princy{
+              display: none;
             }
 
         </style>
@@ -38,102 +41,67 @@ include 'conexao.php';
         <script>
             //EXIBINDO AS CARTAS E DESVIRANDO NOVAMENTE
             setTimeout(function() {
-                $("#img_0, #img_1,#img_2, #img_3, #img_4, #img_5, #img_6, #img_7, #img_8, #img_9, #img_10, #img_11").show(2000);
-                $("#verso_0, #verso_1,#verso_2, #verso_3, #verso_4, #verso_5, #verso_6, #verso_7, #verso_8, #verso_9, #verso_10, #verso_11").hide(2000);
-            }, 2000);
+                $("#img0, #img1,#img2, #img3, #img4, #img5, #img6, #img7, #img8, #img9, #img10, #img11").show(2000);
+                $("#verso_img0, #verso_img1,#verso_img2, #verso_img3, #verso_img4, #verso_img5, #verso_img6, #verso_img7, #verso_img8, #verso_img9, #verso_img10, #verso_img11").hide(2000);
+            }, 1000);
             setTimeout(function() {
-                $("#img_0, #img_1,#img_2, #img_3, #img_4, #img_5, #img_6, #img_7, #img_8, #img_9, #img_10, #img_11").hide(2000);
-                $("#verso_0, #verso_1,#verso_2, #verso_3, #verso_4, #verso_5, #verso_6, #verso_7, #verso_8, #verso_9, #verso_10, #verso_11").show(2000);
-            }, 2000);
+                $("#img0, #img1,#img2, #img3, #img4, #img5, #img6, #img7, #img8, #img9, #img10, #img11").hide(2000);
+                $("#verso_img0, #verso_img1,#verso_img2, #verso_img3, #verso_img4, #verso_img5, #verso_img6, #verso_img7, #verso_img8, #verso_img9, #verso_img10, #verso_img11").show(2000);
+            }, 1000);
 
-            //EXIBINDO AS CARTAS
-            $(document).ready(function() {
-                $('#verso_0').click(function() {
-                    $('#img_0').show('fast');
-                    $('#verso_0').hide('fast');
-                    //$("#verso_0").attr("src","imagens/banana.png");
-                });
-            });
-            $(document).ready(function() {
-                $('#verso_1').click(function() {
-                    $('#img_1').show('fast');
-                    $('#verso_1').hide('fast');
+            var imgs_abertas = 0;
+            var img_aberta_01 = "";
+            var img_aberta_02 = "";
+            var pontos = 0;
 
-                });
-            });
-            $(document).ready(function() {
-                $('#verso_2').click(function() {
-                    $('#img_2').show('fast');
-                    $('#verso_2').hide('fast');
+            function trocarImagem(img1, img2){
+				$('#'+img1).hide();
+				$('#'+img2).fadeIn("slow");
+				compararImagem(img1, img2);
+			}
 
-                });
-            });
-            $(document).ready(function() {
-                $('#verso_3').click(function() {
-                    $('#img_3').show('fast');
-                    $('#verso_3').hide('fast');
+			function compararImagem(img1, img2){
+				if (imgs_abertas == 0){
+					img_aberta_01 = img2;
+					imgs_abertas = 1;
+				}else if(imgs_abertas == 1){
+					img_aberta_02 = img2;
+					if ($('#'+img_aberta_01).attr("src") != $('#'+img_aberta_02).attr("src")){
 
-                });
-            });
-            $(document).ready(function() {
-                $('#verso_4').click(function() {
-                    $('#img_4').show('fast');
-                    $('#verso_4').hide('fast');
+						setTimeout(function(){
+							$('#'+img_aberta_01).hide();
+							$('#'+img_aberta_02).hide();
+							$('#'+"verso_"+img_aberta_01).fadeIn();
+							$('#'+"verso_"+img_aberta_02).fadeIn();
+						}, 800);
 
-                });
-            });
-            $(document).ready(function() {
-                $('#verso_5').click(function() {
-                    $('#img_5').show('fast');
-                    $('#verso_5').hide('fast');
+					}
+					imgs_abertas = 0;
+				}
 
-                });
-            });
-            $(document).ready(function() {
-                $('#verso_6').click(function() {
-                    $('#img_6').show('fast');
-                    $('#verso_6').hide('fast');
+			}
+      // CHAMANDO O JOGO
+      $(document).ready(function () {
+          $('#comecar').click(function () {
+              $('#princy').show('fast');
+              $('#orientacao').hide('fast');
 
-                });
-            });
-            $(document).ready(function() {
-                $('#verso_7').click(function() {
-                    $('#img_7').show('fast');
-                    $('#verso_7').hide('fast');
-
-                });
-            });
-            $(document).ready(function() {
-                $('#verso_8').click(function() {
-                    $('#img_8').show('fast');
-                    $('#verso_8').hide('fast');
-
-                });
-            });
-            $(document).ready(function() {
-                $('#verso_9').click(function() {
-                    $('#img_9').show('fast');
-                    $('#verso_9').hide('fast');
-
-                });
-            });
-            $(document).ready(function() {
-                $('#verso_10').click(function() {
-                    $('#img_10').show('fast');
-                    $('#verso_10').hide('fast');
-
-                });
-            });
-            $(document).ready(function() {
-                $('#verso_11').click(function() {
-                    $('#img_11').show('fast');
-                    $('#verso_11').hide('fast');
-
-                });
-            });
+          });
+      });
+      function sair(){
+          location.href="PaginasComCss/pages/index.php";
+      }
         </script>
     </head>
-    <body><h1>teste</h1>
+    <body>
+      <h1>Jogo da Memória</h1>
+      <div id='orientacao'>
+        <h3> No jogo da memória você terá que: <br>
+            - Memorizar as cartas; <br>
+            - Encontrar os pares das frutas; <br>
+        <h3 id="h3"> Preste bastante atenção quando as cartas forem viradas automaticamente. </h3>
+        <input class="butao" type="button" value="Começar" id="comecar"/>
+      </div>
         <div id="princy">
             <?php
             $a = 0;
@@ -173,16 +141,17 @@ include 'conexao.php';
                 for ($l = 0; $l <= 2; $l++) {
                     echo "<tr id='i.l_$i'>";
                     for ($c = 0; $c <= 3; $c++) {
-                        echo "<td><img src=" . $imagens[$i] . " alt='Bugou' id='img_$i'>
-                              <img src = '$parteTras' alt= 'verso' id='verso_$i'/> </td> ";
-                        ;
+                        echo "<td><img src=" . $imagens[$i] . " alt='Bugou' id='img$i'/>
+                              <img src = '$parteTras' alt= 'verso' id='verso_img$i' onclick=\"trocarImagem(this.id, 'img$i')\"/> </td> ";
                         $i++;
                     }
                     echo "</tr>";
                 }
                 echo "</table>";
             }
+            echo "<input type='button' value= 'Finalizar' class='butao' id='botao' onclick='sair()'/>";
             echo "</div>";
+
             //$mysqli_close($con);
             ?>
         </div>
