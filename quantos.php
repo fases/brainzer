@@ -26,7 +26,7 @@
                 color: white;
                 font-size: 25px;
                 background-color: #008cde;
-            } 
+            }
             .butao {
                 background: #50b6fa;
                 background-image: -webkit-linear-gradient(top, #50b6fa, #378abd);
@@ -68,7 +68,7 @@
             }
             #h3{
                 color: #B52139;
-                background-color: #008cde;            
+                background-color: #008cde;
             }
             #orientacao{
                 background-color: #008cde;
@@ -108,7 +108,7 @@
                 margin: 20px;
                 background:  #fff;
             }
-        </style> 
+        </style>
         <script type="text/javascript" src="jquery-1.11.3.min.js"></script>
         <script>
             //EXIBINDO A PRIMEIRA PERGUNTA
@@ -239,7 +239,7 @@
                 echo "<form method='post' action='quantos_correcao.php'>";
                 while ($reg = mysqli_fetch_array($result)) {
                     $a++;
-                    echo "<div id='perg$a'> ";
+                    echo "<div id='perg$a' class= 'perguntas'> ";
                     echo "<h2>$a" . "ª Pergunta </h2>";
                     echo "<h3>" . $reg['pergunta'] . "</h3> ";
                     $quesito_id = $reg['id'];
@@ -268,7 +268,7 @@
                 echo "</form>";
             }
             //$mysqli_close($con);
-            ?> 
+            ?>
         </div>
     </body>
 </html>

@@ -1,57 +1,132 @@
-<?php include "conexao.php" ?>
+<?php
+session_start();
+
+include 'conexao.php';
+
+if (!isset($_SESSION["usuario"])) {
+    header("Location: ../pagina_inicial.php");
+} else {
+    $pegar = "SELECT id FROM usuario WHERE user = '" . $_SESSION["usuario"] . "'";
+    $sql = mysqli_query($con, $pegar);
+    if ($sql) {
+        while ($reg = mysqli_fetch_array($sql)) {
+            $id_user = $reg["id"];
+        }
+    }
+}
+?>
 <!DOCTYPE html>
 <html lang="pt-br">
     <head>
-        <meta charset="utf-8">
-        <title></title>
-        <style>
-            *{
-                text-align: center;
-                background-color: #008cde;
+      <link href='https://fonts.googleapis.com/css?family=Exo+2' rel='stylesheet' type='text/css'>
+      <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+      <meta charset="utf-8">
+      <title></title>
+      <style>
+          *{
+              text-align: center;
+              background-color: #F5F5F5;
 
-            }
 
-            h1{
-                font-family: 'Pacifico', cursive;
-                color: white;
-                font-size: 70px;
-            }
-            h3{
-                font-family: 'Exo 2', sans-serif;
-                color: white;
-                font-size: 25px;
-            } 
-            .butao{
-                font-size: 18px;
-                border-radius: 6px;
-                display: inline-block;
-                padding: 15px 20px;
-                font-size: 18px;
-                background-color: #fff;
-            }
-            #video{
-                display: none;
-            }
-            #perg1, #perg2, #perg3, #perg4, #perg5, #perg6{
-                display: none;
-            }
-            #final{
-                display: block;
-            }
-            #finalizar{
-                display: none;
-            }
-            #h3{
-                color: red;
-            }
-            .div{
-                width: 130px;
-                height: 80px;
-                color: white;
-                margin: 20px;
-                background:  #0066ff;
-            }
-        </style>
+          }
+
+          h1{
+              font-family: 'Pacifico', cursive;
+              color: #008cde;
+              font-size: 70px;
+          }
+          h2{
+              font-family: 'Exo 2', sans-serif;
+              background-color: #008cde;
+          }
+          h3{
+              font-family: 'Exo 2', sans-serif;
+              color: white;
+              font-size: 25px;
+              background-color: #008cde;
+          }
+          .butao {
+              background: #50b6fa;
+              background-image: -webkit-linear-gradient(top, #50b6fa, #378abd);
+              background-image: -moz-linear-gradient(top, #50b6fa, #378abd);
+              background-image: -ms-linear-gradient(top, #50b6fa, #378abd);
+              background-image: -o-linear-gradient(top, #50b6fa, #378abd);
+              background-image: linear-gradient(to bottom, #50b6fa, #378abd);
+              -webkit-border-radius: 10;
+              -moz-border-radius: 10;
+              border-radius: 10px;
+              font-family: Arial;
+              color: #ffffff;
+              font-size: 20px;
+              padding: 10px 20px 10px 20px;
+              text-decoration: none;
+              margin-bottom: 20px
+          }
+
+          .butao:hover {
+              background: #3cb0fd;
+              background-image: -webkit-linear-gradient(top, #3cb0fd, #3498db);
+              background-image: -moz-linear-gradient(top, #3cb0fd, #3498db);
+              background-image: -ms-linear-gradient(top, #3cb0fd, #3498db);
+              background-image: -o-linear-gradient(top, #3cb0fd, #3498db);
+              background-image: linear-gradient(to bottom, #3cb0fd, #3498db);
+              text-decoration: none;
+          }
+          #video{
+              display: none;
+          }
+          #perg1, #perg2, #perg3, #perg4, #perg5, #perg6{
+              display: none;
+          }
+          #final{
+              display: block;
+          }
+          #finalizar{
+              display: none;
+          }
+          #h3{
+              color: #B52139;
+              background-color: #008cde;
+          }
+          #orientacao{
+              background-color: #008cde;
+              border-top:1px solid #ddd;
+              padding:10px 15px;
+              border-bottom:1px solid transparent;
+              border-top-left-radius:15px;
+              border-top-right-radius:15px;
+              border-bottom-left-radius:15px;
+              border-bottom-right-radius:15px;
+              width: 50%;
+              background-color:#008cde;
+              border-color:#ddd;
+              margin: 0 auto;
+          }
+          .perguntas{
+              background-color: #008cde;
+              border-top:1px solid #ddd;
+              padding:10px 15px;
+              border-bottom:1px solid transparent;
+              border-top-left-radius:15px;
+              border-top-right-radius:15px;
+              border-bottom-left-radius:15px;
+              border-bottom-right-radius:15px;
+              width: 50%;
+              background-color:#008cde;
+              border-color:#ddd;
+              margin: 0 auto;
+          }
+          .texto{
+              background-color: #008cde;
+              color: #f5f5f5;
+          }
+          .div{
+              width: 130px;
+              height: 80px;
+              margin: 20px;
+              background:  #fff;
+          }
+      </style>
         <script type="text/javascript" src="jquery-1.11.3.min.js"></script>
         <script>
             //EXIBINDO O VÍDEO
@@ -120,35 +195,50 @@
                // });
             //});
             //ONMOUSEOVER E ONMOUSEOUT - BOTÕES DAS RESPOSTAS
-            $(document).ready(function() {
-                $('#resp11, #resp12, #resp13, #resp14, #resp15,#resp16').mouseover(function() {
-                    $('#resp11, #resp12, #resp13, #resp14, #resp15,#resp16').css('background-color', '#fc510d');
+            $(document).ready(function () {
+                $('#resp11, #resp12, #resp13, #resp14, #resp15,#resp16').mouseover(function () {
+                    $('#resp11, #resp12, #resp13, #resp14, #resp15,#resp16').css('background-color', '#008CDE');
                 });
-                $('#resp11, #resp12, #resp13, #resp14, #resp15,#resp16').mouseout(function() {
-                    $('#resp11, #resp12, #resp13, #resp14, #resp15,#resp16').css('background-color', '#0066ff');
-                });
-                //
-                $('#resp21, #resp22, #resp23, #resp24, #resp25,#resp26').mouseover(function() {
-                    $('#resp21, #resp22, #resp23, #resp24, #resp25,#resp26').css('background-color', '#fc510d');
-                });
-                $('#resp21, #resp22, #resp23, #resp24, #resp25,#resp26').mouseout(function() {
-                    $('#resp21, #resp22, #resp23, #resp24, #resp25,#resp26').css('background-color', '#0066ff');
+                $('#resp11, #resp12, #resp13, #resp14, #resp15,#resp16').mouseout(function () {
+                    $('#resp11, #resp12, #resp13, #resp14, #resp15,#resp16').css('background-color', '#fff');
                 });
                 //
-                $('#resp31, #resp32, #resp33, #resp34, #resp35,#resp36').mouseover(function() {
-                    $('#resp31, #resp32, #resp33, #resp34,#resp35,#resp36').css('background-color', '#fc510d');
+                $('#resp21, #resp22, #resp23, #resp24, #resp25,#resp26').mouseover(function () {
+                    $('#resp21, #resp22, #resp23, #resp24, #resp25,#resp26').css('background-color', '#008CDE');
                 });
-                $('#resp31, #resp32, #resp33, #resp34, #resp35,#resp36').mouseout(function() {
-                    $('#resp31, #resp32, #resp33, #resp34, #resp35,#resp36').css('background-color', '#0066ff');
+                $('#resp21, #resp22, #resp23, #resp24, #resp25,#resp26').mouseout(function () {
+                    $('#resp21, #resp22, #resp23, #resp24, #resp25,#resp26').css('background-color', '#fff');
                 });
                 //
-                $('#resp41, #resp42, #resp43, #resp44, #resp45,#resp46').mouseover(function() {
-                    $('#resp41, #resp42, #resp43, #resp44, #resp45,#resp46').css('background-color', '#fc510d');
+                $('#resp31, #resp32, #resp33, #resp34, #resp35,#resp36').mouseover(function () {
+                    $('#resp31, #resp32, #resp33, #resp34,#resp35,#resp36').css('background-color', '#008CDE');
                 });
-                $('#resp41, #resp42, #resp43, #resp44, #resp45,#resp46').mouseout(function() {
-                    $('#resp41, #resp42, #resp43, #resp44, #resp45,#resp46').css('background-color', '#0066ff');
+                $('#resp31, #resp32, #resp33, #resp34, #resp35,#resp36').mouseout(function () {
+                    $('#resp31, #resp32, #resp33, #resp34, #resp35,#resp36').css('background-color', '#fff');
+                });
+                //
+                $('#resp41, #resp42, #resp43, #resp44, #resp45,#resp46').mouseover(function () {
+                    $('#resp41, #resp42, #resp43, #resp44, #resp45,#resp46').css('background-color', '#008CDE');
+                });
+                $('#resp41, #resp42, #resp43, #resp44, #resp45,#resp46').mouseout(function () {
+                    $('#resp41, #resp42, #resp43, #resp44, #resp45,#resp46').css('background-color', '#fff');
                 });
             });
+
+            $(function(){
+                 $('#resp11, #resp12, #resp13, #resp14, #resp15,#resp16').click(function () {
+                    $('#resp11,#resp12, #resp13, #resp14, #resp15,#resp16').css('background', '#008CDE');
+                });
+                $('#resp21, #resp22, #resp23, #resp24, #resp25,#resp26').click(function () {
+                    $('#resp21, #resp22, #resp23, #resp24, #resp25,#resp26').css('background', '#008CDE');
+                });
+                $('#resp31, #resp32, #resp33, #resp34, #resp35,#resp36').click(function () {
+                    $('#resp31, #resp32, #resp33, #resp34,#resp35,#resp36').css('background', '#008CDE');
+                });
+                $('#resp41, #resp42, #resp43, #resp44, #resp45,#resp46').click(function () {
+                    $('#resp41, #resp42, #resp43, #resp44, #resp45,#resp46').css('background', '#008CDE');
+                });
+            })
             //PASSANDO OS VALORES DOS BOTÕES PARA O HIDDEN
             function passar(valor, elemento) {
                 document.getElementById('respcerta' + elemento).value = valor;
@@ -185,7 +275,7 @@
                     echo "<input type='button' class='butao' value='Ir para as perguntas' id='perguntas'/>";
                 }
             }
-            ?> 
+            ?>
         </div>
 
         <?php
@@ -196,7 +286,7 @@
             echo "<form method='post' action='mentalizando_frutas_correcao.php'>";
             while ($reg = mysqli_fetch_array($result)) {
                 $a++;
-                echo "<div id='perg$a'> ";
+                echo "<div id='perg$a' class= 'perguntas'> ";
                 echo "<h2>$a" . "ª Pergunta </h2>";
                 echo "<h3>" . $reg['pergunta'] . "</h3> ";
                 $quesito_id = $reg['id'];
@@ -226,7 +316,7 @@
         }
         //$mysqli_close($con);
         ?>
-        
+
 
     </body>
 </html>
