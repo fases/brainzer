@@ -184,7 +184,7 @@
                             <!-- /input-group -->
                         </li>
                         <li>
-                            <a href="index.html"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
+                            <a href="index.html"><i class="fa fa-dashboard fa-fw"></i> Jogos</a>
                         </li>
                     </ul>
                 </div>
@@ -289,7 +289,7 @@
                     <div class="panel panel-red">
                         <div class="panel-heading">
                             <div class="row">
-                                <div class="col-xs-3">
+                                <!--<div class="col-xs-3">-->
                                     <i class="fa fa-support fa-5x"></i>
                                 </div>
                                 <div class="col-xs-9 text-right">

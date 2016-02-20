@@ -210,8 +210,8 @@
                                     <!--<i class="fa fa-comments fa-5x"></i>-->
                                 </div>
                                 <div class="col-xs-9 text-right">
-                                    <div class="huge">1</div>
-                                    <div>Mentalizando</div>
+                                    <div class="huge">Mentalizando</div>
+                                    <div>2 níveis</div>
                                 </div>
                             </div>
                         </div>
@@ -233,8 +233,8 @@
                                     <!--<i class="fa fa-tasks fa-5x"></i>-->
                                 </div>
                                 <div class="col-xs-9 text-right">
-                                    <div class="huge">2</div>
-                                    <div>Quantos</div>
+                                    <div class="huge">"Quantos?"</div>
+                                    <div>1 nível</div>
                                 </div>
                             </div>
                         </div>
@@ -255,8 +255,8 @@
                                     <i class="fa fa-shopping-cart fa-5x"></i>
                                 </div>
                                 <div class="col-xs-9 text-right">
-                                    <div class="huge">3</div>
-                                    <div>Jogo da Memória</div>
+                                    <div class="huge">Jogo da Memória</div>
+                                    <div>1 nível</div>
                                 </div>
                             </div>
                         </div>
@@ -277,8 +277,8 @@
                                     <i class="fa fa-support fa-5x"></i>
                                 </div>
                                 <div class="col-xs-9 text-right">
-                                    <div class="huge">4</div>
-                                    <div>Caça-Palavras</div>
+                                    <div class="huge">Caça-Palavras</div>
+                                    <div>0 níveis</div>
                                 </div>
                             </div>
                         </div>
