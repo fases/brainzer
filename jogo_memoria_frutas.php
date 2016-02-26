@@ -12,8 +12,8 @@ include 'conexao.php';
   while ($reg = mysqli_fetch_array($sql)) {
   $id_user = $reg["id"];
   }
-  }
-  } */
+  }*/
+  //} 
 ?>
 <!DOCTYPE html>
 <html>
