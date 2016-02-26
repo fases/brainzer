@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: 127.0.0.1
--- Tempo de Geração:
+-- Tempo de Geração: 
 -- Versão do Servidor: 5.5.27
 -- Versão do PHP: 5.4.7
 
@@ -57,7 +57,7 @@ CREATE TABLE IF NOT EXISTS `quesito` (
   PRIMARY KEY (`id`),
   KEY `fk_categoria3` (`jogo_id`),
   KEY `fk7_tipojogo` (`tipojogo_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=28 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=32 ;
 
 --
 -- Extraindo dados da tabela `quesito`
@@ -85,7 +85,9 @@ INSERT INTO `quesito` (`id`, `pergunta`, `pontuacao_padrao`, `jogo_id`, `respost
 (19, 'imagens/maca.png', 16, 3, 'imagens/maca.png', 4),
 (20, 'imagens/laranja.png', 17, 3, 'imagens/laranja.png', 4),
 (21, 'imagens/morango.png', 16, 3, 'imagens/morango.png', 4),
-(22, 'imagens/uva.png', 16, 3, 'imagens/uva.png', 4);
+(22, 'imagens/uva.png', 16, 3, 'imagens/uva.png', 4),
+(23, 'imagens/borboleta.png', 16, 3, 'imagens/borboleta.png', 5),
+(24, 'imagens/cachorro.png', 16, 3, 'imagens/cachorro.png', 5);
 
 -- --------------------------------------------------------
 
@@ -168,7 +170,7 @@ CREATE TABLE IF NOT EXISTS `tipo_jogo` (
   `complemento` varchar(300) DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `fk_categoria2` (`jogo_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=5 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=6 ;
 
 --
 -- Extraindo dados da tabela `tipo_jogo`
@@ -178,7 +180,8 @@ INSERT INTO `tipo_jogo` (`id`, `nome`, `jogo_id`, `nivel`, `complemento`) VALUES
 (1, 'frutas', 1, 1, 'video/FRUTAS_VIDEO_curto.mp4'),
 (2, 'animais', 1, 2, 'video/ANIMAIS_VIDEO_curto.mp4'),
 (3, 'quantidade', 2, 2, NULL),
-(4, 'memoria_frutas', 3, 1, 'imagens/verso.png');
+(4, 'memoria_frutas', 3, 1, 'imagens/verso.png'),
+(5, 'jogo_memoria_animais', 3, 2, 'imagens/verso.png');
 
 -- --------------------------------------------------------
 
