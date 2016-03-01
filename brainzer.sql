@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.2.11
+-- version 4.2.7.1
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: 01-Mar-2016 às 21:23
--- Versão do servidor: 5.6.21
--- PHP Version: 5.6.3
+-- Generation Time: 01-Mar-2016 às 22:48
+-- Versão do servidor: 5.5.39
+-- PHP Version: 5.4.31
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -29,7 +29,7 @@ SET time_zone = "+00:00";
 CREATE TABLE IF NOT EXISTS `jogo` (
 `id` int(11) NOT NULL,
   `nome` varchar(200) DEFAULT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=4 ;
 
 --
 -- Extraindo dados da tabela `jogo`
@@ -53,7 +53,7 @@ CREATE TABLE IF NOT EXISTS `quesito` (
   `jogo_id` int(11) NOT NULL,
   `respostaCorreta` varchar(300) NOT NULL,
   `tipojogo_id` int(11) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=32 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=41 ;
 
 --
 -- Extraindo dados da tabela `quesito`
@@ -89,7 +89,17 @@ INSERT INTO `quesito` (`id`, `pergunta`, `pontuacao_padrao`, `jogo_id`, `respost
 (27, 'imagens/gatinho.png', 16, 3, 'imagens/gatinho.png', 5),
 (28, 'imagens/porco.png', 16, 3, 'imagens/porco.png', 5),
 (29, 'imagens/tigre.png', 16, 3, 'imagens/tigre.png', 5),
-(30, 'imagens/vaca.png', 16, 3, 'imagens/vaca.png', 5);
+(30, 'imagens/vaca.png', 16, 3, 'imagens/vaca.png', 5),
+(31, 'imagens/bicicleta.png', 16, 3, 'imagens/bicicleta.png', 6),
+(32, 'imagens/bola.png', 16, 3, 'imagens/bola.png', 6),
+(33, 'imagens/carro.png', 16, 3, 'imagens/carro.png', 6),
+(34, 'imagens/casa.png', 16, 3, 'imagens/casa.png', 6),
+(35, 'imagens/chapeu.png', 16, 3, 'imagens/chapeu.png', 6),
+(36, 'imagens/livro.png', 16, 3, 'imagens/livro.png', 6),
+(37, 'imagens/onibus.png', 16, 3, 'imagens/onibus.png', 6),
+(38, 'imagens/outraBicicleta.png', 16, 3, 'imagens/outraBicicleta.png', 6),
+(39, 'imagens/relogio.png', 16, 3, 'imagens/relogio.png', 6),
+(40, 'imagens/sorvete.png', 16, 3, 'imagens/sorvete.png', 6);
 
 -- --------------------------------------------------------
 
@@ -103,7 +113,7 @@ CREATE TABLE IF NOT EXISTS `ranking` (
   `jogo_id` int(11) NOT NULL,
   `pontuacao` int(11) NOT NULL,
   `dh` datetime NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=6 ;
 
 --
 -- Extraindo dados da tabela `ranking`
@@ -129,7 +139,7 @@ CREATE TABLE IF NOT EXISTS `respostas` (
   `alternativa3` varchar(500) NOT NULL,
   `alternativa4` varchar(500) NOT NULL,
   `quesito_id` int(11) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=17 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=17 ;
 
 --
 -- Extraindo dados da tabela `respostas`
@@ -165,7 +175,7 @@ CREATE TABLE IF NOT EXISTS `tipo_jogo` (
   `jogo_id` int(11) NOT NULL,
   `nivel` int(11) NOT NULL,
   `complemento` varchar(300) DEFAULT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=7 ;
 
 --
 -- Extraindo dados da tabela `tipo_jogo`
@@ -176,7 +186,8 @@ INSERT INTO `tipo_jogo` (`id`, `nome`, `jogo_id`, `nivel`, `complemento`) VALUES
 (2, 'animais', 1, 2, 'video/ANIMAIS_VIDEO_curto.mp4'),
 (3, 'quantidade', 2, 2, NULL),
 (4, 'memoria_frutas', 3, 1, 'imagens/verso.png'),
-(5, 'jogo_memoria_animais', 3, 2, 'imagens/verso.png');
+(5, 'memoria_animais', 3, 2, 'imagens/verso.png'),
+(6, 'memoria_objetos', 3, 3, 'imagens/verso.png');
 
 -- --------------------------------------------------------
 
@@ -191,7 +202,7 @@ CREATE TABLE IF NOT EXISTS `usuario` (
   `senha` varchar(20) NOT NULL,
   `idade` int(11) NOT NULL,
   `user` varchar(100) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=4 ;
 
 --
 -- Extraindo dados da tabela `usuario`
@@ -254,7 +265,7 @@ MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=4;
 -- AUTO_INCREMENT for table `quesito`
 --
 ALTER TABLE `quesito`
-MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=32;
+MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=41;
 --
 -- AUTO_INCREMENT for table `ranking`
 --
@@ -269,7 +280,7 @@ MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=17;
 -- AUTO_INCREMENT for table `tipo_jogo`
 --
 ALTER TABLE `tipo_jogo`
-MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=6;
+MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=7;
 --
 -- AUTO_INCREMENT for table `usuario`
 --
