@@ -1,428 +1,460 @@
 <!DOCTYPE html>
 <html lang="en-US">
-  <head>
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>BrainZer</title>
-  <link rel="stylesheet" type="text/css" href="style.css"/>
-  <link rel="shortcut icon" href="brainzer_icon.ico" TYPE="image/x-icon">
-  <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css"/>
-  <link rel="stylesheet" type="text/css" href="css/font-awesome.min.css"/>
-  <link href='http://fonts.googleapis.com/css?family=Raleway:400,700,200,100,300,500,600,800,900' rel='stylesheet' type='text/css'>
-  <link href='http://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
-  <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700,700italic,900,400italic,300italic' rel='stylesheet' type='text/css'>
-  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-  <script type="text/javascript" src="js_s/jquery.sticky.js"></script>
-  <script>
-    $(window).load(function(){
-      $("#menu").sticky({ topSpacing: 0 });
-    });
-    function redirecionar(){
-      location.href="pages/login.html";
-    };
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>BrainZer</title>
+        <link rel="stylesheet" type="text/css" href="style.css"/>
+        <link rel="shortcut icon" href="brainzer_icon.ico" TYPE="image/x-icon">
+        <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css"/>
+        <link rel="stylesheet" type="text/css" href="css/font-awesome.min.css"/>
+        <link href='http://fonts.googleapis.com/css?family=Raleway:400,700,200,100,300,500,600,800,900' rel='stylesheet' type='text/css'>
+        <link href='http://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+        <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700,700italic,900,400italic,300italic' rel='stylesheet' type='text/css'>
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+        <script type="text/javascript" src="js_s/jquery.sticky.js"></script>
+        <script>
+            $(window).load(function () {
+                $("#menu").sticky({topSpacing: 0});
+            });
+            function redirecionar() {
+                location.href = "pages/login.html";
+            }
+            ;
 
-    function redirecionar2(){
-      location.href="pages/cadastrar.html";
-    }
+            function redirecionar2() {
+                location.href = "pages/cadastrar.html";
+            }
 
-  </script>
-  </head>
-  <body>
-<div class="container-fluid banner text-center" id="banner"> 
-    <div class="row">
-    <div class="col-md-12 line">
-        <div class="tablebox">
-        <div class="banner-text" id="bannertext">
-            <h1 class="hostyle" id="heads">BrainZer</h1>
-            <p class="pstyle">Jogos para Memória</p>
-            <a href="#play" class="page-scroll arrow" target="blank" title="Clique para rolar a página"><i class="fa fa-angle-down"></i></a> 
-          </div>
-      </div>
-      </div>
-  </div>
-  </div>
-<div class="navbar menubar" id="menu">
-    <div class="container">
-    <div class="navbar-header"> 
-    	<button type="button" class="navbar-toggle menu-button" data-toggle="collapse" data-target="#myNavbar">
-			<span class="glyphicon glyphicon-align-justify"></span>
-		 </button>
-    <a class="navbar-brand logo" href="#banner">BrainZer</a> 
-    </div>
-    <div>
-    	<nav class="collapse navbar-collapse" id="myNavbar" role="navigation">
-        <ul class="nav navbar-nav navbar-right navstyle">
-        <li><a href="#banner" class="page-scroll active">Home</a></li>
-        <li><a href="#play" class="page-scroll active">Jogar</a></li>
-        <li><a href="#features" class="page-scroll">Como jogar?</a></li>
-        <li><a href="#gallery" class="page-scroll">Os Jogos</a></li>
-        <li><a href="#about" class="page-scroll">Sobre</a></li>
-        <li><a href="#testimonials" class="page-scroll">O que dizem sobre</a></li>
-        <li><a href="#contact" class="page-scroll">Contato</a></li>
-      </ul>
-      </nav>
-      </div>
-  </div>
-  </div>
-  <div class="play" id="play">
-    <div class="notes">
-    <div class="container">
-    <div class="row">
-        <div class="col-md-9 col-sm-10 col-12">
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam a suscipit nisl. Etiam a facilisis ante. Sed turpis felis, sagittis at risus ut, luctus feugiat ipsum. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam a suscipit nisl. Etiam a facilisis ante.</p>
-      </div>
-        <div class="col-md-3 col-sm-2 col-xs-12 text-center">
-        <button onclick="redirecionar()" class="botao">Entrar</button>
-        <button onclick="redirecionar2()" class="botao">Cadastrar</button>
-      </div>
-      </div>
-  </div>
-</div>
-<div class="features" id="features">
-    <div class="container">
-    <div class="row">
-        <div class="col-md-12 col-sm-12 col-xs-12">
-        <div class="alldesc">
-            <div class="col-md-6 col-sm-6 col-xs-12 centertext">
-            <p class="all-td">Como jogar o</p>
-            <h2>BrainZer</h2>
-          </div>
-          </div>
-      </div>
-        <div class="col-md-6 col-sm-6 col-xs-12 featurebox">
-        <div class="feature-icons"> <img src="images/criar_conta.png"/></div>
-        <div class="fh-desc">
-            <h3>1. Criar conta</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam a suscipit nisl. Etiam a facilisis ante. Sed turpis felis, sagittis at risus ut, luctus feugiat ipsum.</p>
-          </div>
-      </div>
-        <div class="col-md-6 col-sm-6 col-xs-12 featurebox">
-        <div class="feature-icons"> <img src="images/selecionar_jogo.png"/> </div>
-        <div class="fh-desc">
-            <h3>2. Escolher o tipo de jogo</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam a suscipit nisl. Etiam a facilisis ante. Sed turpis felis, sagittis at risus ut, luctus feugiat ipsum.</p>
-          </div>
-      </div>
-        <div class="col-md-6 col-sm-6 col-xs-12 featurebox">
-        <div class="feature-icons"> <img src="images/selecionar_nivel.png"/> </div>
-        <div class="fh-desc">
-            <h3>3. Escolher o nível do jogo</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam a suscipit nisl. Etiam a facilisis ante. Sed turpis felis, sagittis at risus ut, luctus feugiat ipsum.</p>
-          </div>
-      </div>
-        <div class="col-md-6 col-sm-6 col-xs-12 featurebox">
-        <div class="feature-icons"> <img src="images/jogar.png"/> </div>
-        <div class="fh-desc">
-            <h3>4. Comece a jogar</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam a suscipit nisl. Etiam a facilisis ante. Sed turpis felis, sagittis at risus ut, luctus feugiat ipsum.</p>
-          </div>
-      </div>
-      </div>
-  </div>
-  </div>
-<div class="gallery" id="gallery">
-    <div class="container">
-    <div class="row">
-        <div class="col-md-12 col-sm-12 col-xs-12">
-        <div class="alldesc">
-            <div class="col-md-6 col-sm-6 col-xs-12 centertext">
-            <p class="all-td">Os jogos do </p>
-            <h2>BrainZer</h2>
-          </div>
-            <div class="col-md-6 col-sm-6 col-xs-12">
-            <p class="desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam a suscipit nisl. Etiam a facilisis ante. Sed turpis felis, sagittis at risus ut, luctus feugiat ipsum. Lorem ipsum dolor sit amet.</p>
-          </div>
-          </div>
-      </div>
-        <div class="col-md-12 col-sm-12 col-xs-12">
-        <div class="galleryimg" id="galleryimg">
-            <div class="grid mix category-2 col-md-4 col-sm-6 col-xs-6" data-myorder="1">
-					<figure class="effect-Beauty">
-						<img src="images/unsplash004.jpg" alt="img13"/>
-						<figcaption>
-							<h2>Mentalizando <span>Animais<span></h2>
-							<p>Jogo de perguntas e respostas referentes a um vídeo sobre animais.</p>
-							
-						</figcaption>			
-					</figure>
-          </div>
-           <div class="grid mix category-1 col-md-4 col-sm-6 col-xs-6" data-myorder="2">
-					<figure class="effect-Beauty">
-						<img src="images/unsplash009.jpg" alt="img13"/>
-						<figcaption>
-							<h2>Mentalizando <span>Frutas</span></h2>
-							<p>Jogo de perguntas e respostas referentes a um vídeo sobre frutas.</p>
-							
-						</figcaption>			
-					</figure>
-          </div>
-           <div class="grid mix category-1 col-md-4 col-sm-6 col-xs-6" data-myorder="3">
-					<figure class="effect-Beauty">
-						<img src="images/unsplash0010.jpg" alt="img13"/>
-						<figcaption>
-							<h2>Quantos <span>(?)</span></h2>
-							<p>Questionário sobre a quantidade das coisas.</p>
-							
-						</figcaption>			
-					</figure>
-          </div>
-           <div class="grid mix category-2 col-md-4 col-sm-6 col-xs-6" data-myorder="4">
-					<figure class="effect-Beauty">
-						<img src="images/unsplash002.jpg" alt="img13"/>
-						<figcaption>
-							<h2>Jogo da <span>Memória</span></h2>
-							<p>Jogo formado por cartas que apresentam uma figura em um dos lados que devem ser memorizadas para formar um par.</p>
-							
-						</figcaption>			
-					</figure>
-          </div>
-           <div class="grid mix category-2 col-md-4 col-sm-6 col-xs-6" data-myorder="5">
-					<figure class="effect-Beauty">
-						<img src="images/unsplash006.jpg" alt="img13"/>
-						<figcaption>
-							<h2>Quebra <span>Cabeça</span></h2>
-							<p>Jogo formado por peças que precisam ser encaixadas de maneira para formar uma figura completa. </p>
-							
-						</figcaption>			
-					</figure>
-          </div>
-      </div>
-      </div>
-  </div>
-  </div>
-  </div>
-  </div>
-  </div>
-  <hr class="hr">
-<div class="about" id="about">
-    <div class="container">
-      <div class="row">
-        <div class="col-md-12 col-sm-12 col-xs-12">
-          <div class="alldesc">
-            <div class="col-md-6 col-sm-6 col-xs-12 centertext">
-              <p class="all-td">Tudo sobre o</p>
-              <h2>BrainZer</h2>
-            </div>
-            <div class="center">
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam a suscipit nisl. Etiam a facilisis ante. Sed turpis felis, sagittis at risus ut, luctus feugiat ipsum. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam a suscipit nisl. Etiam a facilisis ante. Sed turpis felis, sagittis at risus ut, luctus feugiat ipsum. Lorem ipsum dolor sit amet.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam a suscipit nisl. Etiam a facilisis ante. Sed turpis felis, sagittis at risus ut, luctus feugiat ipsum. Lorem ipsum dolor sit amet.</p>
-            </div>
-            
-            </div>
-          </div>
-      </div>
-    </div>
-  </div>
-</div>
-<div class="testimonials" id="testimonials">
-	<div class="container">
-    	<div class="row">
-        	<div class="col-md-12 col-sm-12 col-xs-12">
-        		<div class="alldesc">
-            		<div class="col-md-6 col-sm-6 col-xs-12 centertext">
-            			<p class="all-td">O que dizem sobre o </p>
-            			<h2>Brainzer</h2>
-          			</div>
-            		<div class="col-md-6 col-sm-6 col-xs-12">
-            
-          			</div>
-          		</div>
-      		</div>
-            <div class="col-md-12 col-sm-12 col-xs-12">
-            	<div class="quotes">
-                	<blockquote>
-                    	<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus bibendum augue sodales tellus molestie eleifend. Morbi felis sem, fermentum quis tincidunt eu, sollicitudin ut metus</p>
-                        <p class="name">Yogesh Singh (Gujarat, India)</p>
-                    </blockquote>
-                    <blockquote>
-                    	<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus bibendum augue sodales tellus molestie eleifend.</p>
-                        <p class="name">Michal Jordan (New York, USA)</p>
-                    </blockquote>
+        </script>
+    </head>
+    <body>
+        <div class="container-fluid banner text-center" id="banner"> 
+            <div class="row">
+                <div class="col-md-12 line">
+                    <div class="tablebox">
+                        <div class="banner-text" id="bannertext">
+                            <h1 class="hostyle" id="heads">BrainZer</h1>
+                            <p class="pstyle">Uma plataforma de jogos digitais para auxiliar portadores de Alzheimer</p>
+                            <a href="#play" class="page-scroll arrow" target="blank" title="Clique para rolar a página"><i class="fa fa-angle-down"></i></a> 
+                        </div>
+                    </div>
                 </div>
-            </div>        
+            </div>
         </div>
-    </div>
-</div>
-
-</div>
-
-<div class="address" id="contact">
-	<div class="container">
-    	<div class="row">
-        	<div class="col-md-12 col-sm-12 col-xs-12">
-        		<div class="alldesc">
-            		<div class="col-md-6 col-sm-6 col-xs-12 centertext">
-            			<p class="all-td">Entre em contato com o</p>
-            			<h2>BrainZer</h2>
-          			</div>
-            		<div class="col-md-6 col-sm-6 col-xs-12 info centertext">
-                        <p>Email : projetobrainzer@gmail.com</p>
-          			</div>
-                <div class="col-md-4 col-sm-12 col-xs-12 text-center">
-              <ul class="social">
-                  <li><a href="https://twitter.com/projetobrainzer" target="blank" title="Twitter"><i class="fa fa-twitter-square"></i></a></li>
-                    <li><a href="https://www.facebook.com/projetobrainzer" target="blank" title="Facebook"><i class="fa fa-facebook-square"></i></a></li>
-                    <li><a href="https://plus.google.com/u/0/103439938595000628077/posts" target="blank" title="Google+"><i class="fa fa-google-plus-square"></i></a></li>
+        <div class="navbar menubar" id="menu">
+            <div class="container">
+                <div class="navbar-header"> 
+                    <button type="button" class="navbar-toggle menu-button" data-toggle="collapse" data-target="#myNavbar">
+                        <span class="glyphicon glyphicon-align-justify"></span>
+                    </button>
+                    <a class="navbar-brand logo" href="#banner">BrainZer</a> 
                 </div>
-          		</div>
-      		</div>        
-        </div>
-    </div>
-</div>
-<footer class="foot"> 
-	<div class="container">
-    	<div class="row">
-        	<div class="col-md-12 col-sm-12 col-xs-12">
-            	<h4 class="foot-logo">BrainZer</h4>
+                <div>
+                    <nav class="collapse navbar-collapse" id="myNavbar" role="navigation">
+                        <ul class="nav navbar-nav navbar-right navstyle">
+                            <li><a href="#banner" class="page-scroll active">Home</a></li>
+                            <li><a href="#play" class="page-scroll active">Jogar</a></li>
+                            <li><a href="#features" class="page-scroll">Como jogar?</a></li>
+                            <li><a href="#gallery" class="page-scroll">Os Jogos</a></li>
+                            <li><a href="#about" class="page-scroll">Sobre</a></li>
+                            <li><a href="#testimonials" class="page-scroll">O que falam sobre</a></li>
+                            <li><a href="#contact" class="page-scroll">Contato</a></li>
+                        </ul>
+                    </nav>
+                </div>
             </div>
-            <div class="col-md-12 col-xs-12 col-sm-12 text-center">
-            	<p class="foot-text">Copyrights &copy; 2015 | Sedulous Designed By : <a href="http://html5layouts.com">HTML5 Layouts</a>.</p>
-            </div>
         </div>
-    </div>
-</footer>
-<script src="js_s/bootstrap.min.js"></script> 
-<script src="js_s/typed.js" type="text/javascript"></script> 
-<script src="js_s/jquery.mixitup.js" type="text/javascript"></script> 
-<script type="text/javascript" src="js_s/jquery.countTo.js"></script> 
-<script type="text/javascript" src="js_s/jquery.waypoints.min.js"></script> 
-<script type="text/javascript" src="js_s/jquery.quovolver.js"></script>
-<script>
-$(function(){
-    var windowH = $(window).height();
-    var bannerH = $('#banner').height();
-    if(windowH > bannerH) {                            
-        $('#banner').css({'height':($(window).height() - 68)+'px'});
-		$('#bannertext').css({'height':($(window).height() - 68)+'px'});
-    }                                                                               
-    $(window).resize(function(){
-        var windowH = $(window).height();
-        var bannerH = $('#banner').height();
-        var differenceH = windowH - bannerH;
-        var newH = bannerH + differenceH;
-        var truecontentH = $('#bannertext').height();
-        if(windowH < truecontentH) {
-            $('#banner').css({'height': (newH - 68)+'px'});
-			$('#bannertext').css({'height': (newH - 68)+'px'});
-        }
-		if(windowH > truecontentH) {
-            $('#banner').css({'height': (newH - 68)+'px'});
-			$('#bannertext').css({'height': (newH - 68)+'px'});
-        }
 
-    })          
-});
+        <div class="play" id="play">
+            <div class="notes" style="height: 470px;">
+                <div class="container">
+                    <div class="col-md-12 col-sm-12 col-xs-12">
+                        <div class="alldesc">
+                            <div class="col-md-6 col-sm-6 col-xs-12 centertext">
+                                <p class="all-td" style="font-size: 22px;">O que é o</p>
+                                <h2>Alzheimer?</h2>
+                            <p align='Justify' style="width: 650px; margin-top: 20px; font-family: 'Source Sans Pro',sans-serif; font-size: 17px; color: #888;  letter-spacing: 0px;"> 
+                            A Doença de Alzheimer é uma enfermidade incurável que se agrava ao longo do tempo, mas pode e deve ser tratada.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+
+                        <div class="col-md-9 col-sm-10 col-12">
+
+                        </div>
+                        <div class="col-md-3 col-sm-2 col-xs-12 text-center">
+                            <button onclick="redirecionar()" class="botao">Entrar</button>
+                            <button onclick="redirecionar2()" class="botao">Cadastrar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <hr class="hr">
+            <div class="features" id="features">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12 col-sm-12 col-xs-12">
+                            <div class="alldesc">
+                                <div class="col-md-6 col-sm-6 col-xs-12 centertext">
+                                    <p class="all-td">Como jogar o</p>
+                                    <h2>BrainZer</h2>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-sm-6 col-xs-12 featurebox">
+                            <div class="feature-icons"> <img src="images/criar_conta.png"/></div>
+                            <div class="fh-desc">
+                                <h3>1. Criar conta</h3>
+                                <p align='Justify'>Para criar uma conta no Brainzer basta clicar em "Jogar" no menu inicial, depois no botão "Cadastrar" ao lado direito da tela e em seguida, preencha o que será pedido e pronto! </p>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-sm-6 col-xs-12 featurebox">
+                            <div class="feature-icons"> <img src="images/selecionar_jogo.png"/> </div>
+                            <div class="fh-desc">
+                                <h3>2. Escolher o tipo de jogo</h3>
+                                <p align='Justify'>A escolha do tipo de jogo é a mais simples, basta selecionar o jogo que você desejar. Existem, pelo menos, quatro tipos de jogos. Escolha e divirta-se! </p>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-sm-6 col-xs-12 featurebox">
+                            <div class="feature-icons"> <img src="images/selecionar_nivel.png"/> </div>
+                            <div class="fh-desc">
+                                <h3>3. Escolher o nível do jogo</h3>
+                                <p align='Justify'>Escolher o nível é muito importante. Logo, selecione de acordo com a sua necessidade e avalie o seu desempenho!</p>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-sm-6 col-xs-12 featurebox">
+                            <div class="feature-icons"> <img src="images/jogar.png"/> </div>
+                            <div class="fh-desc">
+                                <h3>4. Comece a jogar</h3>
+                                <p align='Justify'>É aqui que a diversão começa. Aproveite ao máximo, e se desejar acompanhe a sua pontuação no final de cada jogo!</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="gallery" id="gallery">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12 col-sm-12 col-xs-12">
+                            <div class="alldesc">
+                                <div class="col-md-6 col-sm-6 col-xs-12 centertext">
+                                    <p class="all-td">Os jogos do </p>
+                                    <h2>BrainZer</h2>
+                                </div>
+                                <div class="col-md-6 col-sm-6 col-xs-12">
+                                    <p class="desc" align='Justify'>A plataforma BrainZer proporciona jogos que foram desenvolvidos para exercitar adequadamente áreas específicas do cérebro, responsáveis pela memória e pensamento.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-12 col-sm-12 col-xs-12">
+                            <div class="galleryimg" id="galleryimg">
+                                <div class="grid mix category-2 col-md-4 col-sm-6 col-xs-6" data-myorder="1">
+                                    <figure class="effect-Beauty">
+                                        <img src="images/unsplash004.jpg" alt="img13"/>
+                                        <figcaption>
+                                            <h2>Mentalizando <span>Animais<span></h2>
+                                                        <p>Jogo de perguntas e respostas referentes a um vídeo sobre animais.</p>
+
+                                                        </figcaption>			
+                                                        </figure>
+                                                        </div>
+                                                        <div class="grid mix category-1 col-md-4 col-sm-6 col-xs-6" data-myorder="2">
+                                                            <figure class="effect-Beauty">
+                                                                <img src="images/unsplash009.jpg" alt="img13"/>
+                                                                <figcaption>
+                                                                    <h2>Mentalizando <span>Frutas</span></h2>
+                                                                    <p>Jogo de perguntas e respostas referentes a um vídeo sobre frutas.</p>
+
+                                                                </figcaption>			
+                                                            </figure>
+                                                        </div>
+                                                        <div class="grid mix category-1 col-md-4 col-sm-6 col-xs-6" data-myorder="3">
+                                                            <figure class="effect-Beauty">
+                                                                <img src="images/unsplash0010.jpg" alt="img13"/>
+                                                                <figcaption>
+                                                                    <h2>Quantos <span>(?)</span></h2>
+                                                                    <p>Questionário sobre a quantidade das coisas.</p>
+
+                                                                </figcaption>			
+                                                            </figure>
+                                                        </div>
+                                                        <div class="grid mix category-2 col-md-4 col-sm-6 col-xs-6" data-myorder="4">
+                                                            <figure class="effect-Beauty">
+                                                                <img src="images/unsplash002.jpg" alt="img13"/>
+                                                                <figcaption>
+                                                                    <h2>Jogo da <span>Memória</span></h2>
+                                                                    <p>Jogo formado por cartas que apresentam uma figura em um dos lados que devem ser memorizadas para formar um par.</p>
+
+                                                                </figcaption>			
+                                                            </figure>
+                                                        </div>
+                                                        <div class="grid mix category-2 col-md-4 col-sm-6 col-xs-6" data-myorder="1">
+                                                            <figure class="effect-Beauty">
+                                                                <img src="images/unsplash0011.jpg" alt="img15"/>
+                                                                <figcaption>
+                                                                    <h2>Caça <span>Palavras<span></h2>
+                                                                                <p>O jogo de caça-palavras, ou sopa de letras, é um passatempo que consiste de letras arranjadas aparentemente aleatórias em uma grade quadrada ou retangular.</p>
+
+                                                                                </figcaption>			
+                                                                                </figure>
+                                                                                </div>
+                                                                                <div class="grid mix category-2 col-md-4 col-sm-6 col-xs-6" data-myorder="5">
+                                                                                    <figure class="effect-Beauty">
+                                                                                        <img src="images/unsplash006.jpg" alt="img13"/>
+                                                                                        <figcaption>
+                                                                                            <h2>Quebra <span>Cabeça</span></h2>
+                                                                                            <p>Jogo formado por peças que precisam ser encaixadas de maneira para formar uma figura completa. </p>
+
+                                                                                        </figcaption>			
+                                                                                    </figure>
+                                                                                </div>
+
+                                                                                </div>
+                                                                                </div>
+                                                                                </div>
+                                                                                </div>
+                                                                                </div>
+                                                                                </div>
+                                                                                </div>
+                                                                                <hr class="hr">
+                                                                                <div class="about" id="about">
+                                                                                    <div class="container">
+                                                                                        <div class="row">
+                                                                                            <div class="col-md-12 col-sm-12 col-xs-12">
+                                                                                                <div class="alldesc">
+                                                                                                    <div class="col-md-6 col-sm-6 col-xs-12 centertext">
+                                                                                                        <p class="all-td">Sobre o</p>
+                                                                                                        <h2>BrainZer</h2>
+                                                                                                    </div>
+                                                                                                    <div class="center">
+                                                                                                        <p align='Justify'>O projeto BrainZer se trata de uma plataforma WEB voltada para usuários portadores da Doença Alzheimer. No intuito de auxiliar a função cognitiva de pessoas, geralmente idosas, portadoras do primeiro estágio da doença Alzheimer de maneira dinâmica e lúdica, seja em casa com a ajuda de um cuidador ou numa clínica com ajuda de um terapeuta ocupacional (médico especialista neste tipo de tratamento alternativo).  </p>
+                                                                                                    </div>
+
+                                                                                                </div>
+                                                                                            </div>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+                                                                                </div>
+                                                                                <div class="testimonials" id="testimonials">
+                                                                                    <div class="container">
+                                                                                        <div class="row">
+                                                                                            <div class="col-md-12 col-sm-12 col-xs-12">
+                                                                                                <div class="alldesc">
+                                                                                                    <div class="col-md-6 col-sm-6 col-xs-12 centertext">
+                                                                                                        <p class="all-td">O que falam sobre o </p>
+                                                                                                        <h2>Alzheimer</h2>
+                                                                                                    </div>
+                                                                                                    <div class="col-md-6 col-sm-6 col-xs-12">
+
+                                                                                                    </div>
+                                                                                                </div>
+                                                                                            </div>
+                                                                                            <div class="col-md-12 col-sm-12 col-xs-12">
+                                                                                                <div class="quotes">
+                                                                                                    <blockquote>
+                                                                                                        <p>O Alzheimer é uma doença neurodegenerativa, progressiva e irreversível, para a qual, apesar dos avanços da medicina, ainda não há cura.</p>
+                                                                                                        <p class="name">Carina Corrêa Bastos (Amazônia, Brasil)</p>
+                                                                                                    </blockquote>
+                                                                                                    <blockquote>
+                                                                                                        <p>Apesar de não haver uma única forma de tratar a demência, nós poderemos tomar medidas para reduzir o risco de desenvolvermos demência durante a velhice.</p>
+                                                                                                        <p class="name">Carol Brayne (Cambridge, Reino Unido)</p>
+                                                                                                    </blockquote>
+                                                                                                    <blockquote>
+                                                                                                        <p>O Alzheimer é uma doença neurodegenerativa que gera uma perda de memória significativa. Quanto maior o grau da fase da doença maior irá ser as perdas cognitivas e funcionais do paciente.</p>
+                                                                                                        <p class="name">Ligia Cristina Pestili (Minas Gerais, Brasil)</p>
+                                                                                                    </blockquote>
+                                                                                                    <blockquote>
+                                                                                                        <p>[...] o risco mais importante para a doença de Alzheimer é a idade.</p>
+                                                                                                        <p class="name">Paul S. Aisen (São Paulo, Brasil)</p>
+                                                                                                    </blockquote>
+                                                                                                </div>
+                                                                                            </div>        
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+
+                                                                                </div>
+
+                                                                                <div class="address" id="contact">
+                                                                                    <div class="container">
+                                                                                        <div class="row">
+                                                                                            <div class="col-md-12 col-sm-12 col-xs-12">
+                                                                                                <div class="alldesc">
+                                                                                                    <div class="col-md-6 col-sm-6 col-xs-12 centertext">
+                                                                                                        <p class="all-td">Entre em contato com o</p>
+                                                                                                        <h2>BrainZer</h2>
+                                                                                                    </div>
+                                                                                                    <div class="col-md-6 col-sm-6 col-xs-12 info centertext">
+                                                                                                        <p style="margin-left: 70px;"> Email : projetobrainzer@gmail.com</p>
+                                                                                                    </div>
+                                                                                                    <div class="col-md-4 col-sm-12 col-xs-12 text-center">
+                                                                                                        <ul class="social">
+                                                                                                            <li><a href="https://twitter.com/projetobrainzer" target="blank" title="Twitter"><i class="fa fa-twitter-square"></i></a></li>
+                                                                                                            <li><a href="https://www.facebook.com/projetobrainzer" target="blank" title="Facebook"><i class="fa fa-facebook-square"></i></a></li>
+                                                                                                            <li><a href="https://plus.google.com/u/0/103439938595000628077/posts" target="blank" title="Google+"><i class="fa fa-google-plus-square"></i></a></li>
+                                                                                                    </div>
+                                                                                                </div>
+                                                                                            </div>        
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+                                                                                <footer class="foot"> 
+                                                                                    <div class="container">
+                                                                                        <div class="row">
+                                                                                            <div class="col-md-12 col-sm-12 col-xs-12">
+                                                                                                <h4 class="foot-logo" >BrainZer</h4>
+                                                                                            </div>
+                                                                                            <div class="col-md-12 col-xs-12 col-sm-12 text-center">
+                                                                                                <p class="foot-text">Copyrights &copy; 2016</p>
+                                                                                            </div>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </footer>
+                                                                                <script src="js_s/bootstrap.min.js"></script> 
+                                                                                <script src="js_s/typed.js" type="text/javascript"></script> 
+                                                                                <script src="js_s/jquery.mixitup.js" type="text/javascript"></script> 
+                                                                                <script type="text/javascript" src="js_s/jquery.countTo.js"></script> 
+                                                                                <script type="text/javascript" src="js_s/jquery.waypoints.min.js"></script> 
+                                                                                <script type="text/javascript" src="js_s/jquery.quovolver.js"></script>
+                                                                                <script>
+                                $(function () {
+                                    var windowH = $(window).height();
+                                    var bannerH = $('#banner').height();
+                                    if (windowH > bannerH) {
+                                        $('#banner').css({'height': ($(window).height() - 68) + 'px'});
+                                        $('#bannertext').css({'height': ($(window).height() - 68) + 'px'});
+                                    }
+                                    $(window).resize(function () {
+                                        var windowH = $(window).height();
+                                        var bannerH = $('#banner').height();
+                                        var differenceH = windowH - bannerH;
+                                        var newH = bannerH + differenceH;
+                                        var truecontentH = $('#bannertext').height();
+                                        if (windowH < truecontentH) {
+                                            $('#banner').css({'height': (newH - 68) + 'px'});
+                                            $('#bannertext').css({'height': (newH - 68) + 'px'});
+                                        }
+                                        if (windowH > truecontentH) {
+                                            $('#banner').css({'height': (newH - 68) + 'px'});
+                                            $('#bannertext').css({'height': (newH - 68) + 'px'});
+                                        }
+
+                                    })
+                                });
 
 
-	
-	
-	
-	$(function(){
-  $('#galleryimg').mixItUp();
-});
-	/*$('.timer').each(count);*/
-	jQuery(function ($) {
-      // custom formatting example
-      $('.timer').data('countToOptions', {
-        formatter: function (value, options) {
-          return value.toFixed(options.decimals).replace(/\B(?=(?:\d{3})+(?!\d))/g, ',');
-        }
-      });
- 
-      // start all the timers
-      $('#gallery').waypoint(function() {
-    $('.timer').each(count);
-	});
- 
-      function count(options) {
-        var $this = $(this);
-        options = $.extend({}, options || {}, $this.data('countToOptions') || {});
-        $this.countTo(options);
-      }
-    });
-	
-	
-	 $('.quotes').quovolver({
-      equalHeight   : true
-    });
-	
-	
-	</script>
-<script>
 
-	$(document).ready(function () {
 
-		$(document).on("scroll", onScroll);
 
- 
+                                $(function () {
+                                    $('#galleryimg').mixItUp();
+                                });
+                                /*$('.timer').each(count);*/
+                                jQuery(function ($) {
+                                    // custom formatting example
+                                    $('.timer').data('countToOptions', {
+                                        formatter: function (value, options) {
+                                            return value.toFixed(options.decimals).replace(/\B(?=(?:\d{3})+(?!\d))/g, ',');
+                                        }
+                                    });
 
-		$('a[href^="#"]').on('click', function (e) {
+                                    // start all the timers
+                                    $('#gallery').waypoint(function () {
+                                        $('.timer').each(count);
+                                    });
 
-			e.preventDefault();
+                                    function count(options) {
+                                        var $this = $(this);
+                                        options = $.extend({}, options || {}, $this.data('countToOptions') || {});
+                                        $this.countTo(options);
+                                    }
+                                });
 
-			$(document).off("scroll");
 
- 
+                                $('.quotes').quovolver({
+                                    equalHeight: true
+                                });
 
-			$('a').each(function () {
 
-				$(this).removeClass('active');
+                                                                                </script>
+                                                                                <script>
 
-			})
+                                                                                    $(document).ready(function () {
 
-			$(this).addClass('active');
+                                                                                        $(document).on("scroll", onScroll);
 
- 
 
-			var target = this.hash;
 
-			$target = $(target);
+                                                                                        $('a[href^="#"]').on('click', function (e) {
 
-			$('html, body').stop().animate({
+                                                                                            e.preventDefault();
 
-				'scrollTop': $target.offset().top
+                                                                                            $(document).off("scroll");
 
-			}, 500, 'swing', function () {
 
-				window.location.hash = target;
 
-				$(document).on("scroll", onScroll);
+                                                                                            $('a').each(function () {
 
-			});
+                                                                                                $(this).removeClass('active');
 
-		});
+                                                                                            })
 
-	});
+                                                                                            $(this).addClass('active');
 
- 
 
-	function onScroll(event){
 
-		var scrollPosition = $(document).scrollTop();
+                                                                                            var target = this.hash;
 
-		$('.nav li a').each(function () {
+                                                                                            $target = $(target);
 
-			var currentLink = $(this);
+                                                                                            $('html, body').stop().animate({
+                                                                                                'scrollTop': $target.offset().top
 
-			var refElement = $(currentLink.attr("href"));
+                                                                                            }, 500, 'swing', function () {
 
-			if (refElement.position().top <= scrollPosition && refElement.position().top + refElement.height() > scrollPosition) {
+                                                                                                window.location.hash = target;
 
-				$('.nav li a').removeClass("active");
+                                                                                                $(document).on("scroll", onScroll);
 
-				currentLink.addClass("active");
+                                                                                            });
 
-			}
+                                                                                        });
 
-			else{
+                                                                                    });
 
-				currentLink.removeClass("active");
 
-			}
 
-		});
+                                                                                    function onScroll(event) {
 
-	}
+                                                                                        var scrollPosition = $(document).scrollTop();
 
-	</script>
-</body>
-</html>
+                                                                                        $('.nav li a').each(function () {
+
+                                                                                            var currentLink = $(this);
+
+                                                                                            var refElement = $(currentLink.attr("href"));
+
+                                                                                            if (refElement.position().top <= scrollPosition && refElement.position().top + refElement.height() > scrollPosition) {
+
+                                                                                                $('.nav li a').removeClass("active");
+
+                                                                                                currentLink.addClass("active");
+
+                                                                                            }
+
+                                                                                            else {
+
+                                                                                                currentLink.removeClass("active");
+
+                                                                                            }
+
+                                                                                        });
+
+                                                                                    }
+
+                                                                                </script>
+                                                                                </body>
+                                                                                </html>
