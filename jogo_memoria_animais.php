@@ -29,7 +29,7 @@ include 'conexao.php';
                 width: 200px;
                 height: 200px   ;
             }
-            #img0, #img1,#img2, #img3, #img4, #img5, #img6, #img7, #img8, #img9, #img10, #img11, #img12, #img13, #img14, #img15 {
+            #img0, #img1,#img2, #img3, #img4, #img5, #img6, #img7, #img8, #img9, #img10, #img11{
                 display: none;
             }
             #princy{
@@ -38,48 +38,54 @@ include 'conexao.php';
 
         </style>
         <script type="text/javascript" src="jquery-1.11.3.min.js"></script>
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.3/jquery.min.js" type="text/javascript"></script>
         <script>
             //EXIBINDO AS CARTAS E DESVIRANDO NOVAMENTE
             setTimeout(function() {
-                $("#img0, #img1,#img2, #img3, #img4, #img5, #img6, #img7, #img8, #img9, #img10, #img11, #img12, #img13, #img14, #img15").show(2000);
-                $("#verso_img0, #verso_img1,#verso_img2, #verso_img3, #verso_img4, #verso_img5, #verso_img6, #verso_img7, #verso_img8, #verso_img9, #verso_img10, #verso_img11, #verso_img12, #verso_img13, #verso_img14, #verso_img15").hide(2000);
+                $("#img0, #img1,#img2, #img3, #img4, #img5, #img6, #img7, #img8, #img9, #img10, #img11").show(2000);
+                $("#verso_img0, #verso_img1,#verso_img2, #verso_img3, #verso_img4, #verso_img5, #verso_img6, #verso_img7, #verso_img8, #verso_img9, #verso_img10, #verso_img11").hide(2000);
             }, 1000);
             setTimeout(function() {
-                $("#img0, #img1,#img2, #img3, #img4, #img5, #img6, #img7, #img8, #img9, #img10, #img11, #img12, #img13, #img14, #img15").hide(2000);
-                $("#verso_img0, #verso_img1,#verso_img2, #verso_img3, #verso_img4, #verso_img5, #verso_img6, #verso_img7, #verso_img8, #verso_img9, #verso_img10, #verso_img11, #verso_img12, #verso_img13, #verso_img14, #verso_img15").show(2000);
+                $("#img0, #img1,#img2, #img3, #img4, #img5, #img6, #img7, #img8, #img9, #img10, #img11").hide(2000);
+                $("#verso_img0, #verso_img1,#verso_img2, #verso_img3, #verso_img4, #verso_img5, #verso_img6, #verso_img7, #verso_img8, #verso_img9, #verso_img10, #verso_img11").show(2000);
             }, 1000);
 
             var imgs_abertas = 0;
             var img_aberta_01 = "";
             var img_aberta_02 = "";
-            var pontos = 0;
+            var tentativas = 0;
+            var tentativas2 =0;
 
             function trocarImagem(img1, img2){
 				$('#'+img1).hide();
 				$('#'+img2).fadeIn("slow");
 				compararImagem(img1, img2);
 			}
-
+                        pontos = 0;
 			function compararImagem(img1, img2){
 				if (imgs_abertas == 0){
 					img_aberta_01 = img2;
 					imgs_abertas = 1;
 				}else if(imgs_abertas == 1){
 					img_aberta_02 = img2;
-					if ($('#'+img_aberta_01).attr("src") != $('#'+img_aberta_02).attr("src")){
-
+					if ($('#'+img_aberta_01).attr("src") != $('#'+img_aberta_02).attr("src")){                                       
 						setTimeout(function(){
 							$('#'+img_aberta_01).hide();
 							$('#'+img_aberta_02).hide();
 							$('#'+"verso_"+img_aberta_01).fadeIn();
 							$('#'+"verso_"+img_aberta_02).fadeIn();
 						}, 800);
-
+                                                tentativas++;
 					}
+                                        tentativas2++;
 					imgs_abertas = 0;
 				}
 
 			}
+                        //CÁLCULO DA PONTUAÇÃO
+                        tent = tentativas + tentativas2;
+                          pontuacao = (6000/(tentativas + tentativas2));
+
       // CHAMANDO O JOGO
       $(document).ready(function () {
           $('#comecar').click(function () {
@@ -89,7 +95,7 @@ include 'conexao.php';
           });
       });
       function sair(){
-          location.href="PaginasComCss/pages/index.php";
+         alert (tent);
       }
         </script>
     </head>
@@ -98,7 +104,7 @@ include 'conexao.php';
       <div id='orientacao'>
         <h3> No jogo da memória você terá que: <br>
             - Memorizar as cartas; <br>
-            - Encontrar os pares dos animais; <br>
+            - Encontrar os pares das frutas; <br>
         <h3 id="h3"> Preste bastante atenção quando as cartas forem viradas automaticamente. </h3>
         <input class="butao" type="button" value="Começar" id="comecar"/>
       </div>
@@ -106,8 +112,8 @@ include 'conexao.php';
             <?php
             $a = 0;
             $id_jogo = 3;
-            $nivel = 2;
-            $tipo_jogo = 5;
+            $nivel = 1;
+            $tipo_jogo = 4;
 
 
             echo "<div id='verso'>";
@@ -138,7 +144,7 @@ include 'conexao.php';
                 shuffle($imagens);
                 //echo sizeof($imagens);
                 $i = 0;
-                for ($l = 0; $l <= 3; $l++) {
+                for ($l = 0; $l <= 2; $l++) {
                     echo "<tr id='i.l_$i'>";
                     for ($c = 0; $c <= 3; $c++) {
                         echo "<td><img src=" . $imagens[$i] . " alt='Bugou' id='img$i'/>
@@ -151,10 +157,23 @@ include 'conexao.php';
             }
             echo "<input type='button' value= 'Finalizar' class='butao' id='botao' onclick='sair()'/>";
             echo "</div>";
-
             //$mysqli_close($con);
             ?>
         </div>
+      <div> 
+          <?php
+       $pontos = (isset($_POST["pontuacao"]) ? $_POST["pontuacao"] : null);
+       //INSERINDO OS DADOS NA TABELA RANKING
+
+                  $ranking = "INSERT INTO ranking(usuario_id, jogo_id, pontuacao, dh) VALUES ('$id_user','$id_jogo','$pontos', now())";
+                  $sql = mysqli_query($con, $ranking);
+
+                // ~~~~ //
+          
+          echo $pontos;
+          ?>
+      
+      </div>
+          
     </body>
 </html>
-
