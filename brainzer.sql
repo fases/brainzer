@@ -57,7 +57,7 @@ CREATE TABLE IF NOT EXISTS `quesito` (
   PRIMARY KEY (`id`),
   KEY `fk_categoria3` (`jogo_id`),
   KEY `fk7_tipojogo` (`tipojogo_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=41 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=81 ;
 
 --
 -- Extraindo dados da tabela `quesito`
@@ -103,7 +103,33 @@ INSERT INTO `quesito` (`id`, `pergunta`, `pontuacao_padrao`, `jogo_id`, `respost
 (37, 'imagens/onibus.png', 16, 3, 'imagens/onibus.png', 6),
 (38, 'imagens/outraBicicleta.png', 16, 3, 'imagens/outraBicicleta.png', 6),
 (39, 'imagens/relogio.png', 16, 3, 'imagens/relogio.png', 6),
-(40, 'imagens/sorvete.png', 16, 3, 'imagens/sorvete.png', 6);
+(40, 'imagens/sorvete.png', 16, 3, 'imagens/sorvete.png', 6),
+(55, 'Quantos objetos tem no video?', 12, 1, '6 objetos', 7),
+(56, 'Qual o objeto e azul?', 12, 1, 'Carro', 7),
+(57, 'Qual objeto possui mais de tres cores?', 12, 1, 'Bola', 7),
+(58, 'Qual o objeto se usa como acessorio para cabeça?', 12, 1, 'Chapeu', 7),
+(59, 'Quais objetos possuem rodas?', 13, 1, 'Bicicleta e Carro', 7),
+(60, 'Qual objeto possui paginas?', 13, 1, 'Livro', 7),
+(61, 'Quais objetos tem a cor vermelha?', 13, 1, 'Livro e Bicicleta', 7),
+(62, 'Qual objeto as criancas usam para brincar?', 13, 1, 'Bicicleta e Bola', 7),
+(63, 'Quantos dias tem em um mes no geral?', 12, 2, '30 dias', 8),
+(64, 'Quantos naipes tem em um jogo de baralho? ', 12, 2, '4 naipes', 8),
+(65, 'Quantas semanas tem em um mes?', 12, 2, '4 semanas', 8),
+(66, 'Quantas refeicoes minimas uma pessoa deve fazer durante o dia?', 12, 2, '3 refeicoes', 8),
+(67, 'No minimo quantas vezes se deve escovar os dentes durante o dia?', 13, 2, '3 vezes', 8),
+(68, 'Quantas vezes o sol nasce durante o dia?', 13, 2, '1 vez', 8),
+(69, 'Quanto e 1+1?', 13, 2, '2', 8),
+(70, 'Quantos dias tem um ano normal?', 13, 2, '365 dias', 8),
+(71, 'Quanto e o quintuplo de 1?', 10, 2, '5', 9),
+(72, 'Sabendo que um ano bissexto tem 1 dia a mais que o normal, quantos dias tem um ano bissexto? ', 10, 2, '366 dias', 9),
+(73, 'Com quantos anos uma pessoa se torna adulta no Brasil?', 10, 2, '18 anos', 9),
+(74, 'Quantos pulmoes tem um ser humano normal?', 10, 2, '2 pulmoes', 9),
+(75, 'Quantos meses dura uma gestacao humana saudavel?', 10, 2, '9 meses', 9),
+(76, 'Quantas vezes a lua aparece durante uma semana?', 10, 2, '7 vezes', 9),
+(77, 'Quantos minutos tem em 1 hora e 10 minutos?', 10, 2, '70 minutos', 9),
+(78, 'Um trio de pessoas tem quantas pessoas?', 10, 2, '3 pessoas', 9),
+(79, 'Duas horas tem quantos minutos?', 10, 2, '120 minutos', 9),
+(80, 'Quantas letras tem no alfabeto?', 10, 2, '26 letras', 9);
 
 -- --------------------------------------------------------
 
@@ -186,7 +212,7 @@ CREATE TABLE IF NOT EXISTS `tipo_jogo` (
   `complemento` varchar(300) DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `fk_categoria2` (`jogo_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=8 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=10 ;
 
 --
 -- Extraindo dados da tabela `tipo_jogo`
@@ -199,7 +225,9 @@ INSERT INTO `tipo_jogo` (`id`, `nome`, `jogo_id`, `nivel`, `complemento`) VALUES
 (4, 'memoria_frutas', 3, 1, 'imagens/verso.png'),
 (5, 'memoria_animais', 3, 2, 'imagens/verso.png'),
 (6, 'memoria_objetos', 3, 3, 'imagens/verso.png'),
-(7, 'objetos', 1, 3, 'video/OBJETOS_VIDEO_curto.mp4');
+(7, 'objetos', 1, 3, 'video/OBJETOS_VIDEO_curto.mp4'),
+(8, 'quantidade_2', 2, 2, NULL),
+(9, 'quantidade_3', 2, 3, NULL);
 
 -- --------------------------------------------------------
 
