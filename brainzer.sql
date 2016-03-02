@@ -1,13 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 4.2.7.1
+-- version 3.5.2.2
 -- http://www.phpmyadmin.net
 --
--- Host: 127.0.0.1
--- Generation Time: 01-Mar-2016 às 22:48
--- Versão do servidor: 5.5.39
--- PHP Version: 5.4.31
+-- Servidor: 127.0.0.1
+-- Tempo de Geração: 
+-- Versão do Servidor: 5.5.27
+-- Versão do PHP: 5.4.7
 
-SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
 
 
@@ -17,7 +17,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8 */;
 
 --
--- Database: `brainzer`
+-- Banco de Dados: `brainzer`
 --
 
 -- --------------------------------------------------------
@@ -27,8 +27,9 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE IF NOT EXISTS `jogo` (
-`id` int(11) NOT NULL,
-  `nome` varchar(200) DEFAULT NULL
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `nome` varchar(200) DEFAULT NULL,
+  PRIMARY KEY (`id`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=4 ;
 
 --
@@ -47,12 +48,15 @@ INSERT INTO `jogo` (`id`, `nome`) VALUES
 --
 
 CREATE TABLE IF NOT EXISTS `quesito` (
-`id` int(11) NOT NULL,
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `pergunta` varchar(500) DEFAULT NULL,
   `pontuacao_padrao` int(11) NOT NULL,
   `jogo_id` int(11) NOT NULL,
   `respostaCorreta` varchar(300) NOT NULL,
-  `tipojogo_id` int(11) NOT NULL
+  `tipojogo_id` int(11) NOT NULL,
+  PRIMARY KEY (`id`),
+  KEY `fk_categoria3` (`jogo_id`),
+  KEY `fk7_tipojogo` (`tipojogo_id`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=41 ;
 
 --
@@ -108,11 +112,14 @@ INSERT INTO `quesito` (`id`, `pergunta`, `pontuacao_padrao`, `jogo_id`, `respost
 --
 
 CREATE TABLE IF NOT EXISTS `ranking` (
-`id` int(11) NOT NULL,
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `usuario_id` int(11) NOT NULL,
   `jogo_id` int(11) NOT NULL,
   `pontuacao` int(11) NOT NULL,
-  `dh` datetime NOT NULL
+  `dh` datetime NOT NULL,
+  PRIMARY KEY (`id`),
+  KEY `fk_categoria` (`usuario_id`),
+  KEY `fk_categoria1` (`jogo_id`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=6 ;
 
 --
@@ -133,12 +140,14 @@ INSERT INTO `ranking` (`id`, `usuario_id`, `jogo_id`, `pontuacao`, `dh`) VALUES
 --
 
 CREATE TABLE IF NOT EXISTS `respostas` (
-`id` int(11) NOT NULL,
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `alternativa1` varchar(500) NOT NULL,
   `alternativa2` varchar(500) NOT NULL,
   `alternativa3` varchar(500) NOT NULL,
   `alternativa4` varchar(500) NOT NULL,
-  `quesito_id` int(11) NOT NULL
+  `quesito_id` int(11) NOT NULL,
+  PRIMARY KEY (`id`),
+  KEY `fk_categoria4` (`quesito_id`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=17 ;
 
 --
@@ -170,12 +179,14 @@ INSERT INTO `respostas` (`id`, `alternativa1`, `alternativa2`, `alternativa3`, `
 --
 
 CREATE TABLE IF NOT EXISTS `tipo_jogo` (
-`id` int(11) NOT NULL,
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `nome` varchar(50) DEFAULT NULL,
   `jogo_id` int(11) NOT NULL,
   `nivel` int(11) NOT NULL,
-  `complemento` varchar(300) DEFAULT NULL
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=7 ;
+  `complemento` varchar(300) DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  KEY `fk_categoria2` (`jogo_id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=8 ;
 
 --
 -- Extraindo dados da tabela `tipo_jogo`
@@ -187,7 +198,8 @@ INSERT INTO `tipo_jogo` (`id`, `nome`, `jogo_id`, `nivel`, `complemento`) VALUES
 (3, 'quantidade', 2, 2, NULL),
 (4, 'memoria_frutas', 3, 1, 'imagens/verso.png'),
 (5, 'memoria_animais', 3, 2, 'imagens/verso.png'),
-(6, 'memoria_objetos', 3, 3, 'imagens/verso.png');
+(6, 'memoria_objetos', 3, 3, 'imagens/verso.png'),
+(7, 'objetos', 1, 3, 'video/OBJETOS_VIDEO_curto.mp4');
 
 -- --------------------------------------------------------
 
@@ -196,13 +208,14 @@ INSERT INTO `tipo_jogo` (`id`, `nome`, `jogo_id`, `nivel`, `complemento`) VALUES
 --
 
 CREATE TABLE IF NOT EXISTS `usuario` (
-`id` int(11) NOT NULL,
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `nome` varchar(200) NOT NULL,
   `email` varchar(200) NOT NULL,
   `senha` varchar(20) NOT NULL,
   `idade` int(11) NOT NULL,
-  `user` varchar(100) NOT NULL
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=4 ;
+  `user` varchar(100) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=6 ;
 
 --
 -- Extraindo dados da tabela `usuario`
@@ -210,111 +223,39 @@ CREATE TABLE IF NOT EXISTS `usuario` (
 
 INSERT INTO `usuario` (`id`, `nome`, `email`, `senha`, `idade`, `user`) VALUES
 (2, 'Alana Ribeiro', 'alana_fatima@hotmail.com', '202cb962ac59075b964b', 18, 'alanaribeiro'),
-(3, 'Pedro Tomaz', 'pedrootomaz23@gmail.com', '202cb962ac59075b964b', 18, 'pedrootomaz');
+(3, 'Pedro Tomaz', 'pedrootomaz23@gmail.com', '202cb962ac59075b964b', 18, 'pedrootomaz'),
+(4, 'pedro', 'pedro@gmail.com', '202cb962ac59075b964b', 18, 'pedrotomaz'),
+(5, 'Pedro', 'pedrot@gmail.com', '202cb962ac59075b964b', 18, 'pedrot');
 
 --
--- Indexes for dumped tables
+-- Restrições para as tabelas dumpadas
 --
 
 --
--- Indexes for table `jogo`
---
-ALTER TABLE `jogo`
- ADD PRIMARY KEY (`id`);
-
---
--- Indexes for table `quesito`
+-- Restrições para a tabela `quesito`
 --
 ALTER TABLE `quesito`
- ADD PRIMARY KEY (`id`), ADD KEY `fk_categoria3` (`jogo_id`), ADD KEY `fk7_tipojogo` (`tipojogo_id`);
+  ADD CONSTRAINT `fk7_tipojogo` FOREIGN KEY (`tipojogo_id`) REFERENCES `tipo_jogo` (`id`),
+  ADD CONSTRAINT `fk_categoria3` FOREIGN KEY (`jogo_id`) REFERENCES `jogo` (`id`);
 
 --
--- Indexes for table `ranking`
+-- Restrições para a tabela `ranking`
 --
 ALTER TABLE `ranking`
- ADD PRIMARY KEY (`id`), ADD KEY `fk_categoria` (`usuario_id`), ADD KEY `fk_categoria1` (`jogo_id`);
+  ADD CONSTRAINT `fk_categoria` FOREIGN KEY (`usuario_id`) REFERENCES `usuario` (`id`),
+  ADD CONSTRAINT `fk_categoria1` FOREIGN KEY (`jogo_id`) REFERENCES `jogo` (`id`);
 
 --
--- Indexes for table `respostas`
+-- Restrições para a tabela `respostas`
 --
 ALTER TABLE `respostas`
- ADD PRIMARY KEY (`id`), ADD KEY `fk_categoria4` (`quesito_id`);
+  ADD CONSTRAINT `fk_categoria4` FOREIGN KEY (`quesito_id`) REFERENCES `quesito` (`id`);
 
 --
--- Indexes for table `tipo_jogo`
+-- Restrições para a tabela `tipo_jogo`
 --
 ALTER TABLE `tipo_jogo`
- ADD PRIMARY KEY (`id`), ADD KEY `fk_categoria2` (`jogo_id`);
-
---
--- Indexes for table `usuario`
---
-ALTER TABLE `usuario`
- ADD PRIMARY KEY (`id`);
-
---
--- AUTO_INCREMENT for dumped tables
---
-
---
--- AUTO_INCREMENT for table `jogo`
---
-ALTER TABLE `jogo`
-MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=4;
---
--- AUTO_INCREMENT for table `quesito`
---
-ALTER TABLE `quesito`
-MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=41;
---
--- AUTO_INCREMENT for table `ranking`
---
-ALTER TABLE `ranking`
-MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=6;
---
--- AUTO_INCREMENT for table `respostas`
---
-ALTER TABLE `respostas`
-MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=17;
---
--- AUTO_INCREMENT for table `tipo_jogo`
---
-ALTER TABLE `tipo_jogo`
-MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=7;
---
--- AUTO_INCREMENT for table `usuario`
---
-ALTER TABLE `usuario`
-MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=4;
---
--- Constraints for dumped tables
---
-
---
--- Limitadores para a tabela `quesito`
---
-ALTER TABLE `quesito`
-ADD CONSTRAINT `fk7_tipojogo` FOREIGN KEY (`tipojogo_id`) REFERENCES `tipo_jogo` (`id`),
-ADD CONSTRAINT `fk_categoria3` FOREIGN KEY (`jogo_id`) REFERENCES `jogo` (`id`);
-
---
--- Limitadores para a tabela `ranking`
---
-ALTER TABLE `ranking`
-ADD CONSTRAINT `fk_categoria` FOREIGN KEY (`usuario_id`) REFERENCES `usuario` (`id`),
-ADD CONSTRAINT `fk_categoria1` FOREIGN KEY (`jogo_id`) REFERENCES `jogo` (`id`);
-
---
--- Limitadores para a tabela `respostas`
---
-ALTER TABLE `respostas`
-ADD CONSTRAINT `fk_categoria4` FOREIGN KEY (`quesito_id`) REFERENCES `quesito` (`id`);
-
---
--- Limitadores para a tabela `tipo_jogo`
---
-ALTER TABLE `tipo_jogo`
-ADD CONSTRAINT `fk_categoria2` FOREIGN KEY (`jogo_id`) REFERENCES `jogo` (`id`);
+  ADD CONSTRAINT `fk_categoria2` FOREIGN KEY (`jogo_id`) REFERENCES `jogo` (`id`);
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
