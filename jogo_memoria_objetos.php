@@ -138,9 +138,9 @@ include 'conexao.php';
                 shuffle($imagens);
                 //echo sizeof($imagens);
                 $i = 0;
-                for ($l = 0; $l <= 4; $l++) {
+                for ($l = 0; $l <= 3; $l++) {
                     echo "<tr id='i.l_$i'>";
-                    for ($c = 0; $c <= 3; $c++) {
+                    for ($c = 0; $c <= 4; $c++) {
                         echo "<td><img src=" . $imagens[$i] . " alt='Bugou' id='img$i'/>
                               <img src = '$parteTras' alt= 'verso' id='verso_img$i' onclick=\"trocarImagem(this.id, 'img$i')\"/> </td> ";
                         $i++;
