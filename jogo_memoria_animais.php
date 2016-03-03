@@ -29,7 +29,7 @@ include 'conexao.php';
                 width: 200px;
                 height: 200px   ;
             }
-            #img0, #img1,#img2, #img3, #img4, #img5, #img6, #img7, #img8, #img9, #img10, #img11{
+            #img0, #img1,#img2, #img3, #img4, #img5, #img6, #img7, #img8, #img9, #img10, #img11, #img12, #img13, #img14, #img15{
                 display: none;
             }
             #princy{
@@ -42,12 +42,12 @@ include 'conexao.php';
         <script>
             //EXIBINDO AS CARTAS E DESVIRANDO NOVAMENTE
             setTimeout(function() {
-                $("#img0, #img1,#img2, #img3, #img4, #img5, #img6, #img7, #img8, #img9, #img10, #img11").show(2000);
-                $("#verso_img0, #verso_img1,#verso_img2, #verso_img3, #verso_img4, #verso_img5, #verso_img6, #verso_img7, #verso_img8, #verso_img9, #verso_img10, #verso_img11").hide(2000);
+                $("#img0, #img1,#img2, #img3, #img4, #img5, #img6, #img7, #img8, #img9, #img10, #img11, #img12, #img13, #img14, #img15").show(2000);
+                $("#verso_img0, #verso_img1,#verso_img2, #verso_img3, #verso_img4, #verso_img5, #verso_img6, #verso_img7, #verso_img8, #verso_img9, #verso_img10, #verso_img11, #verso_img12, #verso_img13, #verso_img14, #verso_img15").hide(2000);
             }, 1000);
             setTimeout(function() {
-                $("#img0, #img1,#img2, #img3, #img4, #img5, #img6, #img7, #img8, #img9, #img10, #img11").hide(2000);
-                $("#verso_img0, #verso_img1,#verso_img2, #verso_img3, #verso_img4, #verso_img5, #verso_img6, #verso_img7, #verso_img8, #verso_img9, #verso_img10, #verso_img11").show(2000);
+                $("#img0, #img1,#img2, #img3, #img4, #img5, #img6, #img7, #img8, #img9, #img10, #img11, #img12, #img13, #img14, #img15").hide(2000);
+                $("#verso_img0, #verso_img1,#verso_img2, #verso_img3, #verso_img4, #verso_img5, #verso_img6, #verso_img7, #verso_img8, #verso_img9, #verso_img10, #verso_img11, #verso_img12, #verso_img13, #verso_img14, #verso_img15").show(2000);
             }, 1000);
 
             var imgs_abertas = 0;
@@ -113,7 +113,7 @@ include 'conexao.php';
             $a = 0;
             $id_jogo = 3;
             $nivel = 1;
-            $tipo_jogo = 4;
+            $tipo_jogo = 5;
 
 
             echo "<div id='verso'>";
@@ -144,7 +144,7 @@ include 'conexao.php';
                 shuffle($imagens);
                 //echo sizeof($imagens);
                 $i = 0;
-                for ($l = 0; $l <= 2; $l++) {
+                for ($l = 0; $l <= 3; $l++) {
                     echo "<tr id='i.l_$i'>";
                     for ($c = 0; $c <= 3; $c++) {
                         echo "<td><img src=" . $imagens[$i] . " alt='Bugou' id='img$i'/>
