@@ -62,7 +62,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="index.html">BrainZer</a>
+                <a class="navbar-brand" href="index.php">BrainZer</a>
             </div>
             <!-- /.navbar-header -->
 
@@ -94,6 +94,22 @@
                                 <div>
                                     <p>
                                         <strong>Mentalizando Animais</strong>
+                                        <span class="pull-right text-muted">20% Complete</span>
+                                    </p>
+                                    <div class="progress progress-striped active">
+                                        <div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100" style="width: 20%">
+                                            <span class="sr-only">20% Complete</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="divider"></li>
+                        <li>
+                            <a href="#">
+                                <div>
+                                    <p>
+                                        <strong>Mentalizando Objetos</strong>
                                         <span class="pull-right text-muted">20% Complete</span>
                                     </p>
                                     <div class="progress progress-striped active">
@@ -154,11 +170,6 @@
                         <i class="fa fa-user fa-fw"></i>  <i class="fa fa-caret-down"></i>
                     </a>
                     <ul class="dropdown-menu dropdown-user">
-                        <li><a href="#"><i class="fa fa-user fa-fw"></i> Perfil</a>
-                        </li>
-                        <li><a href="#"><i class="fa fa-gear fa-fw"></i> Configuração</a>
-                        </li>
-                        <li class="divider"></li>
                         <li><a href="logout.php"><i class="fa fa-sign-out fa-fw"></i> Sair</a>
                         </li>
                     </ul>
@@ -183,7 +194,7 @@
                             <!-- /input-group -->
                         </li>
                         <li>
-                            <a href="index.html"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
+                            <a href="index.php"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
                         </li>
                     </ul>
                 </div>
@@ -206,7 +217,7 @@
                         <div class="panel-heading">
                             <div class="row">
                                 <div class="col-xs-3">
-                                    <img src="../images/mentalizando.png">
+                                    <img src="../images/mentalizando.png" style="width: 64px;">
                                     <!--<i class="fa fa-comments fa-5x"></i>-->
                                 </div>
                                 <div class="col-xs-9 text-right">
@@ -229,7 +240,7 @@
                         <div class="panel-heading">
                             <div class="row">
                                 <div class="col-xs-3">
-                                    <img src="../images/caca-palavras.png">
+                                    <img src="../images/caca-palavras.png" style="width: 64px;">
                                     <!--<i class="fa fa-tasks fa-5x"></i>-->
                                 </div>
                                 <div class="col-xs-9 text-right">
@@ -252,11 +263,12 @@
                         <div class="panel-heading">
                             <div class="row">
                                 <div class="col-xs-3">
-                                    <i class="fa fa-shopping-cart fa-5x"></i>
+                                    <img src="../images/memory.png" style="width: 64px;">
+                                    <!--<i class="fa fa-tasks fa-5x"></i>-->
                                 </div>
                                 <div class="col-xs-9 text-right">
                                     <div class="huge">Jogo da Memória</div>
-                                    <div>1 nível</div>
+                                    <div>3 níveis</div>
                                 </div>
                             </div>
                         </div>
@@ -274,7 +286,8 @@
                         <div class="panel-heading">
                             <div class="row">
                                 <div class="col-xs-3">
-                                    <i class="fa fa-support fa-5x"></i>
+                                    <img src="../images/numbers.png" style="width: 64px;">
+                                    <!--<i class="fa fa-tasks fa-5x"></i>-->
                                 </div>
                                 <div class="col-xs-9 text-right">
                                     <div class="huge">Caça-Palavras</div>

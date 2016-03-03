@@ -104,7 +104,7 @@ include 'conexao.php';
       <div id='orientacao'>
         <h3> No jogo da memória você terá que: <br>
             - Memorizar as cartas; <br>
-            - Encontrar os pares das frutas; <br>
+            - Encontrar os pares dos animais; <br>
         <h3 id="h3"> Preste bastante atenção quando as cartas forem viradas automaticamente. </h3>
         <input class="butao" type="button" value="Começar" id="comecar"/>
       </div>
