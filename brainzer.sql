@@ -57,7 +57,7 @@ CREATE TABLE IF NOT EXISTS `quesito` (
   PRIMARY KEY (`id`),
   KEY `fk_categoria3` (`jogo_id`),
   KEY `fk7_tipojogo` (`tipojogo_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=81 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=67 ;
 
 --
 -- Extraindo dados da tabela `quesito`
@@ -104,32 +104,32 @@ INSERT INTO `quesito` (`id`, `pergunta`, `pontuacao_padrao`, `jogo_id`, `respost
 (38, 'imagens/outraBicicleta.png', 16, 3, 'imagens/outraBicicleta.png', 6),
 (39, 'imagens/relogio.png', 16, 3, 'imagens/relogio.png', 6),
 (40, 'imagens/sorvete.png', 16, 3, 'imagens/sorvete.png', 6),
-(55, 'Quantos objetos tem no video?', 12, 1, '6 objetos', 7),
-(56, 'Qual o objeto e azul?', 12, 1, 'Carro', 7),
-(57, 'Qual objeto possui mais de tres cores?', 12, 1, 'Bola', 7),
-(58, 'Qual o objeto se usa como acessorio para cabeça?', 12, 1, 'Chapeu', 7),
-(59, 'Quais objetos possuem rodas?', 13, 1, 'Bicicleta e Carro', 7),
-(60, 'Qual objeto possui paginas?', 13, 1, 'Livro', 7),
-(61, 'Quais objetos tem a cor vermelha?', 13, 1, 'Livro e Bicicleta', 7),
-(62, 'Qual objeto as criancas usam para brincar?', 13, 1, 'Bicicleta e Bola', 7),
-(63, 'Quantos dias tem em um mes no geral?', 12, 2, '30 dias', 8),
-(64, 'Quantos naipes tem em um jogo de baralho? ', 12, 2, '4 naipes', 8),
-(65, 'Quantas semanas tem em um mes?', 12, 2, '4 semanas', 8),
-(66, 'Quantas refeicoes minimas uma pessoa deve fazer durante o dia?', 12, 2, '3 refeicoes', 8),
-(67, 'No minimo quantas vezes se deve escovar os dentes durante o dia?', 13, 2, '3 vezes', 8),
-(68, 'Quantas vezes o sol nasce durante o dia?', 13, 2, '1 vez', 8),
-(69, 'Quanto e 1+1?', 13, 2, '2', 8),
-(70, 'Quantos dias tem um ano normal?', 13, 2, '365 dias', 8),
-(71, 'Quanto e o quintuplo de 1?', 10, 2, '5', 9),
-(72, 'Sabendo que um ano bissexto tem 1 dia a mais que o normal, quantos dias tem um ano bissexto? ', 10, 2, '366 dias', 9),
-(73, 'Com quantos anos uma pessoa se torna adulta no Brasil?', 10, 2, '18 anos', 9),
-(74, 'Quantos pulmoes tem um ser humano normal?', 10, 2, '2 pulmoes', 9),
-(75, 'Quantos meses dura uma gestacao humana saudavel?', 10, 2, '9 meses', 9),
-(76, 'Quantas vezes a lua aparece durante uma semana?', 10, 2, '7 vezes', 9),
-(77, 'Quantos minutos tem em 1 hora e 10 minutos?', 10, 2, '70 minutos', 9),
-(78, 'Um trio de pessoas tem quantas pessoas?', 10, 2, '3 pessoas', 9),
-(79, 'Duas horas tem quantos minutos?', 10, 2, '120 minutos', 9),
-(80, 'Quantas letras tem no alfabeto?', 10, 2, '26 letras', 9);
+(41, 'Quantos objetos tem no video?', 12, 1, '6 objetos', 7),
+(42, 'Qual o objeto e azul?', 12, 1, 'Carro', 7),
+(43, 'Qual objeto possui mais de tres cores?', 12, 1, 'Bola', 7),
+(44, 'Qual o objeto se usa como acessorio para cabeça?', 12, 1, 'Chapeu', 7),
+(45, 'Quais objetos possuem rodas?', 13, 1, 'Bicicleta e Carro', 7),
+(46, 'Qual objeto possui paginas?', 13, 1, 'Livro', 7),
+(47, 'Quais objetos tem a cor vermelha?', 13, 1, 'Livro e Bicicleta', 7),
+(48, 'Qual objeto as criancas usam para brincar?', 13, 1, 'Bicicleta e Bola', 7),
+(49, 'Quantos dias tem em um mes no geral?', 12, 2, '30 dias', 8),
+(50, 'Quantos naipes tem em um jogo de baralho? ', 12, 2, '4 naipes', 8),
+(51, 'Quantas semanas tem em um mes?', 12, 2, '4 semanas', 8),
+(52, 'Quantas refeicoes minimas uma pessoa deve fazer durante o dia?', 12, 2, '3 refeicoes', 8),
+(53, 'No minimo quantas vezes se deve escovar os dentes durante o dia?', 13, 2, '3 vezes', 8),
+(54, 'Quantas vezes o sol nasce durante o dia?', 13, 2, '1 vez', 8),
+(55, 'Quanto e 1+1?', 13, 2, '2', 8),
+(56, 'Quantos dias tem um ano normal?', 13, 2, '365 dias', 8),
+(57, 'Quanto e o quintuplo de 1?', 10, 2, '5', 9),
+(58, 'Sabendo que um ano bissexto tem 1 dia a mais que o normal, quantos dias tem um ano bissexto? ', 10, 2, '366 dias', 9),
+(59, 'Com quantos anos uma pessoa se torna adulta no Brasil?', 10, 2, '18 anos', 9),
+(60, 'Quantos pulmoes tem um ser humano normal?', 10, 2, '2 pulmoes', 9),
+(61, 'Quantos meses dura uma gestacao humana saudavel?', 10, 2, '9 meses', 9),
+(62, 'Quantas vezes a lua aparece durante uma semana?', 10, 2, '7 vezes', 9),
+(63, 'Quantos minutos tem em 1 hora e 10 minutos?', 10, 2, '70 minutos', 9),
+(64, 'Um trio de pessoas tem quantas pessoas?', 10, 2, '3 pessoas', 9),
+(65, 'Duas horas tem quantos minutos?', 10, 2, '120 minutos', 9),
+(66, 'Quantas letras tem no alfabeto?', 10, 2, '26 letras', 9);
 
 -- --------------------------------------------------------
 
@@ -146,7 +146,7 @@ CREATE TABLE IF NOT EXISTS `ranking` (
   PRIMARY KEY (`id`),
   KEY `fk_categoria` (`usuario_id`),
   KEY `fk_categoria1` (`jogo_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=6 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=10 ;
 
 --
 -- Extraindo dados da tabela `ranking`
@@ -174,7 +174,7 @@ CREATE TABLE IF NOT EXISTS `respostas` (
   `quesito_id` int(11) NOT NULL,
   PRIMARY KEY (`id`),
   KEY `fk_categoria4` (`quesito_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=17 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=25 ;
 
 --
 -- Extraindo dados da tabela `respostas`
@@ -196,7 +196,15 @@ INSERT INTO `respostas` (`id`, `alternativa1`, `alternativa2`, `alternativa3`, `
 (13, '5 estações', '3 estações', '7 estações', '4 estações', 13),
 (14, '12 meses', '24 meses', '6 meses', '10 meses', 14),
 (15, '72 minutos', '60 minutos', '24 minutos', '10 minutos', 15),
-(16, '80 segundos', '24 segundos', '12 segundos', '60 segundos', 16);
+(16, '80 segundos', '24 segundos', '12 segundos', '60 segundos', 16),
+(17, '5', '7', '6', '4', 41),
+(18, 'Chapeu', 'Casa', 'Bola', 'Carro', 42),
+(19, 'Bola', 'Livro', 'Bicicleta', 'Carro', 43),
+(20, 'Televisao', 'Chapeu', 'Relogio', 'Casa', 44),
+(21, 'Bicicleta e Carro', 'Chapeu e Livro', 'Bicicleta e Bola', 'Casa e Carro', 45),
+(22, 'Bola', 'Livro', 'Casa', 'Bicicleta', 46),
+(23, 'Bola e Carro', 'Livro e Bicicleta', 'Chapeu e Bola', 'Livro e Carro', 47),
+(24, 'Bicicleta e Bola', 'Casa e Carro', 'Chapeu e copo', 'Tomada e Livro', 48);
 
 -- --------------------------------------------------------
 
