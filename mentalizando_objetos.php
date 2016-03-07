@@ -255,8 +255,7 @@ include 'conexao.php';
             //PASSANDO OS VALORES DOS BOTÕES PARA O HIDDEN
             function passar(valor, elemento) {
                 document.getElementById('respcerta' + elemento).value = valor;
-            }
-            ;
+            };
         </script>
     </head>
 
