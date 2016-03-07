@@ -153,9 +153,7 @@ and open the template in the editor.
         }
          echo "<input type='button' class='butao' value='Sair' onclick='sair()'>";
          echo '</div>';
-                        ?>
-
-
+        ?>
 
     </body>
 </html>

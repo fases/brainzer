@@ -179,7 +179,7 @@ if (!isset($_SESSION["usuario"])) {
 
                 <div class="navbar-default sidebar" role="navigation" style="width: 200px;">
                     <div class="sidebar-nav navbar-collapse">
-                        <ul class="nav" id="side-menu" style="font-family: 'Raleway',sans-serif; font-size: 18px; ">
+                        <ul class="nav" id="side-menu" style="font-family: 'Raleway',sans-serif; font-size: 18px; height: 800px;">
 
                             <li>
                                 <a style="color: #008DCE;" href="#"><img src="../images/ranking.png" widht="25px" height="25px"> Ranking</a>
@@ -199,7 +199,7 @@ if (!isset($_SESSION["usuario"])) {
             <div id="page-wrapper">
                 <div class="row">
                     <div class="col-lg-12">
-                        <h2 class="page-header" style="font-family: 'Raleway',sans-serif;"> <?php echo "Seja bem-vindo(a), " . $_SESSION["usuario"] . "."; ?> </h2>
+                        <h2 class="page-header" style="font-family: 'Raleway',sans-serif; margin-left: -140px;"> <?php echo "Seja bem-vindo(a), " . $_SESSION["usuario"] . "."; ?> </h2>
                     </div>
                     <!-- /.col-lg-12 -->
                 </div>
@@ -237,7 +237,7 @@ if (!isset($_SESSION["usuario"])) {
                                         <!--<i class="fa fa-tasks fa-5x"></i>-->
                                     </div>
                                     <div class="col-xs-9 text-right">
-                                        <div class="huge">"Quantos?"</div>
+                                        <div class="huge">Quantos(?)</div>
                                         <div>1 nível</div>
                                     </div>
                                 </div>

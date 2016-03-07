@@ -241,7 +241,7 @@ if (!isset($_SESSION["usuario"])) {
                                 <div class="panel-footer">
                                     <?php
                                     if ($_GET["jogo"] == 2) {
-                                        echo "<a class='pull-left' href='../../quantos.php'> Nível 1 </a></br>";
+                                        echo "<a class='pull-left' href='../../quantos1.php'> Nível 1 </a></br>";
                                     }
                                     ?>
                                     <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
