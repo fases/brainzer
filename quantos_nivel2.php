@@ -1,12 +1,12 @@
 <?php include "conexao.php" ?>
 <?php
 session_start();
-/*
+
   if (!isset($_SESSION["usuario"])) {
   header("Location: ../pagina_inicial.php");
   } else {
   echo "";
-  } */
+  } 
 ?>
 <!DOCTYPE html>
 <html lang="en">
