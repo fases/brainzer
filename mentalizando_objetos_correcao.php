@@ -129,33 +129,33 @@ and open the template in the editor.
               </div>
 
 
-                <?php
+        <?php
                 include "conexao.php";
-               echo "<div id='respostascertas' style='display: none;'>";
+        echo "<div id='respostascertas' style='display: none; text-align: center'>";
 
-                $a = 0;
-                $quesitos = "select * from quesito where jogo_id = $id_jogo and tipojogo_id = $tipo";
-                $resultados = mysqli_query($con, $quesitos);
-                if ($resultados) {
-                    while ($reg = mysqli_fetch_array($resultados)) {
-                    $a++;
-                        echo "<h3>$a" . "ª Pergunta: ". $reg['pergunta'] . "</h3> ";
-                        $quesito_id = $reg['id'];
+        $a = 0;
+        $quesitos = "select * from quesito where jogo_id = $id_jogo and tipojogo_id = $tipo";
+        $resultados = mysqli_query($con, $quesitos);
+        if ($resultados) {
+            while ($reg = mysqli_fetch_array($resultados)) {
+                $a++;
+                echo "<h3>$a" . "ª Pergunta: " . $reg['pergunta'] . "</h3> ";
+                $quesito_id = $reg['id'];
                 if ($reg['id']) {
                     $pergunta = $reg['id'];
                     $resp = "select respostaCorreta from quesito where jogo_id = $id_jogo and tipojogo_id = $id_jogo and id= $pergunta";
                     $resultado = mysqli_query($con, $resp);
                     if ($resultado) {
                         while ($regis = mysqli_fetch_array($resultado)) {
-                            echo "<h4>".$regis['respostaCorreta']."</h4>";
+                            echo "<h4>" . $regis['respostaCorreta'] . "</h4>";
                         }
                     }
                 }
             }
         }
-         echo "<input type='button' class='butao' value='Sair' onclick='sair()'>";
-         echo '</div>';
-                        ?>
+        echo "<input type='button' class='butao' value='Sair' onclick='sair()'>";
+        echo '</div>';
+        ?>
 
 
 

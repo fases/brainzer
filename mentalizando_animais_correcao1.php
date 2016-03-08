@@ -1,10 +1,10 @@
 <?php
-session_start();
-
 include 'conexao.php';
 
+session_start();
+
 if (!isset($_SESSION["usuario"])) {
-    header("Location: ../pagina_inicial.php");
+    header("Location: pagina_inicial.php");
 } else {
     $pegar = "SELECT id FROM usuario WHERE user = '" . $_SESSION["usuario"] . "'";
     $sql = mysqli_query($con, $pegar);
@@ -16,11 +16,13 @@ if (!isset($_SESSION["usuario"])) {
 }
 ?>
 <!DOCTYPE html>
-<html lang="en">
-
-
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
     <head>
-
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -51,163 +53,79 @@ if (!isset($_SESSION["usuario"])) {
         <link href="../brainzer/PaginasComCss/bower_components/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 
         <style>
-            ment{
-                text-align: center;
-                background-color: #F5F5F5;
-
+            #respostascertas{
+                display: block;
             }
 
             h1{
                 font-family: 'Raleway',sans-serif;
-                text-transform: uppercase;
-                font-size: 50px;
-                font-weight: 300;
-                letter-spacing: 2px; 
-                background-color: #fff;
-                color: #337ab7;
-                font-size: 80px; 
-                text-align: center;
-                margin-top: 0px;
-                padding-bottom: 50px;
-
-
-            }
-            h2{
-                font-family: 'Raleway',sans-serif;
-                background-color: #337ab7;
+                color: white;
+                font-size: 70px;
             }
             h3{
                 font-family: 'Raleway',sans-serif;
-                color: white;
-                font-size: 40px;
-                background-color: #337ab7;
-            }
-            .butaoin{
-                background: #D94848;
-                background: #50b6fa;
-                background-image: -webkit-linear-gradient(top, #50b6fa, #378abd);
-                background-image: -moz-linear-gradient(top, #50b6fa, #378abd);
-                background-image: -ms-linear-gradient(top, #50b6fa, #378abd);
-                background-image: -o-linear-gradient(top, #50b6fa, #378abd);
-                background-image: linear-gradient(to bottom, #50b6fa, #378abd);
-                -webkit-border-radius: 10;
-                -moz-border-radius: 10;
-                border-radius: 10px;
-                font-family: 'Raleway',sans-serif;
-                color: #ffffff;
-                font-size: 20px;
-                padding: 10px 20px 10px 20px;
-                text-decoration: none;
-                margin-top: 115px;
-                padding-right: 80px; 
-                padding-left: 80px;
-                text-align: center;
-            }
-
-            .butao {
-                background: #50b6fa;
-                background-image: -webkit-linear-gradient(top, #50b6fa, #378abd);
-                background-image: -moz-linear-gradient(top, #50b6fa, #378abd);
-                background-image: -ms-linear-gradient(top, #50b6fa, #378abd);
-                background-image: -o-linear-gradient(top, #50b6fa, #378abd);
-                background-image: linear-gradient(to bottom, #50b6fa, #378abd);
-                -webkit-border-radius: 10;
-                -moz-border-radius: 10;
-                border-radius: 10px;
-                font-family: 'Raleway',sans-serif;
-                color: #ffffff;
-                font-size: 20px;
-                padding: 10px 20px 10px 20px;
-                text-decoration: none;
-                margin-top: 50px;
-                padding-right: 80px; 
-                padding-left: 80px;
-                text-align: center;
-            }
-
-            .butao:hover {
-                background: #50b6fa;
-                background-image: -webkit-linear-gradient(top, #50b6fa, #378abd);
-                background-image: -moz-linear-gradient(top, #50b6fa, #378abd);
-                background-image: -ms-linear-gradient(top, #50b6fa, #378abd);
-                background-image: -o-linear-gradient(top, #50b6fa, #378abd);
-                background-image: linear-gradient(to bottom, #50b6fa, #378abd);
-                text-decoration: none;
-            }
-            #video{
-                display: none;
-                text-align: center;
-            }
-            #perg1, #perg2, #perg3, #perg4, #perg5, #perg6{
-                display: none;
-
-            }
-            #final{
-                display: block;
-            }
-            #finalizar{
-                display: none;
-
-            }
-            #h3{
-                color: #B52139;
-                background-color: #337ab7;
-            }
-            #orientacao{
-                background-color: #337ab7;
-                border-top:1px solid #ddd;
-                padding:10px 15px;
-                border-bottom:1px solid transparent;
-                border-top-left-radius:15px;
-                border-top-right-radius:15px;
-                border-bottom-left-radius:15px;
-                border-bottom-right-radius:15px;
-                width: 60%;
-                height: 500px;
-                border-color:#ddd;
-                margin: 0 auto;
-                text-align: center;
-
-            }
-            .perguntas{
-                background-color: #337ab7;
-                border-top:1px solid #ddd;
-                padding:10px 15px;
-                border-bottom:1px solid transparent;
-                border-top-left-radius:15px;
-                border-top-right-radius:15px;
-                border-bottom-left-radius:15px;
-                border-bottom-right-radius:15px;
-                width: 60%;
-                height: 500px;
-                margin: 0 auto;
-                text-align: center;
-
-            }
-            .texto{
-                background-color: #337ab7;
-                color: #f5f5f5;
-            }
-            .div{
-                width: 100px;
-                height: 100px;
-                background: #fff;
-                margin: 0 auto; width: 30%;
-                font-size: 18px;
-                margin-top: 30px;
-                margin-right: 35px;
-                margin-left: 30px;
                 color: #333;
-                font-family: 'Raleway',sans-serif;
+                font-size: 30px;
+                text-transform: uppercase;
+                text-align: center;
+                margin-top: 0px;
+                margin-left: 50px;
             }
+            .butao{
+                background: #50b6fa;
+                background-image: -webkit-linear-gradient(top, #50b6fa, #378abd);
+                background-image: -moz-linear-gradient(top, #50b6fa, #378abd);
+                background-image: -ms-linear-gradient(top, #50b6fa, #378abd);
+                background-image: -o-linear-gradient(top, #50b6fa, #378abd);
+                background-image: linear-gradient(to bottom, #50b6fa, #378abd);
+                -webkit-border-radius: 10;
+                -moz-border-radius: 10;
+                border-radius: 10px;
+                font-family: 'Raleway',sans-serif;
+                color: #ffffff;
+                font-size: 20px;
+                padding: 10px 20px 10px 20px;
+                text-decoration: none;
 
 
+
+            }
+            .butao:hover {
+                background: #3cb0fd;
+                background-image: -webkit-linear-gradient(top, #3cb0fd, #3498db);
+                background-image: -moz-linear-gradient(top, #3cb0fd, #3498db);
+                background-image: -ms-linear-gradient(top, #3cb0fd, #3498db);
+                background-image: -o-linear-gradient(top, #3cb0fd, #3498db);
+                background-image: linear-gradient(to bottom, #3cb0fd, #3498db);
+                text-decoration: none;
+            }
+            .final{
+                background-color: #fff;
+                text-align: center;
+                padding: 0 15px;
+                min-height: 800px;
+
+            }
         </style>
-        
+        <script type="text/javascript" src="jquery-1.11.3.min.js"></script>
+        <script>
+            //EXIBINDO A CORREÇÃO
+            $(document).ready(function () {
+                $('#correcao').click(function () {
+                    $('#respostascertas').show('fast');
+                    $('#final').hide('fast');
+                });
+            });
+            function responderNovamente() {
+                location.href = "mentalizando_animais1.php";
+
+            }
+            function sair() {
+                location.href = "PaginasComCss/pages/index.php";
+            }
+        </script>
     </head>
-
     <body>
-
         <div id="wrapper">
 
             <!-- Navigation -->
@@ -351,17 +269,94 @@ if (!isset($_SESSION["usuario"])) {
             </nav>
 
             <div id="page-wrapper">
+                <div id="final">
+
+                    <?php
+                    $id_jogo = 1;
+                    $nivel = 2;
+
+
+                    $resposta[1] = (isset($_POST["respcerta1"]) ? $_POST["respcerta1"] : null);
+                    $resposta[2] = (isset($_POST["respcerta2"]) ? $_POST["respcerta2"] : null);
+                    $resposta[3] = (isset($_POST["respcerta3"]) ? $_POST["respcerta3"] : null);
+                    $resposta[4] = (isset($_POST["respcerta4"]) ? $_POST["respcerta4"] : null);
+
+
+                    $erros = 0;
+                    //for ($numero = 0; $numero <= 3; $numero++) {
+                    //$quesito_atual = $_GET["quesito".$numero];
+                    $numero = 0;
+                    $pontos = 0;
+                    $query = "SELECT * FROM quesito where jogo_id ='$id_jogo' and tipojogo_id='$nivel';";
+                    $results = mysqli_query($con, $query);
+                    if ($results) {
+                        while ($registro = mysqli_fetch_array($results)) {
+                            $numero++;
+                            if ($registro["respostaCorreta"] != $resposta[$numero]) {
+                                $erros++;
+                            } else {
+                                $pontos = $pontos + $registro["pontuacao_padrao"];
+                            }
+                        }
+                    }
+                    //INSERINDO OS DADOS NA TABELA RANKING
+
+                    $ranking = "INSERT INTO ranking(usuario_id, jogo_id, pontuacao, dh) VALUES ('$id_user','$id_jogo','$pontos', now())";
+                    $sql = mysqli_query($con, $ranking);
+
+                    // ~~~~ //
+
+
+                    if ($erros == 0) {
+                        echo "<h3><br>Você acertou todas as questões Parabéns!</h3><br>";
+                    } else {
+                        echo "<h3><br>Você errou " . $erros . " questões.</h3><br>";
+                    }
+                    mysqli_close($con);
+                    ?>
+                    <div style="margin-left: 300px;">
+                        <input type='button' class="butao" id='correcao' value='Ver Correção'/>
+                        <input type='button' class="butao" id='respnova' value='Responder Novamente' onclick="responderNovamente()"/>
+                        <input type='button' class="butao" id='sair' value='Sair' onclick="sair()"/>
+                    </div>
+                </div>
+
+
                 <?php
-                echo "<div style='text-align: center; font-size:55px; font-family: 'Raleway',sans-serif;><h1><br><br><br>Esse nível ainda não foi implementado!</h1></div>";
+                include "conexao.php";
+                echo "<div id='respostascertas' style='display: none; text-align: center'>";
+
+                $a = 0;
+                $quesitos = "select * from quesito where jogo_id = $id_jogo and tipojogo_id = $nivel";
+                $resultados = mysqli_query($con, $quesitos);
+                if ($resultados) {
+                    while ($reg = mysqli_fetch_array($resultados)) {
+                        $a++;
+                        echo '<br><br>';
+                        echo "<h3>$a" . "ª Pergunta: " . $reg['pergunta'] . "</h3> ";
+                        //$quesito_id = $reg['id'];
+                        if ($reg['id']) {
+                            $pergunta = $reg['id'];
+                            $resp = "select respostaCorreta from quesito where jogo_id = $id_jogo and tipojogo_id = $nivel and id= $pergunta";
+                            $resultado = mysqli_query($con, $resp);
+                            if ($resultado) {
+                                while ($regis = mysqli_fetch_array($resultado)) {
+                                    echo "<h4>" . $regis['respostaCorreta'] . "</h4>";
+                                }
+                            }
+                        }
+                    }
+                }
+                echo "<input type='button' class='butao' value='Sair' onclick='sair()'>";
+                echo '</div>';
                 ?>
+
 
             </div>
             <!-- /#page-wrapper -->
 
         </div>
         <!-- /#wrapper -->
-
-        <!-- jQuery -->
         <script src="../brainzer/PaginasComCss/bower_components/jquery/dist/jquery.min.js"></script>
 
         <!-- Bootstrap Core JavaScript -->
@@ -379,5 +374,4 @@ if (!isset($_SESSION["usuario"])) {
         <script src="../brainzer/PaginasComCss/dist/js/sb-admin-2.js"></script>
 
     </body>
-
 </html>

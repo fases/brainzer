@@ -269,7 +269,7 @@ if (!isset($_SESSION["usuario"])) {
                                 <div class="panel-footer">
                                     <?php
                                     if ($_GET["jogo"] == 1) {
-                                        echo "<a class='pull-left' href='../../mentalizando_frutas.php'> Nível 2 </a></br>";
+                                        echo "<a class='pull-left' href='../../mentalizando_frutas1.php'> Nível 2 </a></br>";
                                     }
                                     ?>
                                 </span></a>
@@ -298,7 +298,7 @@ if (!isset($_SESSION["usuario"])) {
                             <div class="panel-footer">
                                 <?php
                                 if ($_GET["jogo"] == 1) {
-                                    echo "<a class='pull-left' href='../../mentalizando_objetos.php'> Nível 3 </a></br>";
+                                    echo "<a class='pull-left' href='../../mentalizando_objetos1.php'> Nível 3 </a></br>";
                                 }
                                 ?> 
                                 <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>

@@ -492,7 +492,7 @@ session_start();
                         while ($reg = mysqli_fetch_array($result)) {
                             $a++;
                             echo "<div id='perg$a' class= 'perguntas'> ";
-                            echo "<h2>$a" . "ª Pergunta </h2>";
+                            echo "<h2 styl='font'>$a" . "ª Pergunta </h2>";
                             echo "<h3>" . $reg['pergunta'] . "</h3> ";
                             $quesito_id = $reg['id'];
                             if ($reg['id']) {

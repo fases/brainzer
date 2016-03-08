@@ -56,7 +56,7 @@ if (!isset($_SESSION["usuario"])) {
                 font-weight: 300;
                 letter-spacing: 2px; 
                 background-color: #fff;
-                color: #5cb85c;
+                color: #337ab7;
                 font-size: 80px; 
                 text-align: center;
                 margin-top: 0px;
@@ -66,13 +66,13 @@ if (!isset($_SESSION["usuario"])) {
             }
             h2{
                 font-family: 'Raleway',sans-serif;
-                background-color: #5cb85c;
+                background-color: #337ab7;
             }
             h3{
                 font-family: 'Raleway',sans-serif;
                 color: white;
                 font-size: 40px;
-                background-color: #5cb85c;
+                background-color: #337ab7;
             }
             .butaoin{
                 background: #D94848;
@@ -128,9 +128,12 @@ if (!isset($_SESSION["usuario"])) {
             }
             #video{
                 display: none;
+                text-align: center;
             }
             #perg1, #perg2, #perg3, #perg4, #perg5, #perg6{
                 display: none;
+                
+
             }
             #final{
                 display: block;
@@ -141,10 +144,10 @@ if (!isset($_SESSION["usuario"])) {
             }
             #h3{
                 color: #B52139;
-                background-color: #5cb85c;
+                background-color: #337ab7;
             }
             #orientacao{
-                background-color: #5cb85c;
+                background-color: #337ab7;
                 border-top:1px solid #ddd;
                 padding:10px 15px;
                 border-bottom:1px solid transparent;
@@ -160,7 +163,7 @@ if (!isset($_SESSION["usuario"])) {
 
             }
             .perguntas{
-                background-color: #5cb85c;
+                background-color: #337ab7;
                 border-top:1px solid #ddd;
                 padding:10px 15px;
                 border-bottom:1px solid transparent;
@@ -170,13 +173,12 @@ if (!isset($_SESSION["usuario"])) {
                 border-bottom-right-radius:15px;
                 width: 60%;
                 height: 500px;
-                border-color:#ddd;
                 margin: 0 auto;
                 text-align: center;
 
             }
             .texto{
-                background-color: #008cde;
+                background-color: #337ab7;
                 color: #f5f5f5;
             }
             .div{
@@ -184,7 +186,7 @@ if (!isset($_SESSION["usuario"])) {
                 height: 100px;
                 background: #fff;
                 margin: 0 auto; width: 30%;
-                font-size: 28px;
+                font-size: 14px;
                 margin-top: 30px;
                 margin-right: 35px;
                 margin-left: 30px;
@@ -439,10 +441,10 @@ if (!isset($_SESSION["usuario"])) {
             <div id="page-wrapper">
                 <h1> Mentalizando </h1>
                 <div id="orientacao">
-                    <h3> No jogo mentalizando você terá que: <br>
+                    <h3><br> No jogo mentalizando você terá que: <br>
                         - Assistir um vídeo; <br>
                         - Responder perguntas sobre o vídeo. </h3>
-                    <h3 id="h3"> Preste bastante atenção no vídeo. </h3>
+                    <h3 id="h3"> Preste bastante atenção no vídeo. <br><br></h3>
                     <input class="butao" type="button" value="Começar" id="comecar"/>
                 </div>
                 <div id = "video">
@@ -454,7 +456,7 @@ if (!isset($_SESSION["usuario"])) {
                     $res = mysqli_query($con, $video);
                     if ($res) {
                         while ($registro = mysqli_fetch_array($res)) {
-                            echo "<video width = '560' height = '315' controls = 'controls' >";
+                            echo "<video width = '650' height = '370' controls = 'controls' >";
                             echo "<source src = " . $registro['complemento'] . " type = 'video/mp4'>";
                             echo "<object data = '' width = '560' height = '315'>";
                             echo "<embed width = '560' height = '315' src = " . $registro['complemento'] . "/>";
@@ -472,7 +474,7 @@ if (!isset($_SESSION["usuario"])) {
                 $quesito = "select * from quesito where jogo_id = $id_jogo and tipojogo_id = $nivel";
                 $result = mysqli_query($con, $quesito);
                 if ($result) {
-                    echo "<form method='post' action='mentalizando_animais_correcao.php'>";
+                    echo "<form method='post' action='mentalizando_animais_correcao1.php'>";
                     while ($reg = mysqli_fetch_array($result)) {
                         $a++;
                         echo "<div id='perg$a' class= 'perguntas'> ";
@@ -499,7 +501,7 @@ if (!isset($_SESSION["usuario"])) {
                         echo "</div>";
                     }
 
-                    echo "<input class='butao' type='submit' id='finalizar' value='Finalizar'/>";
+                    echo "<input type='submit' class='butao' id='finalizar' style='margin-top: 1%; margin-left: 40%; margin-right: 35%; padding-right: 80px; padding-left: 80px; text-align: center; font-family: 'Raleway',sans-serif;' value='Finalizar'/>";
 
                     echo "</form>";
                 }

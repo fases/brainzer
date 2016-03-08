@@ -215,7 +215,7 @@ if (!isset($_SESSION["usuario"])) {
                                     </div>
                                     <div class="col-xs-9 text-right">
                                         <div class="huge">Mentalizando</div>
-                                        <div>2 níveis</div>
+                                        <div>3 níveis</div>
                                     </div>
                                 </div>
                             </div>
@@ -238,7 +238,7 @@ if (!isset($_SESSION["usuario"])) {
                                     </div>
                                     <div class="col-xs-9 text-right">
                                         <div class="huge">Quantos(?)</div>
-                                        <div>1 nível</div>
+                                        <div>2 nível</div>
                                     </div>
                                 </div>
                             </div>

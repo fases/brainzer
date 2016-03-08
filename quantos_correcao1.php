@@ -86,6 +86,7 @@ and open the template in the editor.
                 font-size: 20px;
                 padding: 10px 20px 10px 20px;
                 text-decoration: none;
+                
 
 
             }
@@ -307,7 +308,7 @@ and open the template in the editor.
                     // ~~~~ //
 
                     if ($erros == 0) {
-                        echo "<h3 style=''><br>Você acertou todas as questões Parabéns!</h3><br>";
+                        echo "<h3><br>Você acertou todas as questões Parabéns!</h3><br>";
                     } else {
                         echo "<h3><br>Você errou " . $erros . " questões.</h3><br>";
                     }

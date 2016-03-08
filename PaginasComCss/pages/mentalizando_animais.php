@@ -202,9 +202,9 @@ if (!isset($_SESSION["usuario"])) {
                     $('#resp41, #resp42, #resp43, #resp44, #resp45,#resp46').css('background-color', '#fff');
                 });
             });
-            
-            $(function(){
-                 $('#resp11, #resp12, #resp13, #resp14, #resp15,#resp16').click(function () {
+
+            $(function () {
+                $('#resp11, #resp12, #resp13, #resp14, #resp15,#resp16').click(function () {
                     $('#resp11,#resp12, #resp13, #resp14, #resp15,#resp16').css('background', '#008CDE');
                 });
                 $('#resp21, #resp22, #resp23, #resp24, #resp25,#resp26').click(function () {
@@ -242,7 +242,7 @@ if (!isset($_SESSION["usuario"])) {
             $res = mysqli_query($con, $video);
             if ($res) {
                 while ($registro = mysqli_fetch_array($res)) {
-                    echo "<video width = '560' height = '315' controls = 'controls' >";
+                    echo "<video width = '650' height = '370' controls = 'controls' >";
                     echo "<source src = " . $registro['complemento'] . " type = 'video/mp4'>";
                     echo "<object data = '' width = '560' height = '315'>";
                     echo "<embed width = '560' height = '315' src = " . $registro['complemento'] . "/>";
@@ -263,7 +263,7 @@ if (!isset($_SESSION["usuario"])) {
             echo "<form method='post' action='mentalizando_animais_correcao.php'>";
             while ($reg = mysqli_fetch_array($result)) {
                 $a++;
-               echo "<div id='perg$a' class= 'perguntas'> ";
+                echo "<div id='perg$a' class= 'perguntas'> ";
                 echo "<h2>$a" . "ª Pergunta </h2>";
                 echo "<h3>" . $reg['pergunta'] . "</h3> ";
                 $quesito_id = $reg['id'];
