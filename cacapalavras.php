@@ -352,7 +352,7 @@ if (!isset($_SESSION["usuario"])) {
 
             <div id="page-wrapper">
                 <?php
-                echo "<div style='text-align: center; font-size:55px; font-family: 'Raleway',sans-serif;><h1><br><br><br>Esse nível ainda não foi implementado!</h1></div>";
+                echo "<div style='text-align: center; font-size:55px; font-family: 'Raleway',sans-serif;><img src='../brainzer/PaginasComCss/images/sad.png' widht='200px;' height='200px;'><h1><br>Esse nível ainda não foi implementado!</h1></div>";
                 ?>
 
             </div>
