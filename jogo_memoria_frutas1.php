@@ -64,9 +64,7 @@ if (!isset($_SESSION["usuario"])) {
                 text-align: center;
                 margin-top: 0px;
                 padding-bottom: 50px;
-
-
-            }
+                }
             h2{
                 font-family: 'Raleway',sans-serif;
                 background-color: #337ab7;
@@ -76,6 +74,7 @@ if (!isset($_SESSION["usuario"])) {
                 color: white;
                 font-size: 40px;
                 background-color: #f0ad4e;
+                
             }
             .butaoin{
                 background: #D94848;
@@ -176,7 +175,7 @@ if (!isset($_SESSION["usuario"])) {
             }
             #princy{
                 display: none;
-                margin-left: 150px;
+                margin-left: 40px;
                 
 
             }
@@ -373,7 +372,7 @@ if (!isset($_SESSION["usuario"])) {
 
                 <div class="navbar-default sidebar" role="navigation" style="width: 200px;">
                     <div class="sidebar-nav navbar-collapse">
-                        <ul class="nav" id="side-menu" style="font-family: 'Raleway',sans-serif; font-size: 18px; height: 900px;">
+                        <ul class="nav" id="side-menu" style="font-family: 'Raleway',sans-serif; font-size: 18px; height: 1000px;">
 
                             <li>
                                 <a style="color: #008DCE;" href="#"><img src="../brainzer/PaginasComCss/images/ranking.png" widht="25px" height="25px"> Ranking</a>
@@ -390,8 +389,8 @@ if (!isset($_SESSION["usuario"])) {
                 <!-- /.navbar-static-side -->
             </nav>
 
-            <div id="page-wrapper" style="height: 900px;">
-                <h1>Jogo da Memória</h1>
+            <div id="page-wrapper" style="height: 1000px;">
+                <h1><br>Jogo da Memória</h1>
                 <div id='orientacao'>
                     <h3> No jogo da memória você terá que: <br>
                         - Memorizar as cartas; <br>
@@ -432,7 +431,7 @@ if (!isset($_SESSION["usuario"])) {
                             array_push($imagens, $reg['respostaCorreta']);
                         }
                         echo "<table>";
-                        //shuffle($imagens);
+                        shuffle($imagens);
                         //echo sizeof($imagens);
                         $i = 0;
                         for ($l = 0; $l <= 2; $l++) {
@@ -447,7 +446,7 @@ if (!isset($_SESSION["usuario"])) {
                         echo "</table>";
                     }
                     echo "</div>";
-                    echo "<input type='button' value= 'Finalizar' class='butao' id='botao' onclick='sair()'/>";
+                    echo "<input style='margin-left: 270px;' type='button' value= 'Finalizar' class='butao' id='botao' onclick='sair()'/>";
                     echo "</div>";
                     //$mysqli_close($con);
                     ?>
