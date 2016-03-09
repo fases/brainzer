@@ -1,3 +1,4 @@
+<?php include "conexao.php" ?>
 <?php
 session_start();
 if (!isset($_SESSION["usuario"])) {
@@ -6,7 +7,6 @@ if (!isset($_SESSION["usuario"])) {
     echo "";
 }
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -24,24 +24,177 @@ if (!isset($_SESSION["usuario"])) {
         <link href='http://fonts.googleapis.com/css?family=Raleway:400,700,200,100,300,500,600,800,900' rel='stylesheet' type='text/css'>
 
         <title>BrainZer</title>
-
         <!-- Bootstrap Core CSS -->
-        <link href="../bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+        <link href="../brainzer/PaginasComCss/bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
 
         <!-- MetisMenu CSS -->
-        <link href="../bower_components/metisMenu/dist/metisMenu.min.css" rel="stylesheet">
+        <link href="../brainzer/PaginasComCss/bower_components/metisMenu/dist/metisMenu.min.css" rel="stylesheet">
 
         <!-- Timeline CSS -->
-        <link href="../dist/css/timeline.css" rel="stylesheet">
+        <link href="../brainzer/PaginasComCss/dist/css/timeline.css" rel="stylesheet">
 
         <!-- Custom CSS -->
-        <link href="../dist/css/sb-admin-2.css" rel="stylesheet">
+        <link href="../brainzer/PaginasComCss/dist/css/sb-admin-2.css" rel="stylesheet">
 
         <!-- Morris Charts CSS -->
-        <link href="../bower_components/morrisjs/morris.css" rel="stylesheet">
+        <link href="../brainzer/PaginasComCss/bower_components/morrisjs/morris.css" rel="stylesheet">
 
         <!-- Custom Fonts -->
-        <link href="../bower_components/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+        <link href="../brainzer/PaginasComCss/bower_components/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+        <style>
+            ment{
+                text-align: center;
+                background-color: #F5F5F5;
+
+            }
+
+            h1{
+                font-family: 'Raleway',sans-serif;
+                text-transform: uppercase;
+                font-size: 50px;
+                font-weight: 300;
+                letter-spacing: 2px; 
+                background-color: #fff;
+                color: #5cb85c;
+                font-size: 80px; 
+                text-align: center;
+                margin-top: 0px;
+                padding-bottom: 50px;
+
+
+            }
+            h2{
+                font-family: 'Raleway',sans-serif;
+                background-color: #5cb85c;
+            }
+            h3{
+                font-family: 'Raleway',sans-serif;
+                color: white;
+                font-size: 40px;
+                background-color: #5cb85c;
+            }
+            .butaoin{
+                background: #D94848;
+                background: #50b6fa;
+                background-image: -webkit-linear-gradient(top, #50b6fa, #378abd);
+                background-image: -moz-linear-gradient(top, #50b6fa, #378abd);
+                background-image: -ms-linear-gradient(top, #50b6fa, #378abd);
+                background-image: -o-linear-gradient(top, #50b6fa, #378abd);
+                background-image: linear-gradient(to bottom, #50b6fa, #378abd);
+                -webkit-border-radius: 10;
+                -moz-border-radius: 10;
+                border-radius: 10px;
+                font-family: 'Raleway',sans-serif;
+                color: #ffffff;
+                font-size: 20px;
+                padding: 10px 20px 10px 20px;
+                text-decoration: none;
+                margin-top: 115px;
+                padding-right: 80px; 
+                padding-left: 80px;
+                text-align: center;
+            }
+
+            .butao {
+                background: #50b6fa;
+                background-image: -webkit-linear-gradient(top, #50b6fa, #378abd);
+                background-image: -moz-linear-gradient(top, #50b6fa, #378abd);
+                background-image: -ms-linear-gradient(top, #50b6fa, #378abd);
+                background-image: -o-linear-gradient(top, #50b6fa, #378abd);
+                background-image: linear-gradient(to bottom, #50b6fa, #378abd);
+                -webkit-border-radius: 10;
+                -moz-border-radius: 10;
+                border-radius: 10px;
+                font-family: 'Raleway',sans-serif;
+                color: #ffffff;
+                font-size: 20px;
+                padding: 10px 20px 10px 20px;
+                text-decoration: none;
+                margin-top: 50px;
+                padding-right: 80px; 
+                padding-left: 80px;
+                text-align: center;
+            }
+
+            .butao:hover {
+                background: #50b6fa;
+                background-image: -webkit-linear-gradient(top, #50b6fa, #378abd);
+                background-image: -moz-linear-gradient(top, #50b6fa, #378abd);
+                background-image: -ms-linear-gradient(top, #50b6fa, #378abd);
+                background-image: -o-linear-gradient(top, #50b6fa, #378abd);
+                background-image: linear-gradient(to bottom, #50b6fa, #378abd);
+                text-decoration: none;
+            }
+            #final{
+                display: block;
+            }
+            #finalizar{
+                display: none;
+
+            }
+            #h3{
+                color: #B52139;
+                background-color: #5cb85c;
+            }
+            #orientacao{
+                background-color: #5cb85c;
+                border-top:1px solid #ddd;
+                padding:10px 15px;
+                border-bottom:1px solid transparent;
+                border-top-left-radius:15px;
+                border-top-right-radius:15px;
+                border-bottom-left-radius:15px;
+                border-bottom-right-radius:15px;
+                width: 60%;
+                height: 500px;
+                border-color:#ddd;
+                margin: 0 auto;
+                text-align: center;
+
+            }
+            .perguntas{
+                background-color: #5cb85c;
+                border-top:1px solid #ddd;
+                padding:10px 15px;
+                border-bottom:1px solid transparent;
+                border-top-left-radius:15px;
+                border-top-right-radius:15px;
+                border-bottom-left-radius:15px;
+                border-bottom-right-radius:15px;
+                width: 60%;
+                height: 500px;
+                border-color:#ddd;
+                margin: 0 auto;
+                text-align: center;
+
+            }
+            .texto{
+                background-color: #008cde;
+                color: #f5f5f5;
+            }
+            .div{
+                width: 100px;
+                height: 100px;
+                background: #fff;
+                margin: 0 auto; width: 30%;
+                font-size: 28px;
+                margin-top: 30px;
+                margin-right: 35px;
+                margin-left: 30px;
+                color: #333;
+                font-family: 'Raleway',sans-serif;
+            }
+
+
+        </style>
+        <script type="text/javascript" src="jquery-1.11.3.min.js"></script>
+        <script>
+            //EXIBINDO A PRIMEIRA PERGUNTA
+
+
+        </script>
+
 
         <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
         <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -60,7 +213,7 @@ if (!isset($_SESSION["usuario"])) {
             <nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0; background-color: #008DCE; padding-top: 10px;">
                 <div class="navbar-header">
 
-                    <a class="navbar-brand" style="background-color: #008DCE; color: #fff; height: auto !important; font-family: 'Pacifico',cursive; font-size: 34px !important; margin-left: 10px; margin-top: -8px;" href="index.php">BrainZer</a>
+                    <a class="navbar-brand" style="background-color: #008DCE; color: #fff; height: auto !important; font-family: 'Pacifico',cursive; font-size: 34px !important; margin-left: 10px; margin-top: -8px;" href="../brainzer/PaginasComCss/pages/index.php">BrainZer</a>
                 </div>
                 <!-- /.navbar-header -->
 
@@ -68,7 +221,7 @@ if (!isset($_SESSION["usuario"])) {
                     <!-- /.dropdown -->
                     <li class="dropdown">
                         <a style="background-color: #008DCE;" data-toggle="dropdown" href="#">
-                            <img src="../images/lista.png" widht="20px" height="20px" style="margin-top: -8px;">
+                            <img src="../brainzer/PaginasComCss/images/lista.png" widht="20px" height="20px" style="margin-top: -8px;">
                         </a>
                         <ul class="dropdown-menu dropdown-tasks">
                             <li>
@@ -165,10 +318,10 @@ if (!isset($_SESSION["usuario"])) {
                     <!-- /.dropdown -->
                     <li class="dropdown">
                         <a style="background-color: #008DCE;" data-toggle="dropdown" href="#">
-                            <img src="../images/usuario.png" widht="20px" height="20px" style="margin-top: -8px;">
+                            <img src="../brainzer/PaginasComCss/images/usuario.png" widht="20px" height="20px" style="margin-top: -8px;">
                         </a>
                         <ul class="dropdown-menu dropdown-user">
-                            <li><a href="logout.php"><i class="fa fa-sign-out fa-fw"></i> Sair</a>
+                            <li><a href="../brainzer/PaginasComCss/pages/logout.php"><i class="fa fa-sign-out fa-fw"></i> Sair</a>
                             </li>
                         </ul>
                         <!-- /.dropdown-user -->
@@ -182,12 +335,12 @@ if (!isset($_SESSION["usuario"])) {
                         <ul class="nav" id="side-menu" style="font-family: 'Raleway',sans-serif; font-size: 18px; height: 800px;">
 
                             <li>
-                                <a style="color: #008DCE;" href="ranking.php"><img src="../images/ranking.png" widht="25px" height="25px"> Ranking</a>
+                                <a style="color: #008DCE;" href="#"><img src="../brainzer/PaginasComCss/images/ranking.png" widht="25px" height="25px"> Ranking</a>
                             </li>
 
 
                             <li>
-                                <a style="color: #008DCE;" href="logout.php"><img src="../images/logout.png" widht="25px" height="25px"> Sair</a>
+                                <a style="color: #008DCE;" href="../brainzer/PaginasComCss/pages/logout.php"><img src="../brainzer/PaginasComCss/images/logout.png" widht="25px" height="25px"> Sair</a>
                             </li>
                         </ul>
                     </div>
@@ -197,130 +350,27 @@ if (!isset($_SESSION["usuario"])) {
             </nav>
 
             <div id="page-wrapper">
-                <div class="row">
-                    <div class="col-lg-12">
-                        <h2 class="page-header" style="font-family: 'Raleway',sans-serif; margin-left: -140px;"> <?php echo "Seja bem-vindo(a), " . $_SESSION["usuario"] . "."; ?> </h2>
-                    </div>
-                    <!-- /.col-lg-12 -->
-                </div>
-                <!-- /.row -->
-                <div class="row" style="margin-top: 50px;">
-                    <div class="col-lg-3 col-md-6">
-                        <div class="panel panel-primary">
-                            <div class="panel-heading">
-                                <div class="row">
-                                    <div class="col-xs-3">
-                                        <img src="../images/mentalizando.png" style="width: 64px;">
-                                        <!--<i class="fa fa-comments fa-5x"></i>-->
-                                    </div>
-                                    <div class="col-xs-9 text-right">
-                                        <div class="huge">Mentalizando</div>
-                                        <div>3 níveis</div>
-                                    </div>
-                                </div>
-                            </div>
-                            <a href="#">
-                                <div class="panel-footer">
-                                    <a class="pull-left" href="nivel_mentalizando.php?jogo=1">Escolher jogo</a>
-                                    <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
-                                    <div class="clearfix"></div>
-                                </div>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-6">
-                        <div class="panel panel-green">
-                            <div class="panel-heading">
-                                <div class="row">
-                                    <div class="col-xs-3">
-                                        <img src="../images/numbers.png" style="width: 64px;">
-                                        <!--<i class="fa fa-tasks fa-5x"></i>-->
-                                    </div>
-                                    <div class="col-xs-9 text-right">
-                                        <div class="huge">Quantos(?)</div>
-                                        <div>2 nível</div>
-                                    </div>
-                                </div>
-                            </div>
-                            <a href="#">
-                                <div class="panel-footer">
-                                    <a href="nivel_quantos.php?jogo=2"><span class="pull-left">Escolher jogo</span></a>
-                                    <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
-                                    <div class="clearfix"></div>
-                                </div>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-6">
-                        <div class="panel panel-yellow">
-                            <div class="panel-heading">
-                                <div class="row">
-                                    <div class="col-xs-3">
-                                        <img src="../images/memory.png" style="width: 64px;">
-                                        <!--<i class="fa fa-tasks fa-5x"></i>-->
-                                    </div>
-                                    <div class="col-xs-9 text-right">
-                                        <div class="huge">Jogo da Memória</div>
-                                        <div>3 níveis</div>
-                                    </div>
-                                </div>
-                            </div>
-                            <a href="#">
-                                <div class="panel-footer">
-                                    <a href="nivel_memoria.php?jogo=3"><span class="pull-left">Escolher jogo</a></span>
-                                    <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
-                                    <div class="clearfix"></div>
-                                </div>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-6">
-                        <div class="panel panel-red">
-                            <div class="panel-heading">
-                                <div class="row">
-                                    <div class="col-xs-3">
-                                        <img src="../images/caca-palavras.png" style="width: 64px;">
-                                        <!--<i class="fa fa-tasks fa-5x"></i>-->
-                                    </div>
-                                    <div class="col-xs-9 text-right">
-                                        <div class="huge">Caça-Palavras</div>
-                                        <div>0 níveis</div>
-                                    </div>
-                                </div>
-                            </div>
-                            <a href="#">
-                                <div class="panel-footer">
-                                    <a href="nivel_cacapalavras.php?jogo=4"><span class="pull-left">Escolher jogo</a></span>
-                                    <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
-                                    <div class="clearfix"></div>
-                                </div>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-            <!-- /#page-wrapper -->
+                <h1> Rankings </h1>
 
         </div>
         <!-- /#wrapper -->
 
         <!-- jQuery -->
-        <script src="../bower_components/jquery/dist/jquery.min.js"></script>
+        <script src="../brainzer/PaginasComCss/bower_components/jquery/dist/jquery.min.js"></script>
 
         <!-- Bootstrap Core JavaScript -->
-        <script src="../bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+        <script src="../brainzer/PaginasComCss/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
 
         <!-- Metis Menu Plugin JavaScript -->
-        <script src="../bower_components/metisMenu/dist/metisMenu.min.js"></script>
+        <script src="../brainzer/PaginasComCss/bower_components/metisMenu/dist/metisMenu.min.js"></script>
 
         <!-- Morris Charts JavaScript -->
-        <script src="../bower_components/raphael/raphael-min.js"></script>
-        <script src="../bower_components/morrisjs/morris.min.js"></script>
-        <script src="../js/morris-data.js"></script>
+        <script src="../brainzer/PaginasComCss/bower_components/raphael/raphael-min.js"></script>
+        <script src="../brainzer/PaginasComCss/bower_components/morrisjs/morris.min.js"></script>
+        <script src="../brainzer/PaginasComCss/js/morris-data.js"></script>
 
         <!-- Custom Theme JavaScript -->
-        <script src="../dist/js/sb-admin-2.js"></script>
+        <script src="../brainzer/PaginasComCss/dist/js/sb-admin-2.js"></script>
 
     </body>
 

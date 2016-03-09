@@ -1,19 +1,19 @@
 <?php
 include 'conexao.php';
 
-/* session_start();
+session_start();
 
-  if (!isset($_SESSION["usuario"])) {
-  header("Location: ../pagina_inicial.php");
-  } else {
-  $pegar = "SELECT id FROM usuario WHERE user = '".$_SESSION["usuario"]."'";
-  $sql = mysqli_query($con, $pegar);
-  if ($sql) {
-  while ($reg = mysqli_fetch_array($sql)) {
-  $id_user = $reg["id"];
-  }
-  }*/
-  //} 
+if (!isset($_SESSION["usuario"])) {
+    header("Location: ../pagina_inicial.php");
+} else {
+    $pegar = "SELECT id FROM usuario WHERE user = '" . $_SESSION["usuario"] . "'";
+    $sql = mysqli_query($con, $pegar);
+    if ($sql) {
+        while ($reg = mysqli_fetch_array($sql)) {
+            $id_user = $reg["id"];
+        }
+    }
+}
 ?>
 <!DOCTYPE html>
 <html>
@@ -53,7 +53,6 @@ include 'conexao.php';
             var imgs_abertas = 0;
             var img_aberta_01 = "";
             var img_aberta_02 = "";
-            var tentativas = 0;
             var tentativas2 =0;
 
             function trocarImagem(img1, img2){
@@ -75,16 +74,13 @@ include 'conexao.php';
 							$('#'+"verso_"+img_aberta_01).fadeIn();
 							$('#'+"verso_"+img_aberta_02).fadeIn();
 						}, 800);
-                                                tentativas++;
+                                                
 					}
                                         tentativas2++;
 					imgs_abertas = 0;
 				}
 
 			}
-                        //CÁLCULO DA PONTUAÇÃO
-                        tent = tentativas + tentativas2;
-                          pontuacao = (6000/(tentativas + tentativas2));
 
       // CHAMANDO O JOGO
       $(document).ready(function () {
@@ -95,8 +91,12 @@ include 'conexao.php';
           });
       });
       function sair(){
-         alert (tent);
-      }
+        //CÁLCULO DA PONTUAÇÃO
+            var pontuacao = 8000 / tentativas2;
+           
+            $("#pontuacao").attr("value", pontuacao);
+              
+            }
         </script>
     </head>
     <body>
@@ -155,25 +155,14 @@ include 'conexao.php';
                 }
                 echo "</table>";
             }
-            echo "<input type='button' value= 'Finalizar' class='butao' id='botao' onclick='sair()'/>";
-            echo "</div>";
+             echo "</div>";
+                    echo "<form action= 'jogo_memoria_animais_correcao.php' method= 'get' onsubmit= 'sair()'>";
+                    echo " <input type='hidden' name='pontuacao' id='pontuacao'/>";
+                    echo "<input style='margin-left: 270px;' type='submit' value= 'Finalizar' class='butao' id='botao'/>";
+                    echo "</form>";
+                    echo "</div>";
             //$mysqli_close($con);
             ?>
-        </div>
-      <div> 
-          <?php
-       $pontos = (isset($_POST["pontuacao"]) ? $_POST["pontuacao"] : null);
-       //INSERINDO OS DADOS NA TABELA RANKING
-
-                  $ranking = "INSERT INTO ranking(usuario_id, jogo_id, pontuacao, dh) VALUES ('$id_user','$id_jogo','$pontos', now())";
-                  $sql = mysqli_query($con, $ranking);
-
-                // ~~~~ //
-          
-          echo $pontos;
-          ?>
-      
-      </div>
-          
+        </div> 
     </body>
 </html>

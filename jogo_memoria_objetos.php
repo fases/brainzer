@@ -1,19 +1,19 @@
 <?php
 include 'conexao.php';
 
-/* session_start();
+session_start();
 
-  if (!isset($_SESSION["usuario"])) {
-  header("Location: ../pagina_inicial.php");
-  } else {
-  $pegar = "SELECT id FROM usuario WHERE user = '".$_SESSION["usuario"]."'";
-  $sql = mysqli_query($con, $pegar);
-  if ($sql) {
-  while ($reg = mysqli_fetch_array($sql)) {
-  $id_user = $reg["id"];
-  }
-  }*/
-  //} 
+if (!isset($_SESSION["usuario"])) {
+    header("Location: ../pagina_inicial.php");
+} else {
+    $pegar = "SELECT id FROM usuario WHERE user = '" . $_SESSION["usuario"] . "'";
+    $sql = mysqli_query($con, $pegar);
+    if ($sql) {
+        while ($reg = mysqli_fetch_array($sql)) {
+            $id_user = $reg["id"];
+        }
+    }
+}
 ?>
 <!DOCTYPE html>
 <html>
@@ -53,6 +53,7 @@ include 'conexao.php';
             var img_aberta_01 = "";
             var img_aberta_02 = "";
             var pontos = 0;
+            var tentativas2 = 0;
 
             function trocarImagem(img1, img2){
 				$('#'+img1).hide();
@@ -77,6 +78,7 @@ include 'conexao.php';
 
 					}
 					imgs_abertas = 0;
+                                        tentativas2++;
 				}
 
 			}
@@ -88,9 +90,13 @@ include 'conexao.php';
 
           });
       });
-      function sair(){
-          location.href="PaginasComCss/pages/index.php";
-      }
+       function sair(){
+        //CÁLCULO DA PONTUAÇÃO
+            var pontuacao = 10000 / tentativas2;
+           
+            $("#pontuacao").attr("value", pontuacao);
+              
+            }
         </script>
     </head>
     <body>
@@ -149,8 +155,12 @@ include 'conexao.php';
                 }
                 echo "</table>";
             }
-            echo "<input type='button' value= 'Finalizar' class='butao' id='botao' onclick='sair()'/>";
             echo "</div>";
+                    echo "<form action= 'jogo_memoria_objetos_correcao.php' method= 'get' onsubmit= 'sair()'>";
+                    echo " <input type='hidden' name='pontuacao' id='pontuacao'/>";
+                    echo "<input style='margin-left: 270px;' type='submit' value= 'Finalizar' class='butao' id='botao'/>";
+                    echo "</form>";
+                    echo "</div>";
 
             //$mysqli_close($con);
             ?>

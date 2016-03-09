@@ -182,7 +182,7 @@ if (!isset($_SESSION["usuario"])) {
                     <div class="sidebar-nav navbar-collapse">
                         <ul class="nav" id="side-menu" style="font-family: 'Raleway',sans-serif; font-size: 18px; height: 800px;">
                             <li>
-                                <a style="color: #008DCE;" href="#"><img src="../images/ranking.png" widht="25px" height="25px"> Ranking</a>
+                                <a style="color: #008DCE;" href="ranking.php"><img src="../images/ranking.png" widht="25px" height="25px"> Ranking</a>
                             </li>
 
 

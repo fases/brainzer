@@ -219,16 +219,14 @@ if (!isset($_SESSION["usuario"])) {
                             $('#' + "verso_" + img_aberta_01).fadeIn();
                             $('#' + "verso_" + img_aberta_02).fadeIn();
                         }, 800);
-                        tentativas++;
                     }
                     imgs_abertas = 0;
                     tentativas2++;
                 }
+               
 
             }
-            //CÁLCULO DA PONTUAÇÃO
-            tent = parseInt(tentativas) + parseInt(tentativas2);
-            pontuacao = 6000 / tent;
+            
 
             // CHAMANDO O JOGO
             $(document).ready(function() {
@@ -239,8 +237,11 @@ if (!isset($_SESSION["usuario"])) {
                 });
             });
             function sair() {
-                //alert (tent);
-                alert(pontuacao);
+            //CÁLCULO DA PONTUAÇÃO
+            var pontuacao = 6000 / tentativas2;
+           
+            $("#pontuacao").attr("value", pontuacao);
+              
             }
         </script>
     </head>
@@ -446,26 +447,15 @@ if (!isset($_SESSION["usuario"])) {
                         echo "</table>";
                     }
                     echo "</div>";
-                    echo "<input style='margin-left: 270px;' type='button' value= 'Finalizar' class='butao' id='botao' onclick='sair()'/>";
+                    echo "<form action= 'jogo_memoria_frutas_correcao.php' method= 'get' onsubmit= 'sair()'>";
+                    echo " <input type='hidden' name='pontuacao' id='pontuacao'/>";
+                    echo "<input style='margin-left: 270px;' type='submit' value= 'Finalizar' class='butao' id='botao'/>";
+                    echo "</form>";
                     echo "</div>";
                     //$mysqli_close($con);
                     ?>
                 </div>
-                <div> 
-                    <?php
-                    $pontos = (isset($_POST["pontuacao"]) ? $_POST["pontuacao"] : null);
-                    //INSERINDO OS DADOS NA TABELA RANKING
-
-                    /* $ranking = "INSERT INTO ranking(usuario_id, jogo_id, pontuacao, dh) VALUES ('$id_user','$id_jogo','$pontos', now())";
-                      $sql = mysqli_query($con, $ranking);
-                     */
-                    // ~~~~ //
-
-                    echo $pontos;
-                    ?>
-
-                </div>
-
+ 
             </div>
             <!-- /#page-wrapper -->
 
