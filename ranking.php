@@ -1,11 +1,11 @@
 <?php include "conexao.php" ?>
 <?php
 session_start();
-if (!isset($_SESSION["usuario"])) {
+/*if (!isset($_SESSION["usuario"])) {
     header("Location: ../pagina_inicial.php");
 } else {
     echo "";
-}
+}*/
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -349,9 +349,58 @@ if (!isset($_SESSION["usuario"])) {
                 <!-- /.navbar-static-side -->
             </nav>
 
+            <style>
+                td{
+                    padding: 10px;
+                }
+                
+                .vermelho{
+                    background: red;
+                }
+            </style>
+            
             <div id="page-wrapper">
                 <h1> Rankings </h1>
-
+                <table>
+                    <tr>
+                        <td>000</td>
+                        <td>100</td>
+                        <td>200</td>
+                        <td>300</td>
+                        <td>400</td>
+                        <td>500</td>
+                        <td>600</td>
+                        <td>700</td>
+                        <td>800</td>
+                        <td>900</td>
+                    </tr>
+                    
+                    <tr>
+                        
+                    <?php
+                        $sql = "select * from ranking where jogo_id=2"; // mudar
+                        $rankings = mysqli_query($con, $sql);
+                        
+                        $soma = 0;
+                        while($ranking = mysqli_fetch_array($rankings)){
+                            $soma += $ranking['pontuacao'];
+                        }
+                        //$media = $media / mysqli_num_rows($rankings);
+                        
+                        $qtdDivs = 1 / 100 * $soma; // ajustar
+                        
+                        for ($i = 0; $i < $qtdDivs; $i++){
+                            echo "<td class='vermelho'></td>";
+                        }
+                        
+                        for ($i = 0;  $i < 10 - $qtdDivs; $i++){
+                            echo "<td></td>";
+                        }
+                        
+                    ?>
+                        </tr>
+                </table>
+                
         </div>
         <!-- /#wrapper -->
 

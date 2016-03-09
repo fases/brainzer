@@ -167,15 +167,14 @@ if (!isset($_SESSION["usuario"])) {
 
 
             }
-
-            #img0, #img1,#img2, #img3, #img4, #img5, #img6, #img7, #img8, #img9, #img10, #img11{
+            #img0, #img1,#img2, #img3, #img4, #img5, #img6, #img7, #img8, #img9, #img10, #img11, #img12, #img13, #img14, #img15, #img16, #img17, #img18, #img19{
                 display: none;
                 padding-right: 20px;
                 padding-top: 20px;
             }
             #princy{
                 display: none;
-                margin-left: 14%;
+                margin-left: 5%;
 
             }
 
@@ -185,12 +184,12 @@ if (!isset($_SESSION["usuario"])) {
         <script>
             //EXIBINDO AS CARTAS E DESVIRANDO NOVAMENTE
             setTimeout(function () {
-                $("#img0, #img1,#img2, #img3, #img4, #img5, #img6, #img7, #img8, #img9, #img10, #img11, #img12").show(2000);
-                $("#verso_img0, #verso_img1,#verso_img2, #verso_img3, #verso_img4, #verso_img5, #verso_img6, #verso_img7, #verso_img8, #verso_img9, #verso_img10, #verso_img11, #verso_img12").hide(2000);
+                $("#img0, #img1,#img2, #img3, #img4, #img5, #img6, #img7, #img8, #img9, #img10, #img11, #img12, #img13, #img14, #img15, #img16, #img17, #img18, #img19").show(2000);
+                $("#verso_img0, #verso_img1,#verso_img2, #verso_img3, #verso_img4, #verso_img5, #verso_img6, #verso_img7, #verso_img8, #verso_img9, #verso_img10, #verso_img11, #verso_img12, #verso_img13, #verso_img14, #verso_img15, #verso_img16, #verso_img17, #verso_img18, #verso_img19").hide(2000);
             }, 1000);
             setTimeout(function () {
-                $("#img0, #img1,#img2, #img3, #img4, #img5, #img6, #img7, #img8, #img9, #img10, #img11, #img12").hide(2000);
-                $("#verso_img0, #verso_img1,#verso_img2, #verso_img3, #verso_img4, #verso_img5, #verso_img6, #verso_img7, #verso_img8, #verso_img9, #verso_img10, #verso_img11, #verso_img12").show(2000);
+                $("#img0, #img1,#img2, #img3, #img4, #img5, #img6, #img7, #img8, #img9, #img10, #img11, #img12, #img13, #img14, #img15, #img16, #img17, #img18, #img19").hide(2000);
+                $("#verso_img0, #verso_img1,#verso_img2, #verso_img3, #verso_img4, #verso_img5, #verso_img6, #verso_img7, #verso_img8, #verso_img9, #verso_img10, #verso_img11, #verso_img12, #verso_img13, #verso_img14, #verso_img15, #verso_img16, #verso_img17, #verso_img18, #verso_img19").show(2000);
             }, 1000);
 
             var imgs_abertas = 0;
@@ -394,7 +393,7 @@ if (!isset($_SESSION["usuario"])) {
                 <div id='orientacao'>
                     <h3><br> No jogo da memória você terá que: <br>
                         - Memorizar as cartas; <br>
-                        - Encontrar os pares das frutas; <br>
+                        - Encontrar os pares dos animais; <br>
                         <h3 id="h3"> Preste bastante atenção quando as cartas forem viradas automaticamente. </h3><br><br>
                         <input class="butao" type="button" value="Começar" id="comecar"/>
                 </div>
@@ -402,8 +401,8 @@ if (!isset($_SESSION["usuario"])) {
                     <?php
                     $a = 0;
                     $id_jogo = 3;
-                    $nivel = 1;
-                    $tipo_jogo = 4;
+                    $nivel = 3;
+                    $tipo_jogo = 6;
 
 
                     echo "<div id='verso'>";
@@ -434,9 +433,9 @@ if (!isset($_SESSION["usuario"])) {
                         shuffle($imagens);
                         //echo sizeof($imagens);
                         $i = 0;
-                        for ($l = 0; $l <= 2; $l++) {
+                        for ($l = 0; $l <= 3; $l++) {
                             echo "<tr id='i.l_$i'>";
-                            for ($c = 0; $c <= 3; $c++) {
+                            for ($c = 0; $c <= 4; $c++) {
                                 echo "<td><img style='width: 200px; height: 200px; padding-right: 20px; padding-top: 20px;' src=" . $imagens[$i] . " alt='Bugou' id='img$i'/>
                               <img style='width: 200px; height: 200px; padding-right: 20px; padding-top: 20px;' src = '$parteTras' alt= 'verso' id='verso_img$i' onclick=\"trocarImagem(this.id, 'img$i')\"/> </td> ";
                                 $i++;
@@ -448,7 +447,7 @@ if (!isset($_SESSION["usuario"])) {
                     echo "</div>";
                     echo "<form action= 'jogo_memoria_frutas_correcao.php' method= 'get' onsubmit= 'sair()'>";
                     echo " <input type='hidden' name='pontuacao' id='pontuacao'/>";
-                    echo "<input style='margin-left: 270px;' type='submit' value= 'Finalizar' class='butao' id='botao'/>";
+                    echo "<input style='margin-left: 50%;' type='submit' value= 'Finalizar' class='butao' id='botao'/>";
                     echo "</form>";
                     echo "</div>";
                     //$mysqli_close($con);
