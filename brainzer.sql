@@ -65,7 +65,7 @@ CREATE TABLE IF NOT EXISTS `quesito` (
 
 INSERT INTO `quesito` (`id`, `pergunta`, `pontuacao_padrao`, `jogo_id`, `respostaCorreta`, `tipojogo_id`) VALUES
 (1, 'Quantas frutas tem no video?', 17, 1, '5', 1),
-(2, 'Quais frutas possuem a cor VERMELHA?', 16, 1, 'Melancia e Maca', 1),
+(2, 'Quais frutas tem a cor vermelha?', 16, 1, 'Melancia e Maca', 1),
 (3, 'Quais frutas comecam com a letra M?', 16, 1, 'Melancia e Maca', 1),
 (4, 'Quais frutas comecam com a letra L?', 17, 1, 'Laranja', 1),
 (5, 'Qual fruta tem a casca amarela? ', 17, 1, 'Banana e Laranja', 1),
@@ -106,7 +106,7 @@ INSERT INTO `quesito` (`id`, `pergunta`, `pontuacao_padrao`, `jogo_id`, `respost
 (40, 'imagens/sorvete.png', 16, 3, 'imagens/sorvete.png', 6),
 (41, 'Quantos objetos tem no video?', 12, 1, '6 objetos', 7),
 (42, 'Qual o objeto e azul?', 12, 1, 'Carro', 7),
-(43, 'Qual objeto possui mais de tres cores?', 12, 1, 'Bola', 7),
+(43, 'Qual objeto tem mais de tres cores?', 12, 1, 'Bola', 7),
 (44, 'Qual o objeto se usa na cabeca?', 12, 1, 'Chapeu', 7),
 (45, 'Quais objetos possuem rodas?', 13, 1, 'Bicicleta e Carro', 7),
 (46, 'Qual objeto possui paginas?', 13, 1, 'Livro', 7),

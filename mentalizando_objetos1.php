@@ -285,32 +285,32 @@ include 'conexao.php';
             //});
             //ONMOUSEOVER E ONMOUSEOUT - BOTÕES DAS RESPOSTAS
             $(document).ready(function () {
-                $('#resp11, #resp12, #resp13, #resp14, #resp15,#resp16').mouseover(function () {
-                    $('#resp11, #resp12, #resp13, #resp14, #resp15,#resp16').css('background-color', '#008CDE');
+                $('#resp11, #resp12, #resp13, #resp14, #resp15,#resp16,#resp17,#resp18').mouseover(function () {
+                    $('#resp11, #resp12, #resp13, #resp14, #resp15,#resp16,#resp17,#resp18').css('background-color', '#008CDE');
                 });
-                $('#resp11, #resp12, #resp13, #resp14, #resp15,#resp16').mouseout(function () {
-                    $('#resp11, #resp12, #resp13, #resp14, #resp15,#resp16').css('background-color', '#fff');
-                });
-                //
-                $('#resp21, #resp22, #resp23, #resp24, #resp25,#resp26').mouseover(function () {
-                    $('#resp21, #resp22, #resp23, #resp24, #resp25,#resp26').css('background-color', '#008CDE');
-                });
-                $('#resp21, #resp22, #resp23, #resp24, #resp25,#resp26').mouseout(function () {
-                    $('#resp21, #resp22, #resp23, #resp24, #resp25,#resp26').css('background-color', '#fff');
+                $('#resp11, #resp12, #resp13, #resp14, #resp15,#resp16,#resp17,#resp18').mouseout(function () {
+                    $('#resp11, #resp12, #resp13, #resp14, #resp15,#resp16,#resp17,#resp18').css('background-color', '#fff');
                 });
                 //
-                $('#resp31, #resp32, #resp33, #resp34, #resp35,#resp36').mouseover(function () {
-                    $('#resp31, #resp32, #resp33, #resp34,#resp35,#resp36').css('background-color', '#008CDE');
+                $('#resp21, #resp22, #resp23, #resp24, #resp25,#resp26,#resp27,#resp28').mouseover(function () {
+                    $('#resp21, #resp22, #resp23, #resp24, #resp25,#resp26,#resp27,#resp28').css('background-color', '#008CDE');
                 });
-                $('#resp31, #resp32, #resp33, #resp34, #resp35,#resp36').mouseout(function () {
-                    $('#resp31, #resp32, #resp33, #resp34, #resp35,#resp36').css('background-color', '#fff');
+                $('#resp21, #resp22, #resp23, #resp24, #resp25,#resp26,#resp27,#resp28').mouseout(function () {
+                    $('#resp21, #resp22, #resp23, #resp24, #resp25,#resp26,#resp27,#resp28').css('background-color', '#fff');
                 });
                 //
-                $('#resp41, #resp42, #resp43, #resp44, #resp45,#resp46').mouseover(function () {
-                    $('#resp41, #resp42, #resp43, #resp44, #resp45,#resp46').css('background-color', '#008CDE');
+                $('#resp31, #resp32, #resp33, #resp34, #resp35,#resp36,#resp37,#resp38').mouseover(function () {
+                    $('#resp31, #resp32, #resp33, #resp34,#resp35,#resp36,#resp37,#resp38').css('background-color', '#008CDE');
                 });
-                $('#resp41, #resp42, #resp43, #resp44, #resp45,#resp46').mouseout(function () {
-                    $('#resp41, #resp42, #resp43, #resp44, #resp45,#resp46').css('background-color', '#fff');
+                $('#resp31, #resp32, #resp33, #resp34, #resp35,#resp36,#resp37,#resp38').mouseout(function () {
+                    $('#resp31, #resp32, #resp33, #resp34, #resp35,#resp36,#resp37,#resp38').css('background-color', '#fff');
+                });
+                //
+                $('#resp41, #resp42, #resp43, #resp44, #resp45,#resp46,#resp47,#resp48').mouseover(function () {
+                    $('#resp41, #resp42, #resp43, #resp44, #resp45,#resp46,#resp47,#resp48').css('background-color', '#008CDE');
+                });
+                $('#resp41, #resp42, #resp43, #resp44, #resp45,#resp46,#resp47,#resp48').mouseout(function () {
+                    $('#resp41, #resp42, #resp43, #resp44, #resp45,#resp46,#resp47,#resp48').css('background-color', '#fff');
                 });
             });
 
@@ -466,7 +466,7 @@ include 'conexao.php';
                         <ul class="nav" id="side-menu" style="font-family: 'Raleway',sans-serif; font-size: 18px; height: 800px;">
 
                             <li>
-                                <a style="color: #008DCE;" href="#"><img src="../brainzer/PaginasComCss/images/ranking.png" widht="25px" height="25px"> Ranking</a>
+                                <a style="color: #008DCE;" href="ranking.php"><img src="../brainzer/PaginasComCss/images/ranking.png" widht="25px" height="25px"> Ranking</a>
                             </li>
 
 

@@ -174,7 +174,7 @@ if (!isset($_SESSION["usuario"])) {
             }
             #princy{
                 display: none;
-                margin-left: 5%;
+                margin-left: 7%;
 
             }
 
@@ -371,10 +371,10 @@ if (!isset($_SESSION["usuario"])) {
 
                 <div class="navbar-default sidebar" role="navigation" style="width: 200px;">
                     <div class="sidebar-nav navbar-collapse">
-                        <ul class="nav" id="side-menu" style="font-family: 'Raleway',sans-serif; font-size: 18px; height: 1000px;">
+                        <ul class="nav" id="side-menu" style="font-family: 'Raleway',sans-serif; font-size: 18px; height: 1200px;">
 
                             <li>
-                                <a style="color: #008DCE;" href="#"><img src="../brainzer/PaginasComCss/images/ranking.png" widht="25px" height="25px"> Ranking</a>
+                                <a style="color: #008DCE;" href="ranking.php"><img src="../brainzer/PaginasComCss/images/ranking.png" widht="25px" height="25px"> Ranking</a>
                             </li>
 
 
@@ -388,7 +388,7 @@ if (!isset($_SESSION["usuario"])) {
                 <!-- /.navbar-static-side -->
             </nav>
 
-            <div id="page-wrapper" style="height: 1000px;">
+            <div id="page-wrapper" style="height: 1200px;">
                 <h1>Jogo da Memória</h1>
                 <div id='orientacao'>
                     <h3><br> No jogo da memória você terá que: <br>
@@ -436,8 +436,8 @@ if (!isset($_SESSION["usuario"])) {
                         for ($l = 0; $l <= 3; $l++) {
                             echo "<tr id='i.l_$i'>";
                             for ($c = 0; $c <= 4; $c++) {
-                                echo "<td><img style='width: 200px; height: 200px; padding-right: 20px; padding-top: 20px;' src=" . $imagens[$i] . " alt='Bugou' id='img$i'/>
-                              <img style='width: 200px; height: 200px; padding-right: 20px; padding-top: 20px;' src = '$parteTras' alt= 'verso' id='verso_img$i' onclick=\"trocarImagem(this.id, 'img$i')\"/> </td> ";
+                                echo "<td><img style='width: 190px; height: 190px; padding-right: 20px; padding-top: 20px;' src=" . $imagens[$i] . " alt='Bugou' id='img$i'/>
+                              <img style='width: 190px; height: 190px; padding-right: 20px; padding-top: 20px;' src = '$parteTras' alt= 'verso' id='verso_img$i' onclick=\"trocarImagem(this.id, 'img$i')\"/> </td> ";
                                 $i++;
                             }
                             echo "</tr>";
@@ -447,7 +447,7 @@ if (!isset($_SESSION["usuario"])) {
                     echo "</div>";
                     echo "<form action= 'jogo_memoria_frutas_correcao.php' method= 'get' onsubmit= 'sair()'>";
                     echo " <input type='hidden' name='pontuacao' id='pontuacao'/>";
-                    echo "<input style='margin-left: 50%;' type='submit' value= 'Finalizar' class='butao' id='botao'/>";
+                    echo "<input style='margin-left: 35%;' type='submit' value= 'Finalizar' class='butao' id='botao'/>";
                     echo "</form>";
                     echo "</div>";
                     //$mysqli_close($con);

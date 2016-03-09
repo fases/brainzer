@@ -16,7 +16,7 @@ session_start();
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="shortcut icon" href="brainzer_icon.ico" TYPE="image/x-icon">
+        <link rel="shortcut icon" href="PaginasComCss/brainzer_icon.ico" TYPE="image/x-icon">
         <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
         <meta name="description" content="">
         <meta name="author" content="">
@@ -52,12 +52,11 @@ session_start();
             h1{
                 font-family: 'Raleway',sans-serif;
                 text-transform: uppercase;
-                font-size: 50px;
+                font-size: 60px;
                 font-weight: 300;
                 letter-spacing: 2px; 
                 background-color: #fff;
-                color: #5cb85c;
-                font-size: 80px; 
+                color: #333;
                 text-align: center;
                 margin-top: 0px;
                 padding-bottom: 50px;
@@ -360,7 +359,7 @@ session_start();
             </style>
             
             <div id="page-wrapper">
-                <h1> Rankings </h1>
+                <h1><br>Gráfico de  Pontuações </h1>
                 <table>
                     <tr>
                         <td>000</td>
