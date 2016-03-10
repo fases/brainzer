@@ -1,11 +1,19 @@
-<?php include "conexao.php" ?>
 <?php
 session_start();
-/*if (!isset($_SESSION["usuario"])) {
-    header("Location: ../pagina_inicial.php");
-} else {
-    echo "";
-}*/
+
+include 'conexao.php';
+
+ /*if (!isset($_SESSION["usuario"])) {
+  header("Location: ../pagina_inicial.php");
+  } else {
+  $pegar = "SELECT id FROM usuario WHERE user = '" . $_SESSION["usuario"] . "'";
+  $sql = mysqli_query($con, $pegar);
+  if ($sql) {
+  while ($reg = mysqli_fetch_array($sql)) {
+  $id_user = $reg["id"];
+  }
+  }
+  } */
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -184,7 +192,9 @@ session_start();
                 color: #333;
                 font-family: 'Raleway',sans-serif;
             }
-
+            .class{
+                position: inherit;
+            }
 
         </style>
         <script type="text/javascript" src="jquery-1.11.3.min.js"></script>
@@ -348,77 +358,52 @@ session_start();
                 <!-- /.navbar-static-side -->
             </nav>
 
-            <style>
-                td{
-                    padding: 10px;
-                }
-                
-                .vermelho{
-                    background: red;
-                }
-            </style>
-            
             <div id="page-wrapper">
-                <h1><br>Gráfico de  Pontuações </h1>
-                <table>
-                    <tr>
-                        <td>000</td>
-                        <td>100</td>
-                        <td>200</td>
-                        <td>300</td>
-                        <td>400</td>
-                        <td>500</td>
-                        <td>600</td>
-                        <td>700</td>
-                        <td>800</td>
-                        <td>900</td>
-                    </tr>
-                    
-                    <tr>
-                        
-                    <?php
-                        $sql = "select * from ranking where jogo_id=2"; // mudar
-                        $rankings = mysqli_query($con, $sql);
-                        
-                        $soma = 0;
-                        while($ranking = mysqli_fetch_array($rankings)){
-                            $soma += $ranking['pontuacao'];
+                <h1><br>Ranking diário dos jogos! </h1>
+                <div id='podios'>
+                    <div class='pontos' style=" background: #ffcc00; width: 100px; height: 150px;">
+                   <?php 
+                   $pp = 0;
+                   $quesito = "select * from ranking where usuario_id = 2";
+                   $result = mysqli_query($con, $quesito);
+                    if ($result) {
+                        while ($reg = mysqli_fetch_array($result)) {
+                            $data = $reg['dh'];
+                            $jogo = $reg['jogo_id'];
+                            $pontos = $reg['pontuacao'];
+                            $pp += $pontos;
                         }
-                        //$media = $media / mysqli_num_rows($rankings);
+                    }
+                                 echo "<h3> $pp </h3>";
+
+                        ?>
+                    </div>
+                    <div class='pontos' style=" background: #00ccff; width: 100px; height: 250px;">
                         
-                        $qtdDivs = 1 / 100 * $soma; // ajustar
+                    </div>
+                    <div class='pontos' style=" background: #cc3300; width: 100px; height: 130px;">
                         
-                        for ($i = 0; $i < $qtdDivs; $i++){
-                            echo "<td class='vermelho'></td>";
-                        }
-                        
-                        for ($i = 0;  $i < 10 - $qtdDivs; $i++){
-                            echo "<td></td>";
-                        }
-                        
-                    ?>
-                        </tr>
-                </table>
-                
-        </div>
-        <!-- /#wrapper -->
+                    </div>
+                </div>
+            </div>
+            <!-- /#wrapper -->
 
-        <!-- jQuery -->
-        <script src="../brainzer/PaginasComCss/bower_components/jquery/dist/jquery.min.js"></script>
+            <!-- jQuery -->
+            <script src="../brainzer/PaginasComCss/bower_components/jquery/dist/jquery.min.js"></script>
 
-        <!-- Bootstrap Core JavaScript -->
-        <script src="../brainzer/PaginasComCss/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+            <!-- Bootstrap Core JavaScript -->
+            <script src="../brainzer/PaginasComCss/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
 
-        <!-- Metis Menu Plugin JavaScript -->
-        <script src="../brainzer/PaginasComCss/bower_components/metisMenu/dist/metisMenu.min.js"></script>
+            <!-- Metis Menu Plugin JavaScript -->
+            <script src="../brainzer/PaginasComCss/bower_components/metisMenu/dist/metisMenu.min.js"></script>
 
-        <!-- Morris Charts JavaScript -->
-        <script src="../brainzer/PaginasComCss/bower_components/raphael/raphael-min.js"></script>
-        <script src="../brainzer/PaginasComCss/bower_components/morrisjs/morris.min.js"></script>
-        <script src="../brainzer/PaginasComCss/js/morris-data.js"></script>
+            <!-- Morris Charts JavaScript -->
+            <script src="../brainzer/PaginasComCss/bower_components/raphael/raphael-min.js"></script>
+            <script src="../brainzer/PaginasComCss/bower_components/morrisjs/morris.min.js"></script>
+            <script src="../brainzer/PaginasComCss/js/morris-data.js"></script>
 
-        <!-- Custom Theme JavaScript -->
-        <script src="../brainzer/PaginasComCss/dist/js/sb-admin-2.js"></script>
+            <!-- Custom Theme JavaScript -->
+            <script src="../brainzer/PaginasComCss/dist/js/sb-admin-2.js"></script>
 
     </body>
 
