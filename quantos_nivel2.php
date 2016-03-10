@@ -297,16 +297,16 @@ session_start();
             });
 
             $(function() {
-                $('#resp11, #resp12, #resp13, #resp14, #resp15,#resp16').click(function() {
+                $('#resp11, #resp12, #resp13, #resp14, #resp15,#resp16').clicked(function() {
                     $('#resp11,#resp12, #resp13, #resp14, #resp15,#resp16').css('background', '#D94848');
                 });
-                $('#resp21, #resp22, #resp23, #resp24, #resp25,#resp26').click(function() {
+                $('#resp21, #resp22, #resp23, #resp24, #resp25,#resp26').clicked(function() {
                     $('#resp21, #resp22, #resp23, #resp24, #resp25,#resp26').css('background', '#D94848');
                 });
-                $('#resp31, #resp32, #resp33, #resp34, #resp35,#resp36').click(function() {
+                $('#resp31, #resp32, #resp33, #resp34, #resp35,#resp36').clicked(function() {
                     $('#resp31, #resp32, #resp33, #resp34,#resp35,#resp36').css('background', '#D94848');
                 });
-                $('#resp41, #resp42, #resp43, #resp44, #resp45,#resp46').click(function() {
+                $('#resp41, #resp42, #resp43, #resp44, #resp45,#resp46').clicked(function() {
                     $('#resp41, #resp42, #resp43, #resp44, #resp45,#resp46').css('background', '#D94848');
                 });
             });

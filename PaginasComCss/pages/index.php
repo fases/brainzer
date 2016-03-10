@@ -54,6 +54,12 @@ if (!isset($_SESSION["usuario"])) {
 
     <body>
 
+        <?php
+        if (isset($_GET['erro_ranking'])){
+            echo "<script>alert('Você precisa jogar algo antes de ver o ranking!');</script>";
+        }
+        ?>
+        
         <div id="wrapper">
 
             <!-- Navigation -->

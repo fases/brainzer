@@ -236,7 +236,7 @@ if (!isset($_SESSION["usuario"])) {
             });
             function sair() {
                 //CÁLCULO DA PONTUAÇÃO
-                var pontuacao = 6000 / tentativas2;
+                var pontuacao = 800 / tentativas2;
 
                 $("#pontuacao").attr("value", pontuacao);
 
