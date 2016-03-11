@@ -21,7 +21,9 @@ if ($res == 1){
 	$_SESSION["usuario"] = $usuario;
     header("Location: index.php?usuario=$usuario");
 }else{
-   header("Location: login.html?erro=1");
+   //header("Location: login.html?erro=1");
+   echo $senha;
+   echo $usuario;
 }
 
 

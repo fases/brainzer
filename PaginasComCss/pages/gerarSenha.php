@@ -13,7 +13,7 @@ switch ($recupera){
  
     default :
  
-        include "recuperarSenha.php";
+        include "recuperarSenha.html";
         break;
  
 }
