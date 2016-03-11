@@ -1,23 +1,23 @@
 -- phpMyAdmin SQL Dump
--- version 4.4.12
+-- version 3.5.2.2
 -- http://www.phpmyadmin.net
 --
--- Host: 127.0.0.1
--- Generation Time: 10-Mar-2016 às 18:06
--- Versão do servidor: 5.6.25
--- PHP Version: 5.6.11
+-- Servidor: 127.0.0.1
+-- Tempo de Geração: 
+-- Versão do Servidor: 5.5.27
+-- Versão do PHP: 5.4.7
 
-SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
 
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
 /*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!40101 SET NAMES utf8mb4 */;
+/*!40101 SET NAMES utf8 */;
 
 --
--- Database: `brainzer`
+-- Banco de Dados: `brainzer`
 --
 
 -- --------------------------------------------------------
@@ -27,9 +27,10 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE IF NOT EXISTS `jogo` (
-  `id` int(11) NOT NULL,
-  `nome` varchar(200) DEFAULT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `nome` varchar(200) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=4 ;
 
 --
 -- Extraindo dados da tabela `jogo`
@@ -47,13 +48,16 @@ INSERT INTO `jogo` (`id`, `nome`) VALUES
 --
 
 CREATE TABLE IF NOT EXISTS `quesito` (
-  `id` int(11) NOT NULL,
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `pergunta` varchar(500) DEFAULT NULL,
   `pontuacao_padrao` int(11) NOT NULL,
   `jogo_id` int(11) NOT NULL,
   `respostaCorreta` varchar(300) NOT NULL,
-  `tipojogo_id` int(11) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=67 DEFAULT CHARSET=latin1;
+  `tipojogo_id` int(11) NOT NULL,
+  PRIMARY KEY (`id`),
+  KEY `fk_categoria3` (`jogo_id`),
+  KEY `fk7_tipojogo` (`tipojogo_id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=57 ;
 
 --
 -- Extraindo dados da tabela `quesito`
@@ -62,12 +66,12 @@ CREATE TABLE IF NOT EXISTS `quesito` (
 INSERT INTO `quesito` (`id`, `pergunta`, `pontuacao_padrao`, `jogo_id`, `respostaCorreta`, `tipojogo_id`) VALUES
 (1, 'Quantas frutas tem no video?', 17, 1, '5', 1),
 (2, 'Quais frutas tem a cor vermelha?', 16, 1, 'Melancia e Maca', 1),
-(3, 'Quais frutas comecam com a letra M?', 16, 1, 'Melancia e Maca', 1),
+(3, 'Quais frutas comecam com "M"?', 16, 1, 'Melancia e Maca', 1),
 (4, 'Quais frutas comecam com a letra L?', 17, 1, 'Laranja', 1),
 (5, 'Qual fruta tem a casca amarela? ', 17, 1, 'Banana e Laranja', 1),
 (6, 'Quais frutas tem folhas?', 17, 1, 'Uva, Maca e Laranja', 1),
 (7, 'Quantos animais tem no video?', 25, 1, '5', 2),
-(8, 'Quais animais tem pelo?', 25, 1, 'Vaca, Gato, Porco e Tigre', 2),
+(8, 'Quais animais tem pelo?', 25, 1, 'Vaca, Gato e Tigre', 2),
 (9, 'Qual animal tem pena?', 25, 1, 'Galo', 2),
 (10, 'Qual animal possui apenas uma cor?', 25, 1, 'Porco', 2),
 (11, 'Quantas horas tem um dia?', 17, 2, '24 horas', 3),
@@ -111,7 +115,7 @@ INSERT INTO `quesito` (`id`, `pergunta`, `pontuacao_padrao`, `jogo_id`, `respost
 (49, 'Quantos naipes tem em um jogo de baralho? ', 12, 2, '4 naipes', 8),
 (50, 'Quantas refeicoes, no minimo, deve-se fazer durante o dia?', 12, 2, '3 refeicoes', 8),
 (51, 'Quantas vezes o sol nasce durante o dia?', 13, 2, '1 vez', 8),
-(52, 'Quanto e o quintuplo de 1?', 10, 2, '5', 8),
+(52, 'Na matematica, quanto vale o quintuplo de 1?', 10, 2, '5', 8),
 (53, 'Quantos meses dura uma gestacao humana saudavel?', 10, 2, '9 meses', 8),
 (54, 'Quantos minutos tem em 1 hora e 10 minutos?', 10, 2, '70 minutos', 8),
 (55, 'Um trio de pessoas tem quantas pessoas?', 10, 2, '3 pessoas', 8),
@@ -124,12 +128,15 @@ INSERT INTO `quesito` (`id`, `pergunta`, `pontuacao_padrao`, `jogo_id`, `respost
 --
 
 CREATE TABLE IF NOT EXISTS `ranking` (
-  `id` int(11) NOT NULL,
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `usuario_id` int(11) NOT NULL,
   `jogo_id` int(11) NOT NULL,
   `pontuacao` int(11) NOT NULL,
-  `dh` datetime NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=latin1;
+  `dh` datetime NOT NULL,
+  PRIMARY KEY (`id`),
+  KEY `fk_categoria` (`usuario_id`),
+  KEY `fk_categoria1` (`jogo_id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=34 ;
 
 --
 -- Extraindo dados da tabela `ranking`
@@ -140,7 +147,25 @@ INSERT INTO `ranking` (`id`, `usuario_id`, `jogo_id`, `pontuacao`, `dh`) VALUES
 (2, 2, 2, 83, '0000-00-00 00:00:00'),
 (3, 2, 2, 83, '2016-02-03 07:47:40'),
 (4, 3, 1, 75, '2016-02-03 07:55:03'),
-(5, 2, 1, 100, '2016-02-03 10:54:29');
+(5, 2, 1, 100, '2016-02-03 10:54:29'),
+(16, 7, 1, 67, '2016-03-11 08:53:01'),
+(17, 7, 1, 0, '2016-03-11 09:24:28'),
+(18, 7, 1, 0, '2016-03-11 09:31:45'),
+(19, 7, 1, 100, '2016-03-11 09:32:30'),
+(20, 7, 1, 100, '2016-03-11 09:32:51'),
+(21, 7, 1, 0, '2016-03-11 09:39:09'),
+(22, 7, 1, 0, '2016-03-11 09:54:33'),
+(23, 7, 1, 0, '2016-03-11 09:55:32'),
+(24, 7, 1, 0, '2016-03-11 09:56:49'),
+(25, 7, 1, 0, '2016-03-11 09:56:59'),
+(26, 7, 2, 0, '2016-03-11 10:02:45'),
+(27, 7, 2, 100, '2016-03-11 10:06:49'),
+(28, 7, 2, 100, '2016-03-11 10:07:04'),
+(29, 7, 2, 0, '2016-03-11 10:07:22'),
+(30, 7, 2, 0, '2016-03-11 10:07:56'),
+(31, 7, 2, 0, '2016-03-11 10:09:12'),
+(32, 7, 2, 0, '2016-03-11 10:09:19'),
+(33, 7, 2, 0, '2016-03-11 10:24:58');
 
 -- --------------------------------------------------------
 
@@ -149,13 +174,15 @@ INSERT INTO `ranking` (`id`, `usuario_id`, `jogo_id`, `pontuacao`, `dh`) VALUES
 --
 
 CREATE TABLE IF NOT EXISTS `respostas` (
-  `id` int(11) NOT NULL,
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `alternativa1` varchar(500) NOT NULL,
   `alternativa2` varchar(500) NOT NULL,
   `alternativa3` varchar(500) NOT NULL,
   `alternativa4` varchar(500) NOT NULL,
-  `quesito_id` int(11) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=33 DEFAULT CHARSET=latin1;
+  `quesito_id` int(11) NOT NULL,
+  PRIMARY KEY (`id`),
+  KEY `fk_categoria4` (`quesito_id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=33 ;
 
 --
 -- Extraindo dados da tabela `respostas`
@@ -165,11 +192,11 @@ INSERT INTO `respostas` (`id`, `alternativa1`, `alternativa2`, `alternativa3`, `
 (1, '1', '5', '9', '4', 1),
 (2, 'Laranja e Banana', 'Melancia e Uva', 'Melancia e Maca', 'Banana e Maca', 2),
 (3, 'Maca', 'Laranja', 'Uva', 'Melancia', 4),
-(4, 'Uva e Maca', 'Laranja e Melancia', 'Banana e Uva', 'Melancia e Maca', 3),
+(4, 'Uva, Maca e Laranja', 'Laranja e Melancia', 'Banana e Uva', 'Melancia e Maca', 3),
 (5, 'Maca e Goiaba', 'Laranja e Uva', 'Uva e Melancia', 'Banana e Laranja', 5),
-(6, 'Uva, Maca e Laranja', 'Laranja', 'Uva e Melancia', 'Maca e Melancia', 6),
+(6, 'Uva e Laranja', 'Laranja', 'Uva e Melancia', 'Maca e Melancia', 6),
 (7, '3', '7', '5', '2', 7),
-(8, 'Galo, Porco, Vaca e Gato', 'Vaca, Gato, Porco e Tigre', 'Tigre, Gato, Cachorro e Joaninha', 'Vaca, Tigre, Vaca e Galo', 8),
+(8, 'Galo, Vaca e Gato', 'Vaca, Gato e Tigre', 'Cachorro e Joaninha', 'Vaca, Tigre e Galo', 8),
 (9, 'Vaca', 'Porco', 'Tigre', 'Galo', 9),
 (10, 'Galo', 'Gato', 'Porco', 'Tigre', 10),
 (11, '8 horas', '16 horas', '24 horas', '12 horas', 11),
@@ -202,12 +229,14 @@ INSERT INTO `respostas` (`id`, `alternativa1`, `alternativa2`, `alternativa3`, `
 --
 
 CREATE TABLE IF NOT EXISTS `tipo_jogo` (
-  `id` int(11) NOT NULL,
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `nome` varchar(50) DEFAULT NULL,
   `jogo_id` int(11) NOT NULL,
   `nivel` int(11) NOT NULL,
-  `complemento` varchar(300) DEFAULT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=latin1;
+  `complemento` varchar(300) DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  KEY `fk_categoria2` (`jogo_id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=10 ;
 
 --
 -- Extraindo dados da tabela `tipo_jogo`
@@ -231,13 +260,14 @@ INSERT INTO `tipo_jogo` (`id`, `nome`, `jogo_id`, `nivel`, `complemento`) VALUES
 --
 
 CREATE TABLE IF NOT EXISTS `usuario` (
-  `id` int(11) NOT NULL,
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `nome` varchar(200) NOT NULL,
   `email` varchar(200) NOT NULL,
   `senha` varchar(200) NOT NULL,
   `idade` int(11) NOT NULL,
-  `user` varchar(100) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=latin1;
+  `user` varchar(100) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=8 ;
 
 --
 -- Extraindo dados da tabela `usuario`
@@ -248,114 +278,35 @@ INSERT INTO `usuario` (`id`, `nome`, `email`, `senha`, `idade`, `user`) VALUES
 (3, 'Pedro Tomaz', 'pedrootomaz23@gmail.com', '202cb962ac59075b964b', 18, 'pedrootomaz'),
 (4, 'pedro', 'pedro@gmail.com', '202cb962ac59075b964b', 18, 'pedrotomaz'),
 (5, 'Pedro', 'pedrot@gmail.com', '202cb962ac59075b964b', 18, 'pedrot'),
-(6, 'MinhÃ£o', 'minhao@gmail.com', '81dc9bdb52d04dc20036', 18, 'minhaozinho');
+(6, 'MinhÃ£o', 'minhao@gmail.com', '81dc9bdb52d04dc20036', 18, 'minhaozinho'),
+(7, 'Edmilson Filho', 'edmilson_filho18@hotmail.com', '10a9c136d796bab18d3e144092a4f20a', 19, 'EdFilho');
 
 --
--- Indexes for dumped tables
---
-
---
--- Indexes for table `jogo`
---
-ALTER TABLE `jogo`
-  ADD PRIMARY KEY (`id`);
-
---
--- Indexes for table `quesito`
---
-ALTER TABLE `quesito`
-  ADD PRIMARY KEY (`id`),
-  ADD KEY `fk_categoria3` (`jogo_id`),
-  ADD KEY `fk7_tipojogo` (`tipojogo_id`);
-
---
--- Indexes for table `ranking`
---
-ALTER TABLE `ranking`
-  ADD PRIMARY KEY (`id`),
-  ADD KEY `fk_categoria` (`usuario_id`),
-  ADD KEY `fk_categoria1` (`jogo_id`);
-
---
--- Indexes for table `respostas`
---
-ALTER TABLE `respostas`
-  ADD PRIMARY KEY (`id`),
-  ADD KEY `fk_categoria4` (`quesito_id`);
-
---
--- Indexes for table `tipo_jogo`
---
-ALTER TABLE `tipo_jogo`
-  ADD PRIMARY KEY (`id`),
-  ADD KEY `fk_categoria2` (`jogo_id`);
-
---
--- Indexes for table `usuario`
---
-ALTER TABLE `usuario`
-  ADD PRIMARY KEY (`id`);
-
---
--- AUTO_INCREMENT for dumped tables
+-- Restrições para as tabelas dumpadas
 --
 
 --
--- AUTO_INCREMENT for table `jogo`
---
-ALTER TABLE `jogo`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=4;
---
--- AUTO_INCREMENT for table `quesito`
---
-ALTER TABLE `quesito`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=67;
---
--- AUTO_INCREMENT for table `ranking`
---
-ALTER TABLE `ranking`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=16;
---
--- AUTO_INCREMENT for table `respostas`
---
-ALTER TABLE `respostas`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=33;
---
--- AUTO_INCREMENT for table `tipo_jogo`
---
-ALTER TABLE `tipo_jogo`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=10;
---
--- AUTO_INCREMENT for table `usuario`
---
-ALTER TABLE `usuario`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=7;
---
--- Constraints for dumped tables
---
-
---
--- Limitadores para a tabela `quesito`
+-- Restrições para a tabela `quesito`
 --
 ALTER TABLE `quesito`
   ADD CONSTRAINT `fk7_tipojogo` FOREIGN KEY (`tipojogo_id`) REFERENCES `tipo_jogo` (`id`),
   ADD CONSTRAINT `fk_categoria3` FOREIGN KEY (`jogo_id`) REFERENCES `jogo` (`id`);
 
 --
--- Limitadores para a tabela `ranking`
+-- Restrições para a tabela `ranking`
 --
 ALTER TABLE `ranking`
   ADD CONSTRAINT `fk_categoria` FOREIGN KEY (`usuario_id`) REFERENCES `usuario` (`id`),
   ADD CONSTRAINT `fk_categoria1` FOREIGN KEY (`jogo_id`) REFERENCES `jogo` (`id`);
 
 --
--- Limitadores para a tabela `respostas`
+-- Restrições para a tabela `respostas`
 --
 ALTER TABLE `respostas`
   ADD CONSTRAINT `fk_categoria4` FOREIGN KEY (`quesito_id`) REFERENCES `quesito` (`id`);
 
 --
--- Limitadores para a tabela `tipo_jogo`
+-- Restrições para a tabela `tipo_jogo`
 --
 ALTER TABLE `tipo_jogo`
   ADD CONSTRAINT `fk_categoria2` FOREIGN KEY (`jogo_id`) REFERENCES `jogo` (`id`);
