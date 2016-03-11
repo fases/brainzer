@@ -17,7 +17,7 @@ session_start();
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="shortcut icon" href="brainzer_icon.ico" TYPE="image/x-icon">
+        <link rel="shortcut icon" href="PaginasComCss/brainzer_icon.ico" TYPE="image/x-icon">
         <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
         <meta name="description" content="">
         <meta name="author" content="">
@@ -72,7 +72,7 @@ session_start();
             h3{
                 font-family: 'Raleway',sans-serif;
                 color: white;
-                font-size: 40px;
+                font-size: 30px;
                 background-color: #5cb85c;
             }
             .butaoin{
@@ -182,7 +182,7 @@ session_start();
                 height: 100px;
                 background: #fff;
                 margin: 0 auto; width: 30%;
-                font-size: 28px;
+                font-size: 24px;
                 margin-top: 30px;
                 margin-right: 35px;
                 margin-left: 30px;
@@ -475,9 +475,9 @@ session_start();
             <div id="page-wrapper">
                 <h1> Quantos(?) </h1>
                 <div id="orientacao">
-                    <h3> <br><br>No jogo dos Quantos(?) você terá que: <br><br><br>
-                        - Responder perguntas sobre quantidades. <br></h3>
-                    <input type="button" class="butaoin" value="Começar" id="comecar"/>
+                    <h3><br><br><br>No jogo dos Quantos(?) você terá que: <br><br><br><br><br>
+                        - Responder perguntas sobre quantidades. <br><br></h3>
+                    <input type="button" class="butaoin" style="margin-top: 90px;" value="Começar" id="comecar"/>
                 </div>
                 <div>
                     <?php
@@ -508,14 +508,14 @@ session_start();
                                         echo "<input type='button' class='div' id='resp4$a' onclick='passar(this.value,$a);' name='resp4'  value= '" . $regis['alternativa4'] . "'/> <br>";
                                         echo "<input type='hidden' class='div' id='respcerta$a' name='respcerta$a' value=''/> <br>";
                                         echo "<input type='hidden' class='div' id='quesito_id' name='quesito$a' value='$quesito_id'/> <br>";
-                                        echo "<input type='button' class='butao' id='proximo$a' value='Próximo'/>";
+                                        echo "<input type='button' class='butao' style='margin-top: 30px;' id='proximo$a' value='Próximo'/>";
                                     }
                                 }
                             }
                             echo "</div>";
                         }
 
-                        echo "<input type='submit' class='butao' id='finalizar' style='margin-top: 1%; margin-left: 40%; margin-right: 35%; padding-right: 80px; padding-left: 80px; text-align: center; font-family: 'Raleway',sans-serif;' value='Finalizar'/>";
+                        echo "<input type='submit' class='butao' id='finalizar' style='margin-top: 1%; margin-left: 38%; margin-right: 35%; padding-right: 80px; padding-left: 80px; text-align: center; font-family: 'Raleway',sans-serif;' value='Finalizar'/>";
 
                         echo "</form>";
                     }

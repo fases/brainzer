@@ -16,7 +16,7 @@ if (!isset($_SESSION["usuario"])) {
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="shortcut icon" href="brainzer_icon.ico" TYPE="image/x-icon">
+        <link rel="shortcut icon" href="PaginasComCss/brainzer_icon.ico" TYPE="image/x-icon">
         <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
         <meta name="description" content="">
         <meta name="author" content="">
@@ -71,7 +71,7 @@ if (!isset($_SESSION["usuario"])) {
             h3{
                 font-family: 'Raleway',sans-serif;
                 color: white;
-                font-size: 40px;
+                font-size: 35px;
                 background-color: #337ab7;
             }
             .butaoin{
@@ -132,7 +132,7 @@ if (!isset($_SESSION["usuario"])) {
             }
             #perg1, #perg2, #perg3, #perg4, #perg5, #perg6{
                 display: none;
-                
+
 
             }
             #final{
@@ -186,7 +186,7 @@ if (!isset($_SESSION["usuario"])) {
                 height: 100px;
                 background: #fff;
                 margin: 0 auto; width: 30%;
-                font-size: 14px;
+                font-size: 15px;
                 margin-top: 30px;
                 margin-right: 35px;
                 margin-left: 30px;
@@ -441,10 +441,10 @@ if (!isset($_SESSION["usuario"])) {
             <div id="page-wrapper">
                 <h1> Mentalizando </h1>
                 <div id="orientacao">
-                    <h3><br> No jogo mentalizando você terá que: <br>
+                    <h3><br><br> No jogo mentalizando você terá que: <br>
                         - Assistir um vídeo; <br>
                         - Responder perguntas sobre o vídeo. </h3>
-                    <h3 id="h3"> Preste bastante atenção no vídeo. <br><br></h3>
+                    <h3 id="h3"> Preste bastante atenção no vídeo. <br><br><br></h3>
                     <input class="butao" type="button" value="Começar" id="comecar"/>
                 </div>
                 <div id = "video">

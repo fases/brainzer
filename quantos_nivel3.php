@@ -24,7 +24,7 @@ if (!isset($_SESSION["usuario"])) {
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="shortcut icon" href="brainzer_icon.ico" TYPE="image/x-icon">
+        <link rel="shortcut icon" href="PaginasComCss/brainzer_icon.ico" TYPE="image/x-icon">
         <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
         <meta name="description" content="">
         <meta name="author" content="">
@@ -352,7 +352,7 @@ if (!isset($_SESSION["usuario"])) {
 
             <div id="page-wrapper">
                 <?php
-                echo "<div style='text-align: center; font-size:55px; font-family: 'Raleway',sans-serif;><h1><br><br><br>Esse nível ainda não foi implementado!</h1></div>";
+                echo "<div style='text-align: center; font-size:55px; font-family: 'Raleway',sans-serif;><img src='../brainzer/PaginasComCss/images/sad.png' widht='200px;' height='200px;'><h1><br>Esse nível ainda não foi implementado!</h1></div>";
                 ?>
 
             </div>

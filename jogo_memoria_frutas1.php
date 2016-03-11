@@ -163,10 +163,7 @@ if (!isset($_SESSION["usuario"])) {
                 width: 200px;
                 height: 40%;
             }
-            img{
-
-
-            }
+            
 
             #img0, #img1,#img2, #img3, #img4, #img5, #img6, #img7, #img8, #img9, #img10, #img11{
                 display: none;
@@ -175,7 +172,7 @@ if (!isset($_SESSION["usuario"])) {
             }
             #princy{
                 display: none;
-                margin-left: 14%;
+                margin-left: 9%;
 
             }
 
@@ -448,7 +445,7 @@ if (!isset($_SESSION["usuario"])) {
                     echo "</div>";
                     echo "<form action= 'jogo_memoria_frutas_correcao.php' method= 'get' onsubmit= 'sair()'>";
                     echo " <input type='hidden' name='pontuacao' id='pontuacao'/>";
-                    echo "<input style='margin-left: 270px;' type='submit' value= 'Finalizar' class='butao' id='botao'/>";
+                    echo "<input style='margin-left: 260px;' type='submit' value= 'Finalizar' class='butao' id='botao'/>";
                     echo "</form>";
                     echo "</div>";
                     //$mysqli_close($con);

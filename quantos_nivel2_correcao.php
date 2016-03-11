@@ -26,7 +26,7 @@ and open the template in the editor.
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="shortcut icon" href="brainzer_icon.ico" TYPE="image/x-icon">
+        <link rel="shortcut icon" href="PaginasComCss/brainzer_icon.ico" TYPE="image/x-icon">
         <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
         <meta name="description" content="">
         <meta name="author" content="">
@@ -309,13 +309,13 @@ and open the template in the editor.
                     // ~~~~ //
 
                     if ($erros == 0) {
-                        echo "<h3 style=''><br>Você acertou todas as questões Parabéns!</h3><br>";
+                        echo "<h3><br>Você acertou todas as questões. Parabéns!</h3><br>";
                     } else {
                         echo "<h3><br>Você errou " . $erros . " questões.</h3><br>";
                     }
                     mysqli_close($con);
                     ?>
-                    <div style="margin-left: 300px;">
+                    <div style="margin-left: 260px;">
                         <input type='button' class='butao' id='correcao' value='Ver Correção'/>
                         <input type='button' class='butao' id='respnova' value='Responder Novamente' onclick="responderNovamente()"/>
                         <input type='button' class='butao' id='sair' value='Sair' onclick="sair()"/>

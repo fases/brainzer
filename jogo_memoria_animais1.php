@@ -163,10 +163,7 @@ if (!isset($_SESSION["usuario"])) {
                 width: 200px;
                 height: 40%;
             }
-            img{
-
-
-            }
+            
             #img0, #img1,#img2, #img3, #img4, #img5, #img6, #img7, #img8, #img9, #img10, #img11, #img12, #img13, #img14, #img15{
                 display: none;
                 padding-right: 20px;
@@ -174,7 +171,7 @@ if (!isset($_SESSION["usuario"])) {
             }
             #princy{
                 display: none;
-                margin-left: 16%;
+                margin-left: 10%;
 
             }
 

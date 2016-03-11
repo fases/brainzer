@@ -423,7 +423,7 @@ if ($result) {
                     <h1><br>Ranking diário dos jogos</h1>
                     <img src="../brainzer/PaginasComCss/images/2_prata.png" widht="60px" height="60px" style="width: 50px;  margin-left: 275px; margin-top: 50px; margin-bottom:-230px;" >
                     <img src="../brainzer/PaginasComCss/images/1_ouro.png" widht="30px" height="30px" style="width: -50px; height: 100px; margin-left: 120px; margin-top: -130px; margin-bottom:-230px;" >
-                    <img src="../brainzer/PaginasComCss/images/3_bronze.png" widht="50px" height="50px" style="width: -50px; margin-left: 635px; margin-top: 60px; margin-bottom:-230px;" >
+                    <img src="../brainzer/PaginasComCss/images/3_bronze.png" widht="50px" height="50px" style="width: -50px; margin-left: 600px; margin-top: 60px; margin-bottom:-230px;" >
                     <ul class='pull-left' style='list-style-type: none; margin-left: -150px; margin-top: 243px;'>
                         <li>
                             <div class='pull-left' style='background-color: #008cde; width: 20px; height: 20px;'></div>
@@ -435,7 +435,7 @@ if ($result) {
                         </li>
                         <li>
                             <div class='pull-left' style='background-color: #f0ad4e; width: 20px; height: 20px;'></div>
-                            <span style='font-size: 20px; margin-left: 5px;'> Mentalizando </span>
+                            <span style='font-size: 20px; margin-left: 5px;'> Jogo da Memória </span>
                         </li>
                     </ul>
 

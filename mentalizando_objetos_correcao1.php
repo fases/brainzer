@@ -311,13 +311,13 @@ and open the template in the editor.
                     // ~~~~ //
 
                     if ($erros == 0) {
-                        echo "<h3><br>Você acertou todas as questões Parabéns!</h3><br>";
+                        echo "<h3><br>Você acertou todas as questões. Parabéns!</h3><br>";
                     } else {
                         echo "<h3><br>Você errou " . $erros . " questões.</h3><br>";
                     }
                     mysqli_close($con);
                     ?>
-                    <div style="margin-left: 300px;">
+                    <div style="margin-left: 260px;">
                         <input type='button' class='butao' id='correcao' value='Ver Correção'/>
                         <input type='button' class='butao' id='respnova' value='Responder Novamente' onclick="responderNovamente()"/>
                         <input type='button' class='butao' id='sair' value='Sair' onclick="sair()"/>

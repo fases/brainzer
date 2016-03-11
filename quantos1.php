@@ -16,7 +16,7 @@ if (!isset($_SESSION["usuario"])) {
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="shortcut icon" href="brainzer_icon.ico" TYPE="image/x-icon">
+        <link rel="shortcut icon" href="PaginasComCss/brainzer_icon.ico" TYPE="image/x-icon">
         <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
         <meta name="description" content="">
         <meta name="author" content="">
@@ -71,7 +71,7 @@ if (!isset($_SESSION["usuario"])) {
             h3{
                 font-family: 'Raleway',sans-serif;
                 color: white;
-                font-size: 40px;
+                font-size: 30px;
                 background-color: #5cb85c;
             }
             .butaoin{
@@ -111,7 +111,7 @@ if (!isset($_SESSION["usuario"])) {
                 font-size: 20px;
                 padding: 10px 20px 10px 20px;
                 text-decoration: none;
-                margin-top: 50px;
+                margin-top: 60px;
                 padding-right: 80px; 
                 padding-left: 80px;
                 text-align: center;
@@ -184,7 +184,7 @@ if (!isset($_SESSION["usuario"])) {
                 height: 100px;
                 background: #fff;
                 margin: 0 auto; width: 30%;
-                font-size: 28px;
+                font-size: 23px;
                 margin-top: 30px;
                 margin-right: 35px;
                 margin-left: 30px;
@@ -462,9 +462,9 @@ if (!isset($_SESSION["usuario"])) {
             <div id="page-wrapper">
                 <h1> Quantos(?) </h1>
                 <div id="orientacao">
-                    <h3> <br><br>No jogo dos Quantos(?) você terá que: <br><br><br>
-                        - Responder perguntas sobre quantidades. <br></h3>
-                    <input type="button" class="butaoin" value="Começar" id="comecar"/>
+                    <h3> <br><br><br>No jogo dos Quantos(?) você terá que: <br><br><br>
+                        - Responder perguntas sobre quantidades. <br><br><br><br></h3>
+                    <input type="button" class="butaoin" style="margin-top: 90px;" value="Começar" id="comecar"/>
                 </div>
                 <div>
                     <?php

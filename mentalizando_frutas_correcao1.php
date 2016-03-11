@@ -309,7 +309,7 @@ and open the template in the editor.
 
 
                     if ($erros == 0) {
-                        echo "<h3><br>Você acertou todas as questões Parabéns!</h3><br>";
+                        echo "<h3><br>Você acertou todas as questões. Parabéns!</h3><br>";
                     } else {
                         echo "<h3><br>Você errou " . $erros . " questões.</h3><br>";
                     }

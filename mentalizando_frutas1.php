@@ -24,7 +24,7 @@ if (!isset($_SESSION["usuario"])) {
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="shortcut icon" href="brainzer_icon.ico" TYPE="image/x-icon">
+        <link rel="shortcut icon" href="PaginasComCss/brainzer_icon.ico" TYPE="image/x-icon">
         <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
         <meta name="description" content="">
         <meta name="author" content="">
@@ -193,7 +193,7 @@ if (!isset($_SESSION["usuario"])) {
                 height: 100px;
                 background: #fff;
                 margin: 0 auto; width: 30%;
-                font-size: 18px;
+                font-size: 15px;
                 margin-top: 30px;
                 margin-right: 35px;
                 margin-left: 30px;
@@ -472,7 +472,7 @@ if (!isset($_SESSION["usuario"])) {
                     <h3><br> No jogo mentalizando você terá que: <br>
                         - Assistir um vídeo; <br>
                         - Responder perguntas sobre o vídeo. </h3>
-                    <h3 id="h3"> Preste bastante atenção no vídeo. </h3><br><br>
+                    <h3 id="h3"> Preste bastante atenção no vídeo. </h3><br><br><br>
                     <input type="button" class="butao" value="Começar" id="comecar"/>
                 </div>
                 <div id = "video">
@@ -508,7 +508,7 @@ if (!isset($_SESSION["usuario"])) {
                         $a++;
                         echo "<div id='perg$a' class= 'perguntas'> ";
                         echo "<h2>$a" . "ª Pergunta </h2>";
-                        echo "<h3 style='font-size:34px; margin-bottom: 20px;'>" . $reg['pergunta'] . "</h3> ";
+                        echo "<h3 style='font-size:30px; margin-bottom: 20px;'>" . $reg['pergunta'] . "</h3> ";
                         $quesito_id = $reg['id'];
                         if ($reg['id']) {
                             $pergunta = $reg['id'];
@@ -530,7 +530,7 @@ if (!isset($_SESSION["usuario"])) {
                         echo "</div>";
                     }
 
-                    echo "<input type='submit' class='butao' id='finalizar' style='margin-top: 1%; margin-left: 40%; margin-right: 35%; padding-right: 80px; padding-left: 80px; text-align: center; font-family: 'Raleway',sans-serif;' value='Finalizar'/>";
+                    echo "<input type='submit' class='butao' id='finalizar' style='margin-top: 1%; margin-left: 38%; margin-right: 35%; padding-right: 80px; padding-left: 80px; text-align: center; font-family: 'Raleway',sans-serif;' value='Finalizar'/>";
 
                     echo "</form>";
                 }
